@@ -1,10 +1,11 @@
-site_name: Unofficial Geospatial Knowledge Hub
+site_name: Geospatial Knowledge Hub
 theme:
   name: material
+  custom_dir: overrides
   language: en
   features:
-    - navigation.tabs          # categories as top tabs
-    - navigation.sections      # group trainings in sidebar
+    - navigation.tabs          # Home and Trainings as top tabs
+    - navigation.sections      # group items in the sidebar
     - navigation.indexes       # index.md acts as section landing page
     - navigation.path
     - navigation.top
@@ -32,22 +33,24 @@ extra:
 
 nav:
   - Home: index.md
-  - GNSS:
-    - gnss/index.md
-    - Fundamentals for Accurate Data Collection:
-        - gnss/fundamentals/index.md
-        - 1. GNSS Basics: gnss/fundamentals/01-gnss-basic.md
-        - 2. Where Errors Come From: gnss/fundamentals/02-where-errors-come-from.md
-        - 3. Precise Is Not Accurate: gnss/fundamentals/03-precise-is-not-accurate.md
-        - 4. Same Place, Different Numbers: gnss/fundamentals/04-same-place-different-numbers.md
-        - 5. Corrections: gnss/fundamentals/05-corrections.md
-        - 6. Hard Places: gnss/fundamentals/06-hard-places.md
-        - 7. Planning for Post-Processing: gnss/fundamentals/07-planning-for-post-processing.md
-  - ArcGIS Pro:
-      - arcgis-pro/index.md
-  - Cartography:
-      - cartography/index.md
-  - About: about.md
+  - Trainings:
+      - trainings/index.md
+      - GNSS Fundamentals for Accurate Data Collection:
+          - gnss/fundamentals/index.md
+          - 1. GNSS Basics: gnss/fundamentals/01-gnss-basic.md
+          - 2. Where Errors Come From: gnss/fundamentals/02-where-errors-come-from.md
+          - 3. Precise Is Not Accurate: gnss/fundamentals/03-precise-is-not-accurate.md
+          - 4. Same Place, Different Numbers: gnss/fundamentals/04-same-place-different-numbers.md
+          - 5. Corrections: gnss/fundamentals/05-corrections.md
+          - 6. Hard Places: gnss/fundamentals/06-hard-places.md
+          - 7. Planning for Post-Processing: gnss/fundamentals/07-planning-for-post-processing.md
+
+# Category pages stay published, but they are not navigation items.
+not_in_nav: |
+  about.md
+  gnss/index.md
+  arcgis-pro/
+  cartography/
 
 markdown_extensions:
   - attr_list
@@ -65,7 +68,14 @@ markdown_extensions:
 extra_css:
   - assets/css/extra.css
 
+plugins:
+  - search
+  - tags:
+      listings_layout: cards
+      listings_toc: false
+
 extra_javascript:
   - javascripts/self-check.js
   - javascripts/toc-align.js
   - javascripts/enlarge.js
+  - javascripts/training-tags.js

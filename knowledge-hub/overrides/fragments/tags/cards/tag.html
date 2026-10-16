@@ -1,0 +1,7 @@
+{% set class = "md-tag" %}
+{% if tag.hidden %}
+  {% set class = class ~ " md-tag-shadow" %}
+{% endif %}
+<span class="{{ class }}">
+  {{- tag.name -}}
+</span>

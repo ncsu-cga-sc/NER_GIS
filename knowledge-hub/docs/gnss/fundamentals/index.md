@@ -1,8 +1,13 @@
+---
+title: GNSS Fundamentals for Accurate Data Collection
+description: Core concepts, error sources, and a repeatable field workflow.
+tags:
+  - GNSS
+---
+
 # GNSS Fundamentals for Accurate Data Collection
 
 Learn how GNSS positioning works, why the same location can produce different coordinates, and how to plan a field workflow that delivers positions you can trust.
-
-[Start Lesson 1](01-gnss-basic.md){ .md-button .md-button--primary }
 
 ## What you will learn
 
@@ -25,7 +30,7 @@ By the end of this training, you will be able to:
 | 4 | [Same Place, Different Numbers](04-same-place-different-numbers.md) | Why repeat visits to one location give different coordinates |
 | 5 | [Corrections](05-corrections.md) | How correction methods reduce errors |
 | 6 | [Hard Places](06-hard-places.md) | Collecting data under canopy, near buildings, and in other difficult conditions |
-| 7 | [Planning for Post-Processing](07-planning-for-post-processings.md) | Collecting data now so it can be improved after the fact |
+| 7 | [Planning for Post-Processing](07-planning-for-post-processing.md) | Collecting data now so it can be improved after the fact |
 
 ## Who this is for
 
@@ -37,11 +42,3 @@ By the end of this training, you will be able to:
 
 - Basic GIS concepts: coordinates, coordinate systems, and datums
 - No receiver is required to follow the concepts
-
-!!! tip "Suggested approach"
-
-    Work through the lessons in order. Each one builds on the previous, and Lessons 5 to 7 assume you understand the error sources from Lessons 2 to 4.
-
-## Next in GNSS
-
-More trainings are planned. See the [GNSS category page](../index.md) for the roadmap.

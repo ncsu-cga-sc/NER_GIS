@@ -4,42 +4,12 @@ hide:
   - toc
 ---
 
-# Unofficial Geospatial Knowledge Hub
+# Geospatial Knowledge Hub
 
 Practical, field-ready training for geospatial professionals: short, focused, and built for real work.
 
 [Start with GNSS Fundamentals](gnss/fundamentals/index.md){ .md-button .md-button--primary }
-[Browse all categories](#categories){ .md-button }
-
-## Categories { #categories }
-
-<div class="grid cards" markdown>
-
--   :material-satellite-variant: **[GNSS](gnss/index.md)**
-
-    ---
-
-    Accurate data collection, from fundamentals to field workflows.
-
-    **1 training available**
-
--   :material-layers: **[ArcGIS Pro](arcgis-pro/index.md)**
-
-    ---
-
-    Workflows and tools for everyday GIS work.
-
-    **0 training available**
-
--   :material-map: **[Cartography](cartography/index.md)**
-
-    ---
-
-    Map design principles and production.
-
-    **0 training available**
-
-</div>
+[Browse trainings](trainings/index.md){ .md-button }
 
 ## Latest training
 

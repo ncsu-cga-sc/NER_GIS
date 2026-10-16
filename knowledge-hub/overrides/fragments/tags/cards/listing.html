@@ -1,0 +1,3 @@
+{% for mapping in listing.mappings %}
+  <li class="training-card-source" hidden data-tag="{{ listing.tag.name }}" data-url="{{ mapping.item.url | url }}" data-title="{{ mapping.item.title }}" data-description="{{ mapping.item.meta.description | default('') }}"></li>
+{% endfor %}
