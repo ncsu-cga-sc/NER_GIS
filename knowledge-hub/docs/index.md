@@ -24,9 +24,3 @@ Practical, field-ready training for geospatial professionals: short, focused, an
 - Field data collectors and GIS technicians
 - GIS analysts and students
 - Anyone who needs to trust the coordinates they collect
-
-## About this site
-
-!!! note "Unofficial"
-
-    This is an independent resource maintained by [your organization/team]. It is not an official product of, or endorsed by, any software or hardware vendor. Product names belong to their respective owners.

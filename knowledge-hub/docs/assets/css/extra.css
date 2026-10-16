@@ -437,6 +437,29 @@
   margin-bottom: 0.4em;
 }
 
+.md-typeset .hub-fig-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin: 1.5em 0;
+}
+
+.md-typeset .hub-fig-pair .hub-img {
+  width: 100%;
+  margin: 0 auto 0.4em;
+}
+
+.md-typeset .hub-fig-pair p.figure-caption {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 30em) {
+  .md-typeset .hub-fig-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
 .md-typeset .gnss-mark {
   display: inline-flex;
   align-items: center;
@@ -1101,6 +1124,56 @@
 .md-typeset .training-grid.grid > ul > li.training-card {
   display: flex;
   flex-direction: column;
+}
+
+.training-card-image {
+  margin: 0 0 0.8rem;
+}
+
+.training-card-image a {
+  display: block;
+}
+
+.training-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.1rem;
+}
+
+.training-card-placeholder .training-card-image {
+  margin-bottom: 0;
+}
+
+.training-card-title {
+  text-align: center;
+}
+
+.training-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+}
+
+.training-card-footer .training-card-tags {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.md-typeset .training-card-date {
+  position: relative;
+  top: 0.35rem;
+  margin: 0;
+  font-size: 0.8em;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: right;
+  color: var(--hub-text-muted);
 }
 
 .training-card-tags {

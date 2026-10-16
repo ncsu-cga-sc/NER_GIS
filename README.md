@@ -70,18 +70,22 @@ knowledge-hub/docs/trainings/<category>/<training-slug>/
 
 Keep figures in `img/` and link them from the lesson as `img/figure-name.png`.
 
-`index.md` is the training landing page. Its `title`, `description`, and `tags` become the card on the Trainings page. Leave `docs/trainings/index.md` unchanged. Use the category name as the tag, and put `tags` on this page only, so the catalog lists the training once. The Trainings page builds its filters from those tags.
+`index.md` is the training landing page. Add its card in `docs/trainings/index.md` by copying an existing `<li class="training-card">`. In that copy, set the image `src`, both `href` values, the title text, the description, and `data-tags`. `data-tags` is the category name, and the same name is the tag button on the card. The Trainings page builds its filters from `data-tags`.
 
-```yaml
----
-title: Training title
-description: One sentence for the catalog card.
-tags:
-  - Category name
----
+```html
+<li class="training-card" data-tags="Category name">
+<p class="training-card-image"><a href="<category>/<training-slug>/"><img src="img/<image-file>" alt="Training title"></a></p>
+<p class="training-card-title"><strong><a href="<category>/<training-slug>/">Training title</a></strong></p>
+<hr>
+<p>One sentence for the card.</p>
+<div class="training-card-footer">
+<p class="training-card-tags"><button type="button" class="md-tag" data-tag="Category name">Category name</button></p>
+<p class="training-card-date">Mon Year</p>
+</div>
+</li>
 ```
 
-Add a lesson table on that page, with a relative link to each lesson file.
+The training `index.md` still needs its own `title` for the page heading. Add a lesson table there, with a relative link to each lesson file.
 
 Register the training in `knowledge-hub/mkdocs.yml` under `Trainings`, with `index.md` first and then each lesson:
 

@@ -19,6 +19,8 @@ Accurate data collection with GNSS: how positioning works, what limits accuracy,
 
     Core concepts, error sources, and a repeatable field workflow.
 
+    **Sep 2026**
+
     **Level:** Beginner · **Format:** Self-paced lessons
 
 </div>

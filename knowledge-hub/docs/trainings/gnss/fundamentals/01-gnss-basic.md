@@ -1,5 +1,5 @@
 
-#  Module 1 — GNSS
+#  Module 1 — GNSS Basics
 
 *Read time: 7–10 minutes*
 
@@ -127,10 +127,24 @@ move your position. Satellites bunched in one part of the sky are like
 hands held close together: the same small errors swing your position
 around a lot.
 
-| | |
-| :---: | :---: |
-| ![Image 1](img/fig-1-4-dop-poor-forested.png) | ![Image 2](img/fig-1-5-dop-good-open.png) |
-| Poor DOP | Good DOP |
+<div class="hub-fig-pair" markdown="1">
+<div markdown="1">
+
+![Satellites bunched in a narrow gap above a receiver under forest canopy](img/fig-1-4-dop-poor-forested.png){ .hub-img }
+
+Poor DOP: The satellites are bunched in one narrow gap, so a small error swings the position a long way.
+{ .figure-caption }
+
+</div>
+<div markdown="1">
+
+![Satellites spread across the open sky above a receiver](img/fig-1-5-dop-good-open.png){ .hub-img }
+
+Good DOP: The satellites are spread across the sky, so the same error barely moves the position.
+{ .figure-caption }
+
+</div>
+</div>
 
 
 **What DOP tells you.** Your controller reports geometry as **DOP**

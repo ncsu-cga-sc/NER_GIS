@@ -76,3 +76,6 @@ extra_javascript:
   - javascripts/toc-align.js
   - javascripts/enlarge.js
   - javascripts/training-tags.js
+
+hooks:
+  - hooks.py
