@@ -19,4 +19,4 @@ Topic requests and corrections are welcome. Send them through your team's usual 
 
 ## Start here
 
-[GNSS Fundamentals for Accurate Data Collection](gnss/fundamentals/index.md)
+[GNSS Fundamentals for Accurate Data Collection](trainings/gnss/fundamentals/index.md)

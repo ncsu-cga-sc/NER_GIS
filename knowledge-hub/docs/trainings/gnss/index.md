@@ -46,4 +46,4 @@ The topics below are on the roadmap. Titles and order may change.
 
 ## Feedback
 
-Have a topic request or found an error? [Contact us](../about.md).
+Have a topic request or found an error? [Contact us](../../about.md).

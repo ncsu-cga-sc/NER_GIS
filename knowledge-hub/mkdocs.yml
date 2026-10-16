@@ -36,21 +36,21 @@ nav:
   - Trainings:
       - trainings/index.md
       - GNSS Fundamentals for Accurate Data Collection:
-          - gnss/fundamentals/index.md
-          - 1. GNSS Basics: gnss/fundamentals/01-gnss-basic.md
-          - 2. Where Errors Come From: gnss/fundamentals/02-where-errors-come-from.md
-          - 3. Precise Is Not Accurate: gnss/fundamentals/03-precise-is-not-accurate.md
-          - 4. Same Place, Different Numbers: gnss/fundamentals/04-same-place-different-numbers.md
-          - 5. Corrections: gnss/fundamentals/05-corrections.md
-          - 6. Hard Places: gnss/fundamentals/06-hard-places.md
-          - 7. Planning for Post-Processing: gnss/fundamentals/07-planning-for-post-processing.md
+          - trainings/gnss/fundamentals/index.md
+          - 1. GNSS Basics: trainings/gnss/fundamentals/01-gnss-basic.md
+          - 2. Where Errors Come From: trainings/gnss/fundamentals/02-where-errors-come-from.md
+          - 3. Precise Is Not Accurate: trainings/gnss/fundamentals/03-precise-is-not-accurate.md
+          - 4. Same Place, Different Numbers: trainings/gnss/fundamentals/04-same-place-different-numbers.md
+          - 5. Corrections: trainings/gnss/fundamentals/05-corrections.md
+          - 6. Hard Places: trainings/gnss/fundamentals/06-hard-places.md
+          - 7. Planning for Post-Processing: trainings/gnss/fundamentals/07-planning-for-post-processing.md
 
 # Category pages stay published, but they are not navigation items.
 not_in_nav: |
   about.md
-  gnss/index.md
-  arcgis-pro/
-  cartography/
+  trainings/gnss/index.md
+  trainings/arcgis-pro/
+  trainings/cartography/
 
 markdown_extensions:
   - attr_list

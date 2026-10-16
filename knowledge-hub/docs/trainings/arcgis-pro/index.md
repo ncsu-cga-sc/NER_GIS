@@ -19,4 +19,4 @@ The only published training so far is [GNSS Fundamentals for Accurate Data Colle
 
 ## Feedback
 
-Have a topic request or found an error? [Contact us](../about.md).
+Have a topic request or found an error? [Contact us](../../about.md).
