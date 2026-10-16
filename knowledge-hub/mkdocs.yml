@@ -47,10 +47,7 @@ nav:
 
 # Category pages stay published, but they are not navigation items.
 not_in_nav: |
-  about.md
   trainings/gnss/index.md
-  trainings/arcgis-pro/
-  trainings/cartography/
 
 markdown_extensions:
   - attr_list

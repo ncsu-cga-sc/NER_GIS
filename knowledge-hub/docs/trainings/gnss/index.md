@@ -43,7 +43,3 @@ The topics below are on the roadmap. Titles and order may change.
 
 - Basic familiarity with GIS concepts (coordinates, coordinate systems, datums)
 - Access to a GNSS receiver is helpful for the hands-on exercises, but not required for the concepts
-
-## Feedback
-
-Have a topic request or found an error? [Contact us](../../about.md).
