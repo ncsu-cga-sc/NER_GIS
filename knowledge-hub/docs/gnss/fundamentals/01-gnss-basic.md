@@ -42,7 +42,7 @@ they serve only their own area (Asia-Oceania for QZSS; India and about
 the horizon, so they add nothing to your count, even if your receiver
 lists them in its settings.
 
-![GNSS Constellations by NASA](../../assets/images/gnss/fundamentals/gnss_EIC_comp_still_labels_preview.jpg)
+![GNSS Constellations by NASA](img/fig-1-1-gnss-constellations.jpg)
 *Global Navigation Satellite System (GNSS) satellites, color-coded by operating country: United States (cyan), European Union (blue), China (red), Russia (yellow), India (green), and Japan (white). Composite view designed for ultrawide displays, including the NASA Earth Information Center (EIC). This version includes labels. See [video](https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005627/gnss_EIC_comp_labels_3840x1080_60fps_60mbps_h265_01.mp4)*.</br>
 
 *Source: NASA Scientific Visualization Studio: https://svs.gsfc.nasa.gov/5627/*
@@ -86,13 +86,13 @@ draws a circle around a satellite; a second distance draws another
 circle, crossing the first at two points; a third distance passes
 through only one of those two points — leaving a single answer.
 
-![How a receiver finds a position: time the signal, convert it to a distance, combine distances from several satellites](../../assets/images/gnss/fundamentals/trilateration_steps.svg)
+![How a receiver finds a position: time the signal, convert it to a distance, combine distances from several satellites](img/fig-1-2-trilateration-steps.svg)
 *The three steps of trilateration: (1) the receiver times each satellite's signal, (2) it converts that time into a distance, and (3) it combines the distances. A third satellite's circle passes through only one of the two points where the first two circles cross.*
 
 **Why trilateration needs 4 satellites, not 3.**
 <div style="float: right; margin-left: 15px; text-align: center; width: 200px;" markdown="block">
 
-<!--![How GPS Calculates Your Position | Trilateration Explained by Geospatial Solution](../../assets/images/gnss/fundamentals/trilateration_explained_youtube_by_Geospatial_Solution.png)
+<!--![How GPS Calculates Your Position | Trilateration Explained by Geospatial Solution](img/fig-1-3-trilateration-explained.png)
 
 <p class="image-credit">Source: Geospatial Solution</p>-->
 
@@ -129,7 +129,7 @@ around a lot.
 
 | | |
 | :---: | :---: |
-| ![Image 1](../../assets/images/gnss/fundamentals/dop_poor_in_forested_area.png) | ![Image 2](../../assets/images/gnss/fundamentals/dop_good_in_not_forested_area.png) |
+| ![Image 1](img/fig-1-4-dop-poor-forested.png) | ![Image 2](img/fig-1-5-dop-good-open.png) |
 | Poor DOP | Good DOP |
 
 
