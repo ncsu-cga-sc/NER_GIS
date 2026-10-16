@@ -1,16 +1,16 @@
 /*
- * Pictures with the ascam-zoom class open in a box on this page. The box stays smaller than
+ * Pictures with the hub-zoom class open in a box on this page. The box stays smaller than
  * the window. A GIF is loaded fresh after the box is shown so it animates;
  * the browser's dialog box freezes GIF frames.
  * Escape, the corner button, or a click outside the box dismisses it.
  */
 (function () {
   var root = document.createElement("div");
-  root.className = "ascam-enlarge-root";
+  root.className = "hub-enlarge-root";
   root.hidden = true;
 
   var box = document.createElement("div");
-  box.className = "ascam-enlarge";
+  box.className = "hub-enlarge";
   box.setAttribute("role", "dialog");
   box.setAttribute("aria-modal", "true");
   box.setAttribute("aria-label", "Enlarged picture");
@@ -51,12 +51,12 @@
   });
 
   function markZoom() {
-    var pictures = document.querySelectorAll(".md-content img.ascam-zoom");
+    var pictures = document.querySelectorAll(".md-content img.hub-zoom");
     for (var i = 0; i < pictures.length; i++) {
       var img = pictures[i];
-      if (img.closest(".ascam-zoom-frame")) continue;
+      if (img.closest(".hub-zoom-frame")) continue;
       var frame = document.createElement("span");
-      frame.className = "ascam-zoom-frame";
+      frame.className = "hub-zoom-frame";
       img.parentNode.insertBefore(frame, img);
       frame.appendChild(img);
     }
@@ -69,7 +69,7 @@
   }
 
   document.addEventListener("click", function (event) {
-    var thumb = event.target.closest("img.ascam-zoom");
+    var thumb = event.target.closest("img.hub-zoom");
     if (!thumb) return;
     event.preventDefault();
 

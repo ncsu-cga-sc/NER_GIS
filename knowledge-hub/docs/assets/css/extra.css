@@ -12,6 +12,14 @@
   display: none;
 }
 
+/* Light theme: header, tab bar, and footer share the same blue as links and table headers. */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs,
+[data-md-color-scheme="default"] .md-footer,
+[data-md-color-scheme="default"] .md-footer-meta {
+  background-color: var(--hub-link);
+}
+
 [data-md-color-primary="custom"] {
   --md-primary-fg-color: #14151a;
   --md-primary-fg-color--light: #3a3c46;
@@ -22,47 +30,47 @@
 
 /* Light theme colors */
 [data-md-color-scheme="default"] {
-  --ascam-heading: #141414;
-  --ascam-h3: #5a5a5a; /* a little gray, so H3 sits below H2 */
-  --ascam-text: #4a4a4a;
-  --ascam-text-muted: #6b6b6b;
-  --ascam-link: #4051b5; /* same blue as the table header */
-  --ascam-accent: #4051b5; /* title underline */
-  --ascam-line: #dedede;
-  --md-typeset-color: var(--ascam-text);
-  --md-typeset-a-color: var(--ascam-link);
-  --md-accent-fg-color: var(--ascam-accent);
+  --hub-heading: #141414;
+  --hub-h3: #5a5a5a; /* a little gray, so H3 sits below H2 */
+  --hub-text: #4a4a4a;
+  --hub-text-muted: #6b6b6b;
+  --hub-link: #4051b5; /* same blue as the table header */
+  --hub-accent: #4051b5; /* title underline */
+  --hub-line: #dedede;
+  --md-typeset-color: var(--hub-text);
+  --md-typeset-a-color: var(--hub-link);
+  --md-accent-fg-color: var(--hub-accent);
   --md-code-bg-color: #f7f7f7;
   --md-code-fg-color: #141414;
 }
 
 /* Dark theme colors (page content background #1e2129) */
 [data-md-color-scheme="slate"] {
-  --ascam-heading: #f2f3f5;
-  --ascam-h3: #b8bcc4; /* a little gray, so H3 sits below H2 */
-  --ascam-text: #c9ccd3;
-  --ascam-text-muted: #9aa0ab;
-  --ascam-link: #34E0A1 ;
-  --ascam-accent: #34E0A1; /* title underline */
-  --ascam-line: rgba(255, 255, 255, 0.14);
+  --hub-heading: #f2f3f5;
+  --hub-h3: #b8bcc4; /* a little gray, so H3 sits below H2 */
+  --hub-text: #c9ccd3;
+  --hub-text-muted: #9aa0ab;
+  --hub-link: #34E0A1 ;
+  --hub-accent: #34E0A1; /* title underline */
+  --hub-line: rgba(255, 255, 255, 0.14);
   --md-default-bg-color: #1e2129;
-  --md-typeset-color: var(--ascam-text);
-  --md-typeset-a-color: var(--ascam-link);
-  --md-accent-fg-color: var(--ascam-accent);
+  --md-typeset-color: var(--hub-text);
+  --md-typeset-a-color: var(--hub-link);
+  --md-accent-fg-color: var(--hub-accent);
   --md-code-bg-color: hsla(225deg, 15%, 18%, 1);
   --md-code-fg-color: #e6e8ec;
 }
 
 /* Outline buttons use the header color, which is near black and disappears in dark mode. */
 [data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary) {
-  color: var(--ascam-link);
-  border-color: var(--ascam-link);
+  color: var(--hub-link);
+  border-color: var(--hub-link);
 }
 
 [data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary):hover,
 [data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary):focus {
-  background-color: var(--ascam-link);
-  border-color: var(--ascam-link);
+  background-color: var(--hub-link);
+  border-color: var(--hub-link);
   color: #1e2129;
 }
 
@@ -71,7 +79,7 @@
  * ------------------------------------------------------------------ */
 .md-typeset {
   font-size: 16px;
-  color: var(--ascam-text);
+  color: var(--hub-text);
 }
 
 .md-typeset p {
@@ -84,16 +92,16 @@
 
 /* ------------------------------------------------------------------
  * Numbered steps. Space between each step, including when a step
- * contains a code block. Change --ascam-step-space to make the gap
+ * contains a code block. Change --hub-step-space to make the gap
  * larger or smaller.
  * ------------------------------------------------------------------ */
 .md-typeset {
-  --ascam-step-space: 1.5em;
+  --hub-step-space: 1.5em;
 }
 
 .md-typeset ol > li {
   margin-bottom: 0;
-  padding-bottom: var(--ascam-step-space);
+  padding-bottom: var(--hub-step-space);
 }
 
 .md-typeset ol > li:last-child {
@@ -119,7 +127,7 @@
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  color: var(--ascam-heading);
+  color: var(--hub-heading);
   font-weight: 400;
   letter-spacing: normal;
 }
@@ -136,7 +144,7 @@
   margin: 0 0 28px;
   padding-bottom: 8px;
   text-decoration: none;
-  border-bottom: 4px solid var(--ascam-accent);
+  border-bottom: 4px solid var(--hub-accent);
 }
 
 .md-typeset h1 > .headerlink {
@@ -150,7 +158,7 @@
 }
 
 .md-typeset h3 {
-  color: var(--ascam-h3);
+  color: var(--hub-h3);
   font-weight: 300;
   font-size: 24px;
   line-height: 1.66;
@@ -158,7 +166,7 @@
 }
 
 .md-typeset h4 {
-  color: var(--ascam-h3);
+  color: var(--hub-h3);
   font-weight: 300;
   font-size: 20px;
   line-height: 1.5;
@@ -167,7 +175,7 @@
 
 .md-typeset h5,
 .md-typeset h6 {
-  color: var(--ascam-h3);
+  color: var(--hub-h3);
   font-size: 16px;
   font-weight: 600;
   text-transform: none;
@@ -199,7 +207,7 @@
 /* Bold text is dark and semi-bold */
 .md-typeset :is(p, li, td, dd) strong {
   font-weight: 600;
-  color: var(--ascam-heading);
+  color: var(--hub-heading);
 }
 
 /* Links in text: indigo with a dashed underline */
@@ -217,14 +225,14 @@
 /* Section divider (Markdown ---). Light theme uses the same blue as links and the title underline. */
 .md-typeset hr {
   border: none;
-  border-bottom: 1px solid var(--ascam-accent);
+  border-bottom: 1px solid var(--hub-accent);
 }
 
 /* Inline code: gray box with a thin border */
 .md-typeset :not(pre) > code {
   font-size: 14px;
   padding: 2px 4px;
-  border: 1px solid var(--ascam-line);
+  border: 1px solid var(--hub-line);
   border-radius: 4px;
 }
 
@@ -246,20 +254,20 @@
    it scrolls with its own vertical scroll bar. A shorter list shows in full with no scroll bar.
    Change 400px to make the limit larger or smaller. */
 [data-md-color-scheme="default"] {
-  --ascam-scroll-thumb: #4051b5;
-  --ascam-scroll-track: rgba(0, 0, 0, 0.07);
+  --hub-scroll-thumb: #4051b5;
+  --hub-scroll-track: rgba(0, 0, 0, 0.07);
 }
 
 [data-md-color-scheme="slate"] {
-  --ascam-scroll-thumb: #34E0A1;
-  --ascam-scroll-track: rgba(255, 255, 255, 0.08);
+  --hub-scroll-thumb: #34E0A1;
+  --hub-scroll-track: rgba(255, 255, 255, 0.08);
 }
 
 .md-sidebar--secondary .md-sidebar__scrollwrap {
   max-height: 400px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--ascam-scroll-thumb) var(--ascam-scroll-track);
+  scrollbar-color: var(--hub-scroll-thumb) var(--hub-scroll-track);
 }
 
 /* Right sidebar: a little more space on the left */
@@ -279,28 +287,28 @@
 
 /* Left sidebar: gray text, active page darker */
 .md-nav--primary .md-nav__link {
-  color: var(--ascam-text);
+  color: var(--hub-text);
 }
 
 .md-nav--primary .md-nav__link--active {
-  color: var(--ascam-heading);
+  color: var(--hub-heading);
   font-weight: 500;
 }
 
 /* Section titles (Help, Developer notes) all the same dark color */
 .md-nav--primary .md-nav__item--section > .md-nav__link {
-  color: var(--ascam-heading);
+  color: var(--hub-heading);
 }
 
 .md-nav--secondary .md-nav__link {
-  color: var(--ascam-text-muted);
+  color: var(--hub-text-muted);
 }
 
 /* Hover and current item in the sidebars: dark (the yellow link color is too light to read as text) */
 .md-nav--primary .md-nav__link:hover,
 .md-nav--secondary .md-nav__link:hover,
 .md-nav--secondary .md-nav__link--active {
-  color: var(--ascam-heading);
+  color: var(--hub-heading);
 }
 
 .md-nav--secondary .md-nav__link--active {
@@ -319,35 +327,35 @@
  * Add the class after an ordered list in Markdown:
  *   1. First item
  *   2. Second item
- *   { .ascam-circle-list }
+ *   { .hub-circle-list }
  * ------------------------------------------------------------------ */
-.md-typeset ol.ascam-circle-list {
+.md-typeset ol.hub-circle-list {
   list-style: none;
-  counter-reset: ascam-circle;
+  counter-reset: hub-circle;
   padding-left: 0;
 }
 
-.md-typeset ol.ascam-circle-list > li {
-  counter-increment: ascam-circle;
+.md-typeset ol.hub-circle-list > li {
+  counter-increment: hub-circle;
   position: relative;
   padding-left: 2.6em;
   margin-bottom: 0.7em;
 }
 
 /* Example message box (not a command) — hide the copy button */
-.md-typeset pre.ascam-msg .md-code__nav {
+.md-typeset pre.hub-msg .md-code__nav {
   display: none;
 }
 
-.md-typeset ol.ascam-circle-list > li::before {
-  content: counter(ascam-circle);
+.md-typeset ol.hub-circle-list > li::before {
+  content: counter(hub-circle);
   position: absolute;
   left: 0;
   top: 0.05em;
   width: 1.7em;
   height: 1.7em;
   border-radius: 50%;
-  background-color: var(--ascam-step-num);
+  background-color: var(--hub-step-num);
   color: #ffffff;
   font-size: 0.8em;
   font-weight: 600;
@@ -358,37 +366,37 @@
 /* ------------------------------------------------------------------
  * Images
  * Add the class to any image in Markdown:
- *   ![Alt text](assets/images/example.png){ .ascam-img }
- * Space above and below. Change --ascam-img-space to make it larger or smaller.
+ *   ![Alt text](assets/images/example.png){ .hub-img }
+ * Space above and below. Change --hub-img-space to make it larger or smaller.
  * ------------------------------------------------------------------ */
-/* Space above and below every Mermaid diagram. Change --ascam-diagram-space to adjust it.
+/* Space above and below every Mermaid diagram. Change --hub-diagram-space to adjust it.
    A note directly under a diagram is its caption and stays centered on the chart. */
 .md-typeset .mermaid {
-  --ascam-diagram-space: 1.5em;
-  margin-top: var(--ascam-diagram-space);
-  margin-bottom: var(--ascam-diagram-space);
+  --hub-diagram-space: 1.5em;
+  margin-top: var(--hub-diagram-space);
+  margin-bottom: var(--hub-diagram-space);
 }
 
-.md-typeset .mermaid:has(+ p:not(.ascam-prose)) {
+.md-typeset .mermaid:has(+ p:not(.hub-prose)) {
   margin-bottom: 0.4em;
 }
 
-.md-typeset .mermaid + p:not(.ascam-prose) {
+.md-typeset .mermaid + p:not(.hub-prose) {
   text-align: center;
   font-style: italic;
   margin-top: 0;
 }
 
-.md-typeset .mermaid + p:not(.ascam-prose) strong {
+.md-typeset .mermaid + p:not(.hub-prose) strong {
   font-style: italic;
 }
 
 /* Center one diagram and the caption under it. */
-.md-typeset .ascam-diagram {
+.md-typeset .hub-diagram {
   text-align: center;
 }
 
-.md-typeset .ascam-diagram > svg {
+.md-typeset .hub-diagram > svg {
   display: block;
   width: 100%;
   max-width: 540px;
@@ -396,14 +404,14 @@
   margin: 1.5em auto;
 }
 
-.md-typeset .ascam-diagram .mermaid {
+.md-typeset .hub-diagram .mermaid {
   display: flex;
   justify-content: center;
   margin-bottom: 0.4em;
 }
 
-.md-typeset .ascam-diagram > p,
-.md-typeset p.ascam-caption {
+.md-typeset .hub-diagram > p,
+.md-typeset p.figure-caption {
   text-align: center;
   font-size: 0.8em;
   font-style: italic;
@@ -412,22 +420,61 @@
   margin-bottom: 1.5em;
 }
 
-.md-typeset p.ascam-caption strong {
+.md-typeset p.figure-caption strong {
   font-style: italic;
   font-weight: 600;
 }
 
-.md-typeset img.ascam-img {
-  --ascam-img-space: 1.5em;
+.md-typeset img.hub-img {
+  --hub-img-space: 1.5em;
   display: block;
   max-width: 100%;
   height: auto;
-  margin-top: var(--ascam-img-space);
-  margin-bottom: var(--ascam-img-space);
+  margin: var(--hub-img-space) auto;
 }
 
-.md-typeset img.ascam-img:has(+ p.ascam-caption) {
+.md-typeset img.hub-img:has(+ p.figure-caption) {
   margin-bottom: 0.4em;
+}
+
+.md-typeset .gnss-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background: #4051b5;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+.md-typeset .gnss-mark--air {
+  background: #b45309;
+}
+
+.md-typeset td.gnss-mark-cell {
+  width: 3rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.md-typeset td.gnss-source {
+  background: #eaedf9;
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset td.gnss-source {
+  background: rgba(64, 81, 181, 0.35);
+}
+
+[data-md-color-scheme="default"] .md-typeset .gnss-errors table:not([class]) th {
+  background-color: #d5daf2;
+  color: #2c3480;
 }
 
 /* ------------------------------------------------------------------
@@ -436,29 +483,29 @@
  * striped rows and a hover highlight. Applies to every Markdown table on the site.
  * ------------------------------------------------------------------ */
 [data-md-color-scheme="default"] {
-  --ascam-table-head-bg: #4051b5;
-  --ascam-table-head-fg: #ffffff;
-  --ascam-table-stripe: #f6f7fb;
-  --ascam-table-hover: #eaedf9;
-  --ascam-table-line: #e3e5ec;
-  --ascam-table-shadow: 0 1px 4px rgba(20, 21, 26, 0.12);
-  --ascam-step-num: #4051b5;
-  --ascam-step-row: #ffffff;
-  --ascam-step-row-alt: #eaedf9;
-  --ascam-quiet-warning: #757575;
+  --hub-table-head-bg: #4051b5;
+  --hub-table-head-fg: #ffffff;
+  --hub-table-stripe: #f6f7fb;
+  --hub-table-hover: #eaedf9;
+  --hub-table-line: #e3e5ec;
+  --hub-table-shadow: 0 1px 4px rgba(20, 21, 26, 0.12);
+  --hub-step-num: #4051b5;
+  --hub-step-row: #ffffff;
+  --hub-step-row-alt: #eaedf9;
+  --hub-quiet-warning: #757575;
 }
 
 [data-md-color-scheme="slate"] {
-  --ascam-table-head-bg: #14151a;
-  --ascam-table-head-fg: #ffffff;
-  --ascam-table-stripe: rgba(255, 255, 255, 0.03);
-  --ascam-table-hover: rgba(94, 139, 222, 0.14);
-  --ascam-table-line: rgba(255, 255, 255, 0.08);
-  --ascam-table-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
-  --ascam-step-num: #7b8cff;
-  --ascam-step-row: transparent;
-  --ascam-step-row-alt: rgba(64, 81, 181, 0.22);
-  --ascam-quiet-warning: #9e9e9e;
+  --hub-table-head-bg: #14151a;
+  --hub-table-head-fg: #ffffff;
+  --hub-table-stripe: rgba(255, 255, 255, 0.03);
+  --hub-table-hover: rgba(94, 139, 222, 0.14);
+  --hub-table-line: rgba(255, 255, 255, 0.08);
+  --hub-table-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  --hub-step-num: #7b8cff;
+  --hub-step-row: transparent;
+  --hub-step-row-alt: rgba(64, 81, 181, 0.22);
+  --hub-quiet-warning: #9e9e9e;
 }
 
 .md-typeset__table {
@@ -470,18 +517,18 @@
   display: table;
   width: 100%;
   font-size: 14px; /* fixed, so table text never grows larger than the 16px body text */
-  border: 1px solid var(--ascam-table-line);
+  border: 1px solid var(--hub-table-line);
   border-radius: 0;
   border-collapse: separate;
   border-spacing: 0;
   overflow: hidden;
-  box-shadow: var(--ascam-table-shadow);
+  box-shadow: var(--hub-table-shadow);
 }
 
 .md-typeset table:not([class]) th {
   padding: 0.8em 1.1em;
-  background-color: var(--ascam-table-head-bg);
-  color: var(--ascam-table-head-fg);
+  background-color: var(--hub-table-head-bg);
+  color: var(--hub-table-head-fg);
   font-weight: 500;
   letter-spacing: 0.02em;
 }
@@ -494,7 +541,7 @@
 .md-typeset table:not([class]) td {
   padding: 0.75em 1.1em;
   vertical-align: top;
-  border-top: 1px solid var(--ascam-table-line);
+  border-top: 1px solid var(--hub-table-line);
 }
 
 .md-typeset table:not([class]) tbody tr:first-child td {
@@ -502,7 +549,7 @@
 }
 
 .md-typeset table:not([class]) tbody tr:nth-child(even) {
-  background-color: var(--ascam-table-stripe);
+  background-color: var(--hub-table-stripe);
 }
 
 .md-typeset table:not([class]) tbody tr {
@@ -510,7 +557,7 @@
 }
 
 .md-typeset table:not([class]) tbody tr:hover {
-  background-color: var(--ascam-table-hover);
+  background-color: var(--hub-table-hover);
 }
 
 /* Bulleted lists inside table cells */
@@ -532,10 +579,10 @@
  * Install steps: step number, image, instruction.
  * Used on Getting started. Change the image column width below.
  * ------------------------------------------------------------------ */
-.md-typeset .ascam-step-table table {
+.md-typeset .hub-step-table table {
   display: table;
   width: 100%;
-  border: 1px solid var(--ascam-table-line);
+  border: 1px solid var(--hub-table-line);
   border-collapse: separate;
   border-spacing: 0;
   box-shadow: none;
@@ -544,69 +591,69 @@
   overflow: hidden;
 }
 
-.md-typeset .ascam-step-table table thead {
+.md-typeset .hub-step-table table thead {
   display: none;
 }
 
-.md-typeset .ascam-step-table table tbody tr:nth-child(odd) {
-  background-color: var(--ascam-step-row);
+.md-typeset .hub-step-table table tbody tr:nth-child(odd) {
+  background-color: var(--hub-step-row);
 }
 
-.md-typeset .ascam-step-table table tbody tr:nth-child(even) {
-  background-color: var(--ascam-step-row-alt);
+.md-typeset .hub-step-table table tbody tr:nth-child(even) {
+  background-color: var(--hub-step-row-alt);
 }
 
-.md-typeset .ascam-step-table table td {
+.md-typeset .hub-step-table table td {
   border: none;
-  border-top: 1px solid var(--ascam-table-line);
+  border-top: 1px solid var(--hub-table-line);
   background: transparent;
   vertical-align: middle;
   padding: 0.85em 0.9em;
 }
 
-.md-typeset .ascam-step-table table tbody tr:first-child td {
+.md-typeset .hub-step-table table tbody tr:first-child td {
   border-top: 0;
 }
 
-.md-typeset .ascam-step-table table td:first-child {
+.md-typeset .hub-step-table table td:first-child {
   width: 3em;
   padding-left: 0.45em;
   text-align: center;
 }
 
-.md-typeset .ascam-step-table table td:nth-child(2),
-.md-typeset .ascam-step-table table td.ascam-step-media {
+.md-typeset .hub-step-table table td:nth-child(2),
+.md-typeset .hub-step-table table td.hub-step-media {
   width: 36%;
 }
 
-.md-typeset .ascam-step-table table td.ascam-step-media {
+.md-typeset .hub-step-table table td.hub-step-media {
   background: var(--md-default-bg-color);
 }
 
-.md-typeset .ascam-step-table table td.ascam-step-text {
+.md-typeset .hub-step-table table td.hub-step-text {
   width: auto;
 }
 
-.md-typeset .ascam-step-table table td.ascam-step-text p,
-.md-typeset .ascam-step-table table td.ascam-step-media p {
+.md-typeset .hub-step-table table td.hub-step-text p,
+.md-typeset .hub-step-table table td.hub-step-media p {
   margin: 0;
 }
 
 /* Quiet note under a step. Warning icon, smaller italic gray text. */
-.md-typeset .ascam-quiet-warning {
+.md-typeset .hub-quiet-warning {
   position: relative;
   margin: 0.75em 0 0;
   padding: 0 0 0 1.5em;
   border: 0;
   background: none;
-  color: var(--ascam-quiet-warning);
+  color: var(--hub-quiet-warning);
   font-size: 0.82em;
   font-style: italic;
   font-weight: 400;
   line-height: 1.4;
 }
 
-.md-typeset .ascam-quiet-warning::before {
+.md-typeset .hub-quiet-warning::before {
   content: "";
   position: absolute;
   left: 0;
@@ -616,22 +663,22 @@
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23F5C400' d='M1 21h22L12 2z'/%3E%3Cpath fill='%23111' d='M11 9.5h2v5.2h-2zm0 6.3h2v2h-2z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-/* Add { .ascam-zoom } to a picture to allow click-to-enlarge. Remove that class to turn it off. */
-.md-typeset img.ascam-zoom {
+/* Add { .hub-zoom } to a picture to allow click-to-enlarge. Remove that class to turn it off. */
+.md-typeset img.hub-zoom {
   cursor: zoom-in;
 }
 
-.md-typeset .ascam-zoom-frame {
+.md-typeset .hub-zoom-frame {
   display: block;
   width: fit-content;
   max-width: 100%;
 }
 
-.md-typeset .ascam-step-table td:nth-child(2) .ascam-zoom-frame {
+.md-typeset .hub-step-table td:nth-child(2) .hub-zoom-frame {
   width: 100%;
 }
 
-.md-typeset .ascam-zoom-frame::after {
+.md-typeset .hub-zoom-frame::after {
   content: "click to enlarge";
   display: block;
   margin-top: 0.35em;
@@ -639,11 +686,11 @@
   font-size: 0.8em;
   font-style: italic;
   line-height: 1.3;
-  color: var(--ascam-text-muted);
+  color: var(--hub-text-muted);
 }
 
 /* Enlarged picture stays in a box on this page. It does not fill the window. */
-.ascam-enlarge-root {
+.hub-enlarge-root {
   position: fixed;
   inset: 0;
   z-index: 200;
@@ -654,11 +701,11 @@
   background: rgba(20, 21, 26, 0.45);
 }
 
-.ascam-enlarge-root[hidden] {
+.hub-enlarge-root[hidden] {
   display: none;
 }
 
-.ascam-enlarge {
+.hub-enlarge {
   position: relative;
   box-sizing: border-box;
   width: fit-content;
@@ -672,7 +719,7 @@
   box-shadow: 0 8px 28px rgba(20, 21, 26, 0.28);
 }
 
-.ascam-enlarge img {
+.hub-enlarge img {
   display: block;
   width: auto;
   height: auto;
@@ -682,7 +729,7 @@
   object-fit: contain;
 }
 
-.ascam-enlarge button {
+.hub-enlarge button {
   position: absolute;
   top: -15px;
   right: -15px;
@@ -707,45 +754,45 @@
   cursor: pointer;
 }
 
-.ascam-enlarge button:focus,
-.ascam-enlarge button:focus-visible {
+.hub-enlarge button:focus,
+.hub-enlarge button:focus-visible {
   outline: none;
   box-shadow: none;
 }
 
-.md-typeset .ascam-step-table table td:nth-child(2) img,
-.md-typeset .ascam-step-table table td.ascam-step-media img {
+.md-typeset .hub-step-table table td:nth-child(2) img,
+.md-typeset .hub-step-table table td.hub-step-media img {
   display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
   margin: 0;
-  border: 1px solid var(--ascam-line);
+  border: 1px solid var(--hub-line);
   border-radius: 4px;
 }
 
-.md-typeset .ascam-step-table table td:nth-child(2) pre {
+.md-typeset .hub-step-table table td:nth-child(2) pre {
   margin: 0;
 }
 
-.md-typeset .ascam-step-table table td:nth-child(2) pre code {
+.md-typeset .hub-step-table table td:nth-child(2) pre code {
   white-space: pre-wrap;
   word-break: break-word;
 }
 
-.md-typeset .ascam-step-table table td:nth-child(2) img.ascam-step-icon {
+.md-typeset .hub-step-table table td:nth-child(2) img.hub-step-icon {
   width: 36px;
   margin: 0 auto;
   border: none;
   border-radius: 0;
 }
 
-.md-typeset .ascam-step-badge {
+.md-typeset .hub-step-badge {
   display: inline-block;
   width: 1.7em;
   height: 1.7em;
   border-radius: 50%;
-  background-color: var(--ascam-step-num);
+  background-color: var(--hub-step-num);
   color: #ffffff;
   font-size: 0.8em;
   font-weight: 600;
@@ -754,27 +801,27 @@
 }
 
 @media screen and (max-width: 600px) {
-  .md-typeset .ascam-step-table table,
-  .md-typeset .ascam-step-table table tbody,
-  .md-typeset .ascam-step-table table tr,
-  .md-typeset .ascam-step-table table td,
-  .md-typeset .ascam-step-table table td:nth-child(2) {
+  .md-typeset .hub-step-table table,
+  .md-typeset .hub-step-table table tbody,
+  .md-typeset .hub-step-table table tr,
+  .md-typeset .hub-step-table table td,
+  .md-typeset .hub-step-table table td:nth-child(2) {
     display: block;
     width: 100%;
   }
 
-  .md-typeset .ascam-step-table table td {
+  .md-typeset .hub-step-table table td {
     padding: 0.35em 0 0;
   }
 
-  .md-typeset .ascam-step-table table td:first-child {
+  .md-typeset .hub-step-table table td:first-child {
     padding-top: 0;
   }
 }
 
 /* Required and optional labels in command reference tables. */
-.md-typeset .ascam-req,
-.md-typeset .ascam-opt {
+.md-typeset .hub-req,
+.md-typeset .hub-opt {
   display: inline-block;
   padding: 0.05em 0.45em;
   border-radius: 3px;
@@ -785,14 +832,14 @@
   white-space: nowrap;
 }
 
-.md-typeset .ascam-req {
-  background: var(--ascam-step-num);
+.md-typeset .hub-req {
+  background: var(--hub-step-num);
   color: #ffffff;
 }
 
-.md-typeset .ascam-opt {
-  border: 1px solid var(--ascam-line);
-  color: var(--ascam-text-muted);
+.md-typeset .hub-opt {
+  border: 1px solid var(--hub-line);
+  color: var(--hub-text-muted);
 }
 
 .md-typeset table td:first-child {
@@ -1019,3 +1066,55 @@
   color: #ffffff;
 }
 .sc-btn:disabled { opacity: .3; cursor: default; }
+
+/* Trainings page: tag filters and the tag on each training card. */
+.training-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.4rem 0 1.2rem;
+}
+
+.training-filters .md-tag,
+.training-card-tags .md-tag {
+  font: inherit;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  padding: 0.1rem 0.65rem;
+  border: 1px solid var(--hub-line);
+  border-radius: 2rem;
+  background: transparent;
+  color: var(--hub-text);
+  cursor: pointer;
+}
+
+.training-filters .md-tag[aria-pressed="true"] {
+  background: var(--hub-accent);
+  border-color: var(--hub-accent);
+  color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .training-filters .md-tag[aria-pressed="true"] {
+  color: #1e2129;
+}
+
+.md-typeset .training-grid.grid > ul > li.training-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.training-card-tags {
+  margin-top: auto;
+  padding-top: 0.8rem;
+}
+
+/* One training stays card-sized. auto-fit would stretch a single card across the page. */
+.md-typeset .training-grid.grid {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.md-typeset .training-card-empty {
+  border: none;
+  background: transparent;
+  padding-left: 0;
+}
