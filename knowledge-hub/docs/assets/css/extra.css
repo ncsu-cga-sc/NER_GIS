@@ -1,6 +1,803 @@
-/* =========================================================
-   Unofficial Geospatial Knowledge Hub: extra.css
-   ========================================================= */
+/*
+ * Text sizes and colors matched to the Esri developer documentation
+ * (https://developers.arcgis.com/javascript/latest/get-started/):
+ * 16px body text, large regular-weight headings (H1 48px, H2 40px, H3 32px),
+ * dark gray text and indigo dashed links.
+ * The font (Roboto) and the Material layout and column widths are unchanged.
+ * Change the variables below to adjust the colors.
+ */
+
+/* Navbar (header). Hide the default Material logo. */
+.md-header .md-logo {
+  display: none;
+}
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #14151a;
+  --md-primary-fg-color--light: #3a3c46;
+  --md-primary-fg-color--dark: #0b0c0f;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+}
+
+/* Light theme colors */
+[data-md-color-scheme="default"] {
+  --ascam-heading: #141414;
+  --ascam-h3: #5a5a5a; /* a little gray, so H3 sits below H2 */
+  --ascam-text: #4a4a4a;
+  --ascam-text-muted: #6b6b6b;
+  --ascam-link: #4051b5; /* same blue as the table header */
+  --ascam-accent: #4051b5; /* title underline */
+  --ascam-line: #dedede;
+  --md-typeset-color: var(--ascam-text);
+  --md-typeset-a-color: var(--ascam-link);
+  --md-accent-fg-color: var(--ascam-accent);
+  --md-code-bg-color: #f7f7f7;
+  --md-code-fg-color: #141414;
+}
+
+/* Dark theme colors (page content background #1e2129) */
+[data-md-color-scheme="slate"] {
+  --ascam-heading: #f2f3f5;
+  --ascam-h3: #b8bcc4; /* a little gray, so H3 sits below H2 */
+  --ascam-text: #c9ccd3;
+  --ascam-text-muted: #9aa0ab;
+  --ascam-link: #34E0A1 ;
+  --ascam-accent: #34E0A1; /* title underline */
+  --ascam-line: rgba(255, 255, 255, 0.14);
+  --md-default-bg-color: #1e2129;
+  --md-typeset-color: var(--ascam-text);
+  --md-typeset-a-color: var(--ascam-link);
+  --md-accent-fg-color: var(--ascam-accent);
+  --md-code-bg-color: hsla(225deg, 15%, 18%, 1);
+  --md-code-fg-color: #e6e8ec;
+}
+
+/* Outline buttons use the header color, which is near black and disappears in dark mode. */
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary) {
+  color: var(--ascam-link);
+  border-color: var(--ascam-link);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary):hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary):focus {
+  background-color: var(--ascam-link);
+  border-color: var(--ascam-link);
+  color: #1e2129;
+}
+
+/* ------------------------------------------------------------------
+ * Text: body, headings, links, inline code
+ * ------------------------------------------------------------------ */
+.md-typeset {
+  font-size: 16px;
+  color: var(--ascam-text);
+}
+
+.md-typeset p {
+  line-height: 26px;
+}
+
+.md-typeset li {
+  line-height: 24px;
+}
+
+/* ------------------------------------------------------------------
+ * Numbered steps. Space between each step, including when a step
+ * contains a code block. Change --ascam-step-space to make the gap
+ * larger or smaller.
+ * ------------------------------------------------------------------ */
+.md-typeset {
+  --ascam-step-space: 1.5em;
+}
+
+.md-typeset ol > li {
+  margin-bottom: 0;
+  padding-bottom: var(--ascam-step-space);
+}
+
+.md-typeset ol > li:last-child {
+  padding-bottom: 0;
+}
+
+.md-typeset ol > li > :first-child,
+.md-typeset ol > li > p:first-child,
+.md-typeset ol > li > :first-child > pre {
+  margin-top: 0;
+}
+
+.md-typeset ol > li > :last-child,
+.md-typeset ol > li > p:last-child,
+.md-typeset ol > li > :last-child > pre {
+  margin-bottom: 0;
+}
+
+/* Headings: regular weight, no letter spacing, dark color. Small screens first. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--ascam-heading);
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+/* One underline under the whole title. text-decoration underlines every wrapped
+   line and leaves a large gap between them and under the title. */
+.md-typeset h1 {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  position: relative;
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0 0 28px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  border-bottom: 4px solid var(--ascam-accent);
+}
+
+.md-typeset h1 > .headerlink {
+  position: absolute;
+}
+
+.md-typeset h2 {
+  font-size: 30px;
+  line-height: 1.375;
+  margin: 40px 0 12px;
+}
+
+.md-typeset h3 {
+  color: var(--ascam-h3);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.66;
+  margin: 40px 0 12px;
+}
+
+.md-typeset h4 {
+  color: var(--ascam-h3);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 32px 0 12px;
+}
+
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--ascam-h3);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: none;
+  margin: 24px 0 8px;
+}
+
+/* Wide screens: the Esri sizes (H1 48px, H2 40px, H3 32px) */
+@media screen and (min-width: 76.25em) {
+  .md-typeset h1 {
+    font-size: 48px;
+    line-height: 1.15;
+  }
+
+  .md-typeset h2 {
+    font-size: 40px;
+    line-height: 55px;
+  }
+
+  .md-typeset h3 {
+    font-size: 32px;
+    line-height: 53px;
+  }
+
+  .md-typeset h4 {
+    font-size: 24px;
+  }
+}
+
+/* Bold text is dark and semi-bold */
+.md-typeset :is(p, li, td, dd) strong {
+  font-weight: 600;
+  color: var(--ascam-heading);
+}
+
+/* Links in text: indigo with a dashed underline */
+.md-typeset :is(p, li, td, dd) a:not(.headerlink):not(.md-button) {
+  text-decoration: underline dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* Home category cards keep a plain title link */
+.md-typeset .grid.cards a {
+  text-decoration: none;
+}
+
+/* Section divider (Markdown ---). Light theme uses the same blue as links and the title underline. */
+.md-typeset hr {
+  border: none;
+  border-bottom: 1px solid var(--ascam-accent);
+}
+
+/* Inline code: gray box with a thin border */
+.md-typeset :not(pre) > code {
+  font-size: 14px;
+  padding: 2px 4px;
+  border: 1px solid var(--ascam-line);
+  border-radius: 4px;
+}
+
+/* Code blocks */
+.md-typeset pre > code {
+  font-size: 14.4px;
+}
+
+/* Sidebar text sizes. Fixed sizes, so they do not grow on large screens. Widths are not changed. */
+.md-sidebar--primary .md-nav {
+  font-size: 13px; /* left sidebar (navigation) */
+}
+
+.md-sidebar--secondary .md-nav {
+  font-size: 14px; /* right sidebar ("Table of contents") */
+}
+
+/* Right sidebar: the table of contents is at most 400px tall. When the list is longer than that,
+   it scrolls with its own vertical scroll bar. A shorter list shows in full with no scroll bar.
+   Change 400px to make the limit larger or smaller. */
+[data-md-color-scheme="default"] {
+  --ascam-scroll-thumb: #4051b5;
+  --ascam-scroll-track: rgba(0, 0, 0, 0.07);
+}
+
+[data-md-color-scheme="slate"] {
+  --ascam-scroll-thumb: #34E0A1;
+  --ascam-scroll-track: rgba(255, 255, 255, 0.08);
+}
+
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ascam-scroll-thumb) var(--ascam-scroll-track);
+}
+
+/* Right sidebar: a little more space on the left */
+.md-sidebar--secondary .md-nav--secondary {
+  padding-left: 16px;
+}
+
+/* Right sidebar: more indent for items below H2 (H3 and smaller). Was 12px per level. */
+.md-sidebar--secondary .md-nav__item .md-nav__list {
+  padding-left: 24px;
+}
+
+/* Left sidebar: space between items. Change 1.1em to make the gaps larger or smaller. */
+.md-sidebar--primary .md-nav__item .md-nav__link {
+  margin-top: 1.1em;
+}
+
+/* Left sidebar: gray text, active page darker */
+.md-nav--primary .md-nav__link {
+  color: var(--ascam-text);
+}
+
+.md-nav--primary .md-nav__link--active {
+  color: var(--ascam-heading);
+  font-weight: 500;
+}
+
+/* Section titles (Help, Developer notes) all the same dark color */
+.md-nav--primary .md-nav__item--section > .md-nav__link {
+  color: var(--ascam-heading);
+}
+
+.md-nav--secondary .md-nav__link {
+  color: var(--ascam-text-muted);
+}
+
+/* Hover and current item in the sidebars: dark (the yellow link color is too light to read as text) */
+.md-nav--primary .md-nav__link:hover,
+.md-nav--secondary .md-nav__link:hover,
+.md-nav--secondary .md-nav__link--active {
+  color: var(--ascam-heading);
+}
+
+.md-nav--secondary .md-nav__link--active {
+  font-weight: 500;
+}
+
+/* Blank space at the bottom of every page. Change the height to make it larger or smaller. */
+.md-content__inner::after {
+  content: "";
+  display: block;
+  height: 8em;
+}
+
+/* ------------------------------------------------------------------
+ * Numbered list with a circle around each number.
+ * Add the class after an ordered list in Markdown:
+ *   1. First item
+ *   2. Second item
+ *   { .ascam-circle-list }
+ * ------------------------------------------------------------------ */
+.md-typeset ol.ascam-circle-list {
+  list-style: none;
+  counter-reset: ascam-circle;
+  padding-left: 0;
+}
+
+.md-typeset ol.ascam-circle-list > li {
+  counter-increment: ascam-circle;
+  position: relative;
+  padding-left: 2.6em;
+  margin-bottom: 0.7em;
+}
+
+/* Example message box (not a command) — hide the copy button */
+.md-typeset pre.ascam-msg .md-code__nav {
+  display: none;
+}
+
+.md-typeset ol.ascam-circle-list > li::before {
+  content: counter(ascam-circle);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background-color: var(--ascam-step-num);
+  color: #ffffff;
+  font-size: 0.8em;
+  font-weight: 600;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------
+ * Images
+ * Add the class to any image in Markdown:
+ *   ![Alt text](assets/images/example.png){ .ascam-img }
+ * Space above and below. Change --ascam-img-space to make it larger or smaller.
+ * ------------------------------------------------------------------ */
+/* Space above and below every Mermaid diagram. Change --ascam-diagram-space to adjust it.
+   A note directly under a diagram is its caption and stays centered on the chart. */
+.md-typeset .mermaid {
+  --ascam-diagram-space: 1.5em;
+  margin-top: var(--ascam-diagram-space);
+  margin-bottom: var(--ascam-diagram-space);
+}
+
+.md-typeset .mermaid:has(+ p:not(.ascam-prose)) {
+  margin-bottom: 0.4em;
+}
+
+.md-typeset .mermaid + p:not(.ascam-prose) {
+  text-align: center;
+  font-style: italic;
+  margin-top: 0;
+}
+
+.md-typeset .mermaid + p:not(.ascam-prose) strong {
+  font-style: italic;
+}
+
+/* Center one diagram and the caption under it. */
+.md-typeset .ascam-diagram {
+  text-align: center;
+}
+
+.md-typeset .ascam-diagram > svg {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  margin: 1.5em auto;
+}
+
+.md-typeset .ascam-diagram .mermaid {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.4em;
+}
+
+.md-typeset .ascam-diagram > p,
+.md-typeset p.ascam-caption {
+  text-align: center;
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+.md-typeset p.ascam-caption strong {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.md-typeset img.ascam-img {
+  --ascam-img-space: 1.5em;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: var(--ascam-img-space);
+  margin-bottom: var(--ascam-img-space);
+}
+
+.md-typeset img.ascam-img:has(+ p.ascam-caption) {
+  margin-bottom: 0.4em;
+}
+
+/* ------------------------------------------------------------------
+ * Tables
+ * Full width, square corners, indigo header row with centered text,
+ * striped rows and a hover highlight. Applies to every Markdown table on the site.
+ * ------------------------------------------------------------------ */
+[data-md-color-scheme="default"] {
+  --ascam-table-head-bg: #4051b5;
+  --ascam-table-head-fg: #ffffff;
+  --ascam-table-stripe: #f6f7fb;
+  --ascam-table-hover: #eaedf9;
+  --ascam-table-line: #e3e5ec;
+  --ascam-table-shadow: 0 1px 4px rgba(20, 21, 26, 0.12);
+  --ascam-step-num: #4051b5;
+  --ascam-step-row: #ffffff;
+  --ascam-step-row-alt: #eaedf9;
+  --ascam-quiet-warning: #757575;
+}
+
+[data-md-color-scheme="slate"] {
+  --ascam-table-head-bg: #14151a;
+  --ascam-table-head-fg: #ffffff;
+  --ascam-table-stripe: rgba(255, 255, 255, 0.03);
+  --ascam-table-hover: rgba(94, 139, 222, 0.14);
+  --ascam-table-line: rgba(255, 255, 255, 0.08);
+  --ascam-table-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  --ascam-step-num: #7b8cff;
+  --ascam-step-row: transparent;
+  --ascam-step-row-alt: rgba(64, 81, 181, 0.22);
+  --ascam-quiet-warning: #9e9e9e;
+}
+
+.md-typeset__table {
+  display: block;
+  width: 100%;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+  font-size: 14px; /* fixed, so table text never grows larger than the 16px body text */
+  border: 1px solid var(--ascam-table-line);
+  border-radius: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  box-shadow: var(--ascam-table-shadow);
+}
+
+.md-typeset table:not([class]) th {
+  padding: 0.8em 1.1em;
+  background-color: var(--ascam-table-head-bg);
+  color: var(--ascam-table-head-fg);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Header text centered (Material sets text-align on [dir], so match its specificity) */
+[dir] .md-typeset table:not([class]) th {
+  text-align: center;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75em 1.1em;
+  vertical-align: top;
+  border-top: 1px solid var(--ascam-table-line);
+}
+
+.md-typeset table:not([class]) tbody tr:first-child td {
+  border-top: 0;
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: var(--ascam-table-stripe);
+}
+
+.md-typeset table:not([class]) tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: var(--ascam-table-hover);
+}
+
+/* Bulleted lists inside table cells */
+.md-typeset table:not([class]) td ul,
+.md-typeset table:not([class]) td ol {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.md-typeset table:not([class]) td li {
+  margin-bottom: 0.25em;
+}
+
+.md-typeset table:not([class]) td li:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------
+ * Install steps: step number, image, instruction.
+ * Used on Getting started. Change the image column width below.
+ * ------------------------------------------------------------------ */
+.md-typeset .ascam-step-table table {
+  display: table;
+  width: 100%;
+  border: 1px solid var(--ascam-table-line);
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: none;
+  background: transparent;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+.md-typeset .ascam-step-table table thead {
+  display: none;
+}
+
+.md-typeset .ascam-step-table table tbody tr:nth-child(odd) {
+  background-color: var(--ascam-step-row);
+}
+
+.md-typeset .ascam-step-table table tbody tr:nth-child(even) {
+  background-color: var(--ascam-step-row-alt);
+}
+
+.md-typeset .ascam-step-table table td {
+  border: none;
+  border-top: 1px solid var(--ascam-table-line);
+  background: transparent;
+  vertical-align: middle;
+  padding: 0.85em 0.9em;
+}
+
+.md-typeset .ascam-step-table table tbody tr:first-child td {
+  border-top: 0;
+}
+
+.md-typeset .ascam-step-table table td:first-child {
+  width: 3em;
+  padding-left: 0.45em;
+  text-align: center;
+}
+
+.md-typeset .ascam-step-table table td:nth-child(2),
+.md-typeset .ascam-step-table table td.ascam-step-media {
+  width: 36%;
+}
+
+.md-typeset .ascam-step-table table td.ascam-step-media {
+  background: var(--md-default-bg-color);
+}
+
+.md-typeset .ascam-step-table table td.ascam-step-text {
+  width: auto;
+}
+
+.md-typeset .ascam-step-table table td.ascam-step-text p,
+.md-typeset .ascam-step-table table td.ascam-step-media p {
+  margin: 0;
+}
+
+/* Quiet note under a step. Warning icon, smaller italic gray text. */
+.md-typeset .ascam-quiet-warning {
+  position: relative;
+  margin: 0.75em 0 0;
+  padding: 0 0 0 1.5em;
+  border: 0;
+  background: none;
+  color: var(--ascam-quiet-warning);
+  font-size: 0.82em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.md-typeset .ascam-quiet-warning::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.05em;
+  height: 1.05em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23F5C400' d='M1 21h22L12 2z'/%3E%3Cpath fill='%23111' d='M11 9.5h2v5.2h-2zm0 6.3h2v2h-2z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Add { .ascam-zoom } to a picture to allow click-to-enlarge. Remove that class to turn it off. */
+.md-typeset img.ascam-zoom {
+  cursor: zoom-in;
+}
+
+.md-typeset .ascam-zoom-frame {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.md-typeset .ascam-step-table td:nth-child(2) .ascam-zoom-frame {
+  width: 100%;
+}
+
+.md-typeset .ascam-zoom-frame::after {
+  content: "click to enlarge";
+  display: block;
+  margin-top: 0.35em;
+  text-align: center;
+  font-size: 0.8em;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--ascam-text-muted);
+}
+
+/* Enlarged picture stays in a box on this page. It does not fill the window. */
+.ascam-enlarge-root {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(20, 21, 26, 0.45);
+}
+
+.ascam-enlarge-root[hidden] {
+  display: none;
+}
+
+.ascam-enlarge {
+  position: relative;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: min(720px, 82vw);
+  max-height: 82vh;
+  padding: 16px 16px 14px;
+  overflow: visible;
+  border: none;
+  border-radius: 6px;
+  background: var(--md-default-bg-color, #fff);
+  box-shadow: 0 8px 28px rgba(20, 21, 26, 0.28);
+}
+
+.ascam-enlarge img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(82vh - 88px);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.ascam-enlarge button {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 0 0 1px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  appearance: none;
+  background: #6b6b6b;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ascam-enlarge button:focus,
+.ascam-enlarge button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.md-typeset .ascam-step-table table td:nth-child(2) img,
+.md-typeset .ascam-step-table table td.ascam-step-media img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border: 1px solid var(--ascam-line);
+  border-radius: 4px;
+}
+
+.md-typeset .ascam-step-table table td:nth-child(2) pre {
+  margin: 0;
+}
+
+.md-typeset .ascam-step-table table td:nth-child(2) pre code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.md-typeset .ascam-step-table table td:nth-child(2) img.ascam-step-icon {
+  width: 36px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 0;
+}
+
+.md-typeset .ascam-step-badge {
+  display: inline-block;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background-color: var(--ascam-step-num);
+  color: #ffffff;
+  font-size: 0.8em;
+  font-weight: 600;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .md-typeset .ascam-step-table table,
+  .md-typeset .ascam-step-table table tbody,
+  .md-typeset .ascam-step-table table tr,
+  .md-typeset .ascam-step-table table td,
+  .md-typeset .ascam-step-table table td:nth-child(2) {
+    display: block;
+    width: 100%;
+  }
+
+  .md-typeset .ascam-step-table table td {
+    padding: 0.35em 0 0;
+  }
+
+  .md-typeset .ascam-step-table table td:first-child {
+    padding-top: 0;
+  }
+}
+
+/* Required and optional labels in command reference tables. */
+.md-typeset .ascam-req,
+.md-typeset .ascam-opt {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.6;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.md-typeset .ascam-req {
+  background: var(--ascam-step-num);
+  color: #ffffff;
+}
+
+.md-typeset .ascam-opt {
+  border: 1px solid var(--ascam-line);
+  color: var(--ascam-text-muted);
+}
+
+.md-typeset table td:first-child {
+  white-space: nowrap;
+}
 
 
 /* ===== Admonitions ===== */
@@ -64,7 +861,7 @@
   position: relative;
   margin: 1.5rem 0;
   padding: 1.3rem 1.5rem 1rem;
-  background: color-mix(in srgb, var(--md-primary-fg-color) 7%, var(--md-default-bg-color));
+  background: color-mix(in srgb, var(--md-accent-fg-color) 7%, var(--md-default-bg-color));
   border: .05rem solid var(--md-default-fg-color--lightest);
   border-top: .25rem solid var(--md-default-fg-color--lightest);
   border-radius: .5rem;
@@ -79,7 +876,7 @@
   left: 0;
   height: .25rem;
   width: var(--sc-progress, 0%);
-  background: var(--md-primary-fg-color);
+  background: var(--md-accent-fg-color);
   border-top-left-radius: .5rem;
   transition: width .3s ease;
 }
@@ -138,13 +935,13 @@
 .md-typeset .sc-card:not([data-done]) .sc-options li:hover,
 .md-typeset .sc-card:not([data-done]) .sc-options li:focus {
   transform: translateX(.2rem);
-  border-color: var(--md-primary-fg-color);
+  border-color: var(--md-accent-fg-color);
   outline: none;
 }
 .md-typeset .sc-card:not([data-done]) .sc-options li:hover::before,
 .md-typeset .sc-card:not([data-done]) .sc-options li:focus::before {
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
+  background: var(--md-accent-fg-color);
+  color: #ffffff;
 }
 
 /* answered states */
@@ -174,7 +971,7 @@
   margin-top: .8rem;
   padding: .7rem 1rem;
   background: var(--md-default-bg-color);
-  border-left: .2rem solid var(--md-primary-fg-color);
+  border-left: .2rem solid var(--md-accent-fg-color);
   border-radius: 0 .3rem .3rem 0;
   font-size: .8rem;
 }
@@ -186,7 +983,7 @@
   font-weight: 700;
   letter-spacing: .05em;
   text-transform: uppercase;
-  color: var(--md-primary-fg-color);
+  color: var(--md-accent-fg-color);
 }
 .md-typeset .sc-explain > p:last-child { margin-bottom: 0; }
 
@@ -210,15 +1007,15 @@
   font: inherit;
   font-size: .75rem;
   padding: .35rem 1rem;
-  border: .075rem solid var(--md-primary-fg-color);
+  border: .075rem solid var(--md-accent-fg-color);
   border-radius: 2rem;
   background: none;
-  color: var(--md-primary-fg-color);
+  color: var(--md-accent-fg-color);
   cursor: pointer;
   transition: background .15s, color .15s;
 }
 .sc-btn:hover:not(:disabled) {
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
+  background: var(--md-accent-fg-color);
+  color: #ffffff;
 }
 .sc-btn:disabled { opacity: .3; cursor: default; }
