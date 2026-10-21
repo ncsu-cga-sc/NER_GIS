@@ -107,7 +107,22 @@ drop a degraded signal.</br>
 <!--[How GPS Calculates Your Position | Trilateration Explained by Geospatial Solution [YouTube Video]](https://www.youtube-nocookie.com/embed/urLfpVSaBIs)
 <br style="clear: both;">-->
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/urLfpVSaBIs?si=xeNW3Tv4yFznYftF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<figure class="hub-video">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/urLfpVSaBIs?cc_load_policy=1&amp;cc_lang_pref=en&amp;hl=en" title="How GPS calculates your position: trilateration explained" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<figcaption>How GPS calculates your position, by Geospatial Solution. English captions play with the video.</figcaption>
+</figure>
+
+??? note "Transcript: How GPS calculates your position"
+
+    GPS does not use triangulation. It uses trilateration.
+
+    Your receiver listens to satellites. Each satellite sends its position and the time the signal was sent. The receiver measures how long the signal took to arrive. Radio signals travel at the speed of light, so that time becomes a distance. GPS measures distance, not an angle. That is why the method is trilateration.
+
+    One satellite puts you somewhere on a sphere around that satellite. A second satellite crosses that sphere with another, which is still a whole curve of possible places. A third satellite leaves two points. One of those points is usually impossible, in space or on the other side of the Earth, so the receiver drops it. The fourth satellite solves the receiver's clock error and produces latitude, longitude, and altitude.
+
+    Triangulation is a different method. It uses angles, not distances. Surveyors use it with a total station or known landmarks. GPS satellites do not send angles, and a phone cannot measure an angle to a satellite, so GPS cannot use triangulation.
+
+    Four satellites is the minimum because the receiver's clock is not an atomic clock. A tiny timing error becomes a large position error. Three satellites leave that clock error unsolved. Four satellites solve time and position together.
 
 
 ## 1.4 Checking Your Geometry: Dilution of Precision (DOP)
@@ -220,7 +235,26 @@ If your DOP stays high and won't improve, a later module (Hard Places)
 covers what to actually do about it — move, wait, or switch methods.
 This module is only about recognizing good geometry from bad; the fix
 comes later.
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CwDIiPXLTs4?si=qYpScwhTCpzAUDaW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<figure class="hub-video">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CwDIiPXLTs4?cc_load_policy=1&amp;cc_lang_pref=en&amp;hl=en" title="Dilution of precision: why satellite geometry changes accuracy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<figcaption>Dilution of precision, by GIS Resources. English captions play with the video.</figcaption>
+</figure>
+
+??? note "Transcript: Dilution of precision"
+
+    GNSS accuracy is not only signal quality. Satellite geometry, called dilution of precision or DOP, matters too.
+
+    A receiver measures distances to several satellites. Those distances always contain small errors from the atmosphere, the clock, and noise. DOP is not one of those errors. It is the multiplier: it tells you how much the satellite layout stretches those errors. Good geometry means a small position error. Poor geometry means a large one. Position error is roughly DOP times the range error, so a high DOP can spoil a small measurement error. That is why surveyors check DOP before they observe.
+
+    GDOP, geometric dilution of precision, combines the effect of geometry on the three position coordinates and on the receiver clock. A lower GDOP means the satellites are well spread across the sky.
+
+    PDOP, position dilution of precision, is the one surveyors watch most. It is the effect on the full 3D position. PDOP below 3 is very good geometry. Between 3 and 6 is acceptable for many surveys. Above 6 is poor geometry and weaker accuracy. Satellites spread across the sky lower PDOP. Satellites clustered in one part of the sky raise it.
+
+    HDOP is the horizontal part, latitude and longitude. It matters for cadastral work, GIS mapping, and topographic surveys. VDOP is the vertical part, height. Height is usually weaker than horizontal position because the satellites are all above you, not below you, so the vertical geometry is poorer. Heights often need a longer observation or more precise equipment.
+
+    TDOP is the effect of geometry on the receiver clock. Positioning depends on precise time, and a small clock error can become meters of position error. TDOP matters most in precise methods such as RTK and PPP.
+
+    DOP does not create the error. It controls how large that error becomes. GDOP is overall geometry. PDOP is the 3D position. HDOP is horizontal. VDOP is vertical. TDOP is timing.
 <!--[Dilution of Precision: Why Satellite Geometry Destroys Accuracy by GIS Resources](https://youtu.be/CwDIiPXLTs4?si=KBZfDO2WfIz-gHE8)-->
 
 ## 1.5 Where to Check It

@@ -454,6 +454,26 @@
   margin-bottom: 0;
 }
 
+.md-typeset .hub-video {
+  margin: 1.5em 0;
+}
+
+.md-typeset .hub-video iframe {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.md-typeset .hub-video figcaption {
+  margin-top: 0.4em;
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+}
+
 @media screen and (max-width: 30em) {
   .md-typeset .hub-fig-pair {
     grid-template-columns: 1fr;
