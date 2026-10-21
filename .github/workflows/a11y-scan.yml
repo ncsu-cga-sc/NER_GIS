@@ -1,0 +1,29 @@
+name: Accessibility Scanner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  accessibility_scanner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/accessibility-scanner@v3
+        with:
+          urls: |
+            https://ncsu-cga-sc.github.io/NER_GIS/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/fundamentals/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/fundamentals/01-gnss-basic/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/fundamentals/02-where-errors-come-from/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/fundamentals/03-precise-is-not-accurate/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/fundamentals/04-same-place-different-numbers/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/fundamentals/05-corrections/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/fundamentals/06-hard-places/
+            https://ncsu-cga-sc.github.io/NER_GIS/trainings/gnss/fundamentals/07-planning-for-post-processing/
+          repository: ncsu-cga-sc/NER_GIS
+          token: ${{ secrets.GH_TOKEN }}
+          cache_key: cached_results-ncsu-cga-sc.github.io.json
+          group_by: rule+url
+          # Set to true if this repository does not have GitHub Copilot.
+          skip_copilot_assignment: false
