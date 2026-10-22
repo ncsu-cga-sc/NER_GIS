@@ -1,0 +1,1358 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../03-precise-is-not-accurate/">
+      
+      
+        <link rel="next" href="../05-corrections/">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Module 4: Same Place, Different Numbers - Geospatial Knowledge Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../../../assets/ableplayer/build/ableplayer.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-4-same-place-different-numbers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Geospatial Knowledge Hub" class="md-header__button md-logo" aria-label="Geospatial Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Geospatial Knowledge Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 4: Same Place, Different Numbers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Trainings
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Geospatial Knowledge Hub" class="md-nav__button md-logo" aria-label="Geospatial Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Geospatial Knowledge Hub
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainings
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trainings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS Fundamentals for Accurate Data Collection
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GNSS Fundamentals for Accurate Data Collection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-gnss-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. GNSS Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-where-errors-come-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Where Errors Come From
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-precise-is-not-accurate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Precise Is Not Accurate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Same Place, Different Numbers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Same Place, Different Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-two-good-answers-that-disagree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Two Good Answers That Disagree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-the-ruler-reference-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 The Ruler: Reference Frames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-the-date-epochs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 The Date: Epochs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-converting-between-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Converting Between Frames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-pa11-and-ma11-are-not-pennsylvania-and-massachusetts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 PA11 and MA11 Are Not Pennsylvania and Massachusetts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-which-frame-is-each-source-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Which Frame Is Each Source In?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-where-to-check-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 Where to Check It
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7 Where to Check It">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-corrections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Corrections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-hard-places/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Hard Places
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-planning-for-post-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Planning for Post-Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-two-good-answers-that-disagree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Two Good Answers That Disagree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-the-ruler-reference-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 The Ruler: Reference Frames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-the-date-epochs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 The Date: Epochs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-converting-between-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Converting Between Frames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-pa11-and-ma11-are-not-pennsylvania-and-massachusetts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 PA11 and MA11 Are Not Pennsylvania and Massachusetts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-which-frame-is-each-source-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Which Frame Is Each Source In?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-where-to-check-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 Where to Check It
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7 Where to Check It">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Trainings
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    GNSS Fundamentals for Accurate Data Collection
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-4-same-place-different-numbers">Module 4: Same Place, Different Numbers<a class="headerlink" href="#module-4-same-place-different-numbers" title="Permanent link">&para;</a></h1>
+<p><em>Read time: 7–10 minutes</em></p>
+<p><strong>By the end of this module, you can:</strong> explain in plain words what a
+reference frame, an epoch, a time-dependent transformation, and a
+velocity model are; name the frame each of your position sources
+delivers; and recognize when two sources disagree because of the frame,
+not the satellites.</p>
+<h2 id="41-two-good-answers-that-disagree">4.1 Two Good Answers That Disagree<a class="headerlink" href="#41-two-good-answers-that-disagree" title="Permanent link">&para;</a></h2>
+<p><strong>Start with a puzzle.</strong> You set up on a survey monument in
+Pennsylvania. Network RTK agrees with the published coordinates to
+within 2 cm. You switch to SBAS or a PPP service on the same spot, and
+the reading lands more than half a meter away — steady, with a small ±
+on screen. Come back next year, and the gap is a little larger.</p>
+<p>Neither receiver is broken, and both answers are precise. They disagree
+because they measure with different rulers, and one of those rulers is
+attached to ground that moves. This is the "precise but not accurate"
+problem from Module 3, with one new twist: this offset grows every
+year.</p>
+<h2 id="42-the-ruler-reference-frames">4.2 The Ruler: Reference Frames<a class="headerlink" href="#42-the-ruler-reference-frames" title="Permanent link">&para;</a></h2>
+<p><strong>Picture yourself on a moving train.</strong> Measure the distance from your
+seat to the door, and you get the same number every day, because you and
+the door ride together. Someone on the platform measuring where your
+seat is gets a different answer every time the train moves.</p>
+<p>A <strong>reference frame</strong> (also called a datum) is the ruler that
+coordinates are measured with. <strong>NAD83(2011)</strong> is a ruler glued to the
+North American tectonic plate — the view from inside the train. A fence
+post in Pennsylvania or Massachusetts keeps nearly the same NAD83(2011)
+coordinates year after year, changing only about 1–2 mm per year.</p>
+<p><strong>Global frames</strong> such as ITRF and WGS84 are the view from the platform:
+a ruler fixed to the Earth as a whole. The continent slides underneath
+it at roughly 2 cm per year, so the same fence post's global
+coordinates change every year.</p>
+<p>Both rulers are legitimate. Trouble starts only when data measured with
+one is compared with data measured with the other. <strong>Our standard in PA
+and MA is NAD83(2011).</strong></p>
+<h2 id="43-the-date-epochs">4.3 The Date: Epochs<a class="headerlink" href="#43-the-date-epochs" title="Permanent link">&para;</a></h2>
+<p><strong>A photo of a moving train only tells you where it was if you know when
+the photo was taken.</strong> Coordinates in a moving frame work the same way.
+The <strong>epoch</strong> is the date a set of coordinates is valid for.
+NAD83(2011) coordinates are defined at <strong>epoch 2010.00</strong> — 1 January
+2010.</p>
+<p>A global-frame position measured today is valid for today's date. Since
+2010, the ground in the Northeast has moved roughly 30 cm in a global
+frame, and the two frames also differ by a built-in offset from how each
+was originally defined. Together, mixing them produces an offset of
+roughly <strong>50 cm to 1 m</strong> in the Northeast — many times your 1–3 cm
+target — and it gets larger each year.</p>
+<p><em>Figure: The same fence post plotted in two frames, 2010 to today. In
+NAD83(2011), its dot stays in place. In a global frame, its dot moves a
+little further from the 2010 position each year.</em></p>
+<h2 id="44-converting-between-frames">4.4 Converting Between Frames<a class="headerlink" href="#44-converting-between-frames" title="Permanent link">&para;</a></h2>
+<p><strong>A fixed shift can't close a gap that keeps growing.</strong> A shift that's
+correct this year is off by about 2 cm next year, and by more the year
+after.</p>
+<p>A <strong>time-dependent transformation</strong> converts coordinates between a
+global frame and NAD83(2011) epoch 2010.00 <strong>using the date the data
+were collected.</strong> To do that, it needs to know how fast and in which
+direction the ground under each point has moved. That's the job of a
+<strong>velocity model</strong>: a map of ground motion, in millimeters per year, at
+each location. NGS's HTDP software is the standard one; in the
+Northeast, its values are dominated by smooth plate motion. In the
+train picture, the velocity model is the speedometer, and the
+transformation works out where a passenger would have been sitting in
+2010.</p>
+<p><strong>About the software update:</strong> [SME to confirm — which software applies
+the time-dependent transformation (Zeno Connect, Field Maps, or both),
+the version number, and the velocity model it uses.]</p>
+<table>
+<thead>
+<tr>
+<th scope="col"><strong>WHY IT MATTERS</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A receiver can be fixed, show ±1 cm, and still be 50 cm to 1 m off if two frames are mixed. The ± number can't see it. Only a known-point check, repeated with each position source you use, catches a frame mismatch.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="45-pa11-and-ma11-are-not-pennsylvania-and-massachusetts">4.5 PA11 and MA11 Are Not Pennsylvania and Massachusetts<a class="headerlink" href="#45-pa11-and-ma11-are-not-pennsylvania-and-massachusetts" title="Permanent link">&para;</a></h2>
+<p>You may see <strong>NAD83(PA11)</strong> and <strong>NAD83(MA11)</strong> listed next to
+NAD83(2011) in software menus. The letters are a coincidence.
+<strong>PA11</strong> is the frame for the <strong>Pacific</strong> plate (Hawaii, American
+Samoa), and <strong>MA11</strong> is the frame for the <strong>Mariana</strong> plate (Guam,
+Northern Mariana Islands). Pennsylvania and Massachusetts both sit on
+the North American plate. Choosing PA11 or MA11 here adds a large,
+plate-motion-sized error. <strong>In PA and MA, choose NAD83(2011).</strong></p>
+<h2 id="46-which-frame-is-each-source-in">4.6 Which Frame Is Each Source In?<a class="headerlink" href="#46-which-frame-is-each-source-in" title="Permanent link">&para;</a></h2>
+<p>Each position source arrives in its own frame. Knowing which one tells
+you whether a transformation is needed before the data reach your map.</p>
+<table>
+<thead>
+<tr>
+<th scope="col"><strong>Source</strong></th>
+<th scope="col"><strong>Typical frame</strong></th>
+<th scope="col"><strong>Needs a transformation to NAD83(2011)?</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Network or base RTK in PA/MA</td>
+<td>NAD83(2011), epoch 2010.00 — depends on the provider's mountpoint</td>
+<td>Usually no; confirm with each provider</td>
+</tr>
+<tr>
+<td>SBAS (WAAS)</td>
+<td>Global (ITRF)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Real-time PPP (subscription)</td>
+<td>Usually global, at today's date</td>
+<td>Yes — this is where the date matters most</td>
+</tr>
+<tr>
+<td>PPK / post-processed</td>
+<td>Whatever frame the base or CORS coordinates are in</td>
+<td>Depends on the base coordinates used</td>
+</tr>
+<tr>
+<td>Standalone</td>
+<td>WGS84</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The data path adds its own risk.</strong> Points travel from the receiver
+through Zeno Connect into Esri Field Maps, and then onto a map with
+other layers. Any step can apply a transformation. Field Maps can hold
+only <strong>two</strong> transformations in its location profile; if a third would
+be needed, the data won't line up. Esri and Eos both give the same
+advice: keep basemaps, layers, and GNSS output in <strong>one coordinate
+system</strong>, so fewer transformations are needed.</p>
+<p><strong>The signature to recognize:</strong> points that look right against the
+basemap but sit shifted against an older layer usually mean a missing
+or extra transformation somewhere in that chain, or a layer stored in a
+different datum.</p>
+<h2 id="47-where-to-check-it">4.7 Where to Check It<a class="headerlink" href="#47-where-to-check-it" title="Permanent link">&para;</a></h2>
+<p>Before collecting, confirm that three settings agree on NAD83(2011):
+the coordinate system and correction source in Zeno Connect, the
+transformations in your Field Maps location profile, and the coordinate
+system of the map layers you'll compare against. The step-by-step
+settings are in your device how-to guides. The final check is the one
+from Module 3: a known-point check, repeated for each source.</p>
+<h3 id="self-check">Self-Check<a class="headerlink" href="#self-check" title="Permanent link">&para;</a></h3>
+<p>Pick the best answer for each question. If one surprises you, revisit that section.</p>
+<div class="self-check">
+<div class="sc-card" data-answer="b">
+<p><strong>Q1. What is the difference between NAD83(2011) and a global frame such as ITRF or WGS84?</strong></p>
+<ul class="sc-options">
+<li data-key="a">NAD83(2011) is less precise than global frames</li>
+<li data-key="b">NAD83(2011) moves with the North American plate, so a fence post keeps nearly the same coordinates; global frames don't, so its coordinates change every year</li>
+<li data-key="c">Global frames are only used outside the U.S.</li>
+<li data-key="d">NAD83(2011) is fixed to the Earth as a whole; global frames move with the plate</li>
+</ul>
+<div class="sc-explain">
+<p>Both are legitimate rulers. NAD83(2011) is the view from inside the train, and global frames are the view from the platform, with the continent sliding underneath at roughly 2 cm per year.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="c">
+<p><strong>Q2. What does "epoch 2010.00" mean for NAD83(2011)?</strong></p>
+<ul class="sc-options">
+<li data-key="a">The year the receiver was manufactured</li>
+<li data-key="b">The date your survey was collected</li>
+<li data-key="c">The date (1 January 2010) the coordinates are valid for</li>
+<li data-key="d">The version number of the correction software</li>
+</ul>
+<div class="sc-explain">
+<p>An epoch is the timestamp on the photo. In a moving frame, coordinates only mean something if you know the date they are valid for.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="a">
+<p><strong>Q3. Why can't a single fixed shift fix a frame mismatch?</strong></p>
+<ul class="sc-options">
+<li data-key="a">The gap grows each year, so a shift that is right this year is off by about 2 cm next year</li>
+<li data-key="b">The gap changes with the weather</li>
+<li data-key="c">Fixed shifts are not allowed in Field Maps</li>
+<li data-key="d">The gap is different for every receiver model</li>
+</ul>
+<div class="sc-explain">
+<p>A time-dependent transformation uses the collection date, plus a velocity model of ground motion in mm per year, to work out the right shift.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="d">
+<p><strong>Q4. A colleague says to pick NAD83(PA11) because the project is in Pennsylvania. What should you do?</strong></p>
+<ul class="sc-options">
+<li data-key="a">Agree, since PA stands for Pennsylvania</li>
+<li data-key="b">Pick NAD83(MA11) instead, since it is closer to the Northeast</li>
+<li data-key="c">Use whichever one the basemap uses</li>
+<li data-key="d">Use NAD83(2011), because PA11 is the Pacific plate frame and MA11 is the Mariana plate frame</li>
+</ul>
+<div class="sc-explain">
+<p>The letters are a coincidence. Pennsylvania and Massachusetts both sit on the North American plate, and choosing PA11 or MA11 adds a large, plate-motion-sized error.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="b">
+<p><strong>Q5. Network RTK agrees with a monument to 2 cm, but SBAS on the same spot is more than half a meter off. Both show a small ± on screen. What is the most likely reason?</strong></p>
+<ul class="sc-options">
+<li data-key="a">The SBAS receiver has a hardware fault</li>
+<li data-key="b">The two sources are in different frames, and SBAS is in a global frame that was not transformed to NAD83(2011)</li>
+<li data-key="c">There are too few satellites</li>
+<li data-key="d">Multipath at the monument</li>
+</ul>
+<div class="sc-explain">
+<p>The ± number can't see a frame mismatch. A constant offset of 50 cm to 1 m in the Northeast that grows each year is the frame signature.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="c">
+<p><strong>Q6. How do you catch a frame mismatch before it ends up in your dataset?</strong></p>
+<ul class="sc-options">
+<li data-key="a">Check that the ± estimate is small</li>
+<li data-key="b">Check that the satellite count is high</li>
+<li data-key="c">Confirm each setting agrees on NAD83(2011), then do a known-point check with each position source you use</li>
+<li data-key="d">Only check when points look shifted against the basemap</li>
+</ul>
+<div class="sc-explain">
+<p>The ± number and satellite count can't detect a frame mismatch, and the known-point check is the one step that compares against a position from outside the receiver. Repeat it for every source, since each can arrive in a different frame.</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-precise-is-not-accurate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. Precise Is Not Accurate">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                3. Precise Is Not Accurate
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-corrections/" class="md-footer__link md-footer__link--next" aria-label="Next: 5. Corrections">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                5. Corrections
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/ableplayer/jquery.min.js"></script>
+      
+        <script src="../../../../assets/ableplayer/js.cookie.min.js"></script>
+      
+        <script src="../../../../assets/ableplayer/build/ableplayer.min.js"></script>
+      
+        <script src="../../../../javascripts/self-check.js"></script>
+      
+        <script src="../../../../javascripts/toc-align.js"></script>
+      
+        <script src="../../../../javascripts/enlarge.js"></script>
+      
+        <script src="../../../../javascripts/table-scroll.js"></script>
+      
+        <script src="../../../../javascripts/training-tags.js"></script>
+      
+    
+  </body>
+</html>

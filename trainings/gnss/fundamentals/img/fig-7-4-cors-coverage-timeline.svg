@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" width="980" height="620" font-family="Arial, Helvetica, sans-serif">
+<title>Three coverage cases: both logs complete, a CORS outage covered by another station, and a gap in your own log that cannot be recovered</title>
+<rect width="980" height="620" fill="#ffffff"/>
+<text x="28" y="36" font-size="16" font-weight="700" fill="#1a1a1a">Session time</text>
+<text x="250" y="36" font-size="13" fill="#444">Start</text>
+<text x="520" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#d32f2f">40 min gap</text>
+<text x="900" y="36" text-anchor="end" font-size="13" fill="#444">End</text>
+<line x1="250" y1="48" x2="900" y2="48" stroke="#c9d1db" stroke-width="1.5"/>
+<rect x="470" y="14" width="100" height="590" fill="#d32f2f" fill-opacity="0.06"/>
+
+<text x="28" y="92" font-size="16" font-weight="700" fill="#1a1a1a">A. Both complete</text>
+<text x="28" y="124" font-size="13" fill="#444">Your log</text>
+<rect x="250" y="110" width="650" height="22" rx="4" fill="#2e7d32"/>
+<text x="28" y="164" font-size="13" fill="#444">CORS</text>
+<rect x="250" y="150" width="650" height="22" rx="4" fill="#1f5fa8"/>
+<text x="250" y="198" font-size="14" fill="#1a1a1a">Every minute of your log has matching reference data. All of it can be corrected.</text>
+
+<line x1="28" y1="222" x2="952" y2="222" stroke="#e6ebf1" stroke-width="1.5"/>
+
+<text x="28" y="258" font-size="16" font-weight="700" fill="#1a1a1a">B. CORS outage</text>
+<text x="28" y="290" font-size="13" fill="#444">Your log</text>
+<rect x="250" y="276" width="650" height="22" rx="4" fill="#2e7d32"/>
+<text x="28" y="330" font-size="13" fill="#444">Nearest CORS</text>
+<rect x="250" y="316" width="220" height="22" rx="4" fill="#1f5fa8"/>
+<rect x="470" y="316" width="100" height="22" rx="4" fill="#ffffff" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="520" y="332" text-anchor="middle" font-size="12" font-weight="700" fill="#d32f2f">outage</text>
+<rect x="570" y="316" width="330" height="22" rx="4" fill="#1f5fa8"/>
+<text x="28" y="370" font-size="13" fill="#444">Next station</text>
+<rect x="250" y="356" width="650" height="22" rx="4" fill="#7b3fa0"/>
+<text x="250" y="404" font-size="14" fill="#1a1a1a">Another station recorded the same hours, so the outage can still be corrected.</text>
+
+<line x1="28" y1="428" x2="952" y2="428" stroke="#e6ebf1" stroke-width="1.5"/>
+
+<text x="28" y="464" font-size="16" font-weight="700" fill="#1a1a1a">C. Gap in your log</text>
+<text x="28" y="496" font-size="13" fill="#444">Your log</text>
+<rect x="250" y="482" width="220" height="22" rx="4" fill="#2e7d32"/>
+<rect x="470" y="482" width="100" height="22" rx="4" fill="#ffcdd2" stroke="#d32f2f" stroke-width="1.5"/>
+<text x="520" y="498" text-anchor="middle" font-size="12" font-weight="700" fill="#d32f2f">lost</text>
+<rect x="570" y="482" width="330" height="22" rx="4" fill="#2e7d32"/>
+<text x="28" y="536" font-size="13" fill="#444">CORS</text>
+<rect x="250" y="522" width="650" height="22" rx="4" fill="#1f5fa8"/>
+<text x="250" y="572" font-size="14" fill="#1a1a1a">No one else was recording at your antenna, so that part of your log is gone.</text>
+</svg>

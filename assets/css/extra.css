@@ -1,0 +1,1494 @@
+/*
+ * Text sizes and colors matched to the Esri developer documentation
+ * (https://developers.arcgis.com/javascript/latest/get-started/):
+ * 16px body text, large regular-weight headings (H1 48px, H2 40px, H3 32px),
+ * dark gray text and indigo dashed links.
+ * The font (Roboto) and the Material layout and column widths are unchanged.
+ * Change the variables below to adjust the colors.
+ */
+
+/* Navbar (header). Hide the default Material logo. */
+.md-header .md-logo {
+  display: none;
+}
+
+/* Light theme: header, tab bar, and footer share the same blue as links and table headers. */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs,
+[data-md-color-scheme="default"] .md-footer,
+[data-md-color-scheme="default"] .md-footer-meta {
+  background-color: var(--hub-link);
+}
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #14151a;
+  --md-primary-fg-color--light: #3a3c46;
+  --md-primary-fg-color--dark: #0b0c0f;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+}
+
+/* Light theme colors */
+[data-md-color-scheme="default"] {
+  --hub-heading: #141414;
+  --hub-h3: #5a5a5a; /* a little gray, so H3 sits below H2 */
+  --hub-text: #4a4a4a;
+  --hub-text-muted: #6b6b6b;
+  --hub-link: #4051b5; /* same blue as the table header */
+  --hub-accent: #4051b5; /* title underline */
+  --hub-line: #dedede;
+  --md-typeset-color: var(--hub-text);
+  --md-typeset-a-color: var(--hub-link);
+  --md-accent-fg-color: var(--hub-accent);
+  --md-code-bg-color: #f7f7f7;
+  --md-code-fg-color: #141414;
+}
+
+/* Dark theme colors (page content background #1e2129) */
+[data-md-color-scheme="slate"] {
+  --hub-heading: #f2f3f5;
+  --hub-h3: #b8bcc4; /* a little gray, so H3 sits below H2 */
+  --hub-text: #c9ccd3;
+  --hub-text-muted: #9aa0ab;
+  --hub-link: #34E0A1 ;
+  --hub-accent: #34E0A1; /* title underline */
+  --hub-line: rgba(255, 255, 255, 0.14);
+  --md-default-bg-color: #1e2129;
+  --md-typeset-color: var(--hub-text);
+  --md-typeset-a-color: var(--hub-link);
+  --md-accent-fg-color: var(--hub-accent);
+  --md-code-bg-color: hsla(225deg, 15%, 18%, 1);
+  --md-code-fg-color: #e6e8ec;
+}
+
+/* Outline buttons use the header color, which is near black and disappears in dark mode. */
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary) {
+  color: var(--hub-link);
+  border-color: var(--hub-link);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary):hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary):focus {
+  background-color: var(--hub-link);
+  border-color: var(--hub-link);
+  color: #1e2129;
+}
+
+/* Text sizes are in rem, so they follow the reader's browser font-size setting.
+   Material raises the root size on very wide screens (137.5% at 100em, 150% at 125em).
+   It is held at Material's normal 125% here, so the text looks the same on every screen:
+   0.8rem = 16px, 0.7rem = 14px, 1rem = 20px, with the browser's default size of 16px. */
+html {
+  font-size: 125%;
+}
+
+/* ------------------------------------------------------------------
+ * Text: body, headings, links, inline code
+ * ------------------------------------------------------------------ */
+.md-typeset {
+  font-size: 0.8rem;
+  color: var(--hub-text);
+}
+
+.md-typeset p {
+  line-height: 1.3rem;
+}
+
+.md-typeset li {
+  line-height: 1.2rem;
+}
+
+/* ------------------------------------------------------------------
+ * Numbered steps. Space between each step, including when a step
+ * contains a code block. Change --hub-step-space to make the gap
+ * larger or smaller.
+ * ------------------------------------------------------------------ */
+.md-typeset {
+  --hub-step-space: 1.5em;
+}
+
+.md-typeset ol > li {
+  margin-bottom: 0;
+  padding-bottom: var(--hub-step-space);
+}
+
+.md-typeset ol > li:last-child {
+  padding-bottom: 0;
+}
+
+.md-typeset ol > li > :first-child,
+.md-typeset ol > li > p:first-child,
+.md-typeset ol > li > :first-child > pre {
+  margin-top: 0;
+}
+
+.md-typeset ol > li > :last-child,
+.md-typeset ol > li > p:last-child,
+.md-typeset ol > li > :last-child > pre {
+  margin-bottom: 0;
+}
+
+/* Headings: regular weight, no letter spacing, dark color. Small screens first. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--hub-heading);
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+/* One underline under the whole title. text-decoration underlines every wrapped
+   line and leaves a large gap between them and under the title. */
+.md-typeset h1 {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  position: relative;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin: 0 0 28px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  border-bottom: 4px solid var(--hub-accent);
+}
+
+.md-typeset h1 > .headerlink {
+  position: absolute;
+}
+
+.md-typeset h2 {
+  font-size: 1.5rem;
+  line-height: 1.375;
+  margin: 40px 0 12px;
+}
+
+.md-typeset h3 {
+  color: var(--hub-h3);
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.66;
+  margin: 40px 0 12px;
+}
+
+.md-typeset h4 {
+  color: var(--hub-h3);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 32px 0 12px;
+}
+
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--hub-h3);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: none;
+  margin: 24px 0 8px;
+}
+
+/* Wide screens: the Esri sizes (H1 48px, H2 40px, H3 32px) */
+@media screen and (min-width: 76.25em) {
+  .md-typeset h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+  }
+
+  .md-typeset h2 {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
+
+  .md-typeset h3 {
+    font-size: 1.6rem;
+    line-height: 2.65rem;
+  }
+
+  .md-typeset h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Bold text is dark and semi-bold */
+.md-typeset :is(p, li, td, dd) strong {
+  font-weight: 600;
+  color: var(--hub-heading);
+}
+
+/* Links in text: indigo with a dashed underline */
+.md-typeset :is(p, li, td, dd) a:not(.headerlink):not(.md-button) {
+  text-decoration: underline dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* Home category cards keep a plain title link */
+.md-typeset .grid.cards a {
+  text-decoration: none;
+}
+
+/* Section divider (Markdown ---). Light theme uses the same blue as links and the title underline. */
+.md-typeset hr {
+  border: none;
+  border-bottom: 1px solid var(--hub-accent);
+}
+
+/* Inline code: gray box with a thin border */
+.md-typeset :not(pre) > code {
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  border: 1px solid var(--hub-line);
+  border-radius: 4px;
+}
+
+/* Code blocks */
+.md-typeset pre > code {
+  font-size: 0.72rem;
+}
+
+/* Sidebar text sizes. Fixed sizes, so they do not grow on large screens. Widths are not changed. */
+.md-sidebar--primary .md-nav {
+  font-size: 0.7rem; /* left sidebar (navigation) */
+}
+
+.md-sidebar--secondary .md-nav {
+  font-size: 0.7rem; /* right sidebar ("Table of contents") */
+}
+
+/* Right sidebar: the table of contents is at most 400px tall. When the list is longer than that,
+   it scrolls with its own vertical scroll bar. A shorter list shows in full with no scroll bar.
+   Change 400px to make the limit larger or smaller. */
+[data-md-color-scheme="default"] {
+  --hub-scroll-thumb: #4051b5;
+  --hub-scroll-track: rgba(0, 0, 0, 0.07);
+}
+
+[data-md-color-scheme="slate"] {
+  --hub-scroll-thumb: #34E0A1;
+  --hub-scroll-track: rgba(255, 255, 255, 0.08);
+}
+
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--hub-scroll-thumb) var(--hub-scroll-track);
+}
+
+/* Right sidebar: a little more space on the left */
+.md-sidebar--secondary .md-nav--secondary {
+  padding-left: 16px;
+}
+
+/* Right sidebar: more indent for items below H2 (H3 and smaller). Was 12px per level. */
+.md-sidebar--secondary .md-nav__item .md-nav__list {
+  padding-left: 24px;
+}
+
+/* Left sidebar: space between items. Change 1.1em to make the gaps larger or smaller. */
+.md-sidebar--primary .md-nav__item .md-nav__link {
+  margin-top: 1.1em;
+}
+
+/* Left sidebar: gray text, active page darker */
+.md-nav--primary .md-nav__link {
+  color: var(--hub-text);
+}
+
+.md-nav--primary .md-nav__link--active {
+  color: var(--hub-heading);
+  font-weight: 500;
+}
+
+/* Section titles (Help, Developer notes) all the same dark color */
+.md-nav--primary .md-nav__item--section > .md-nav__link {
+  color: var(--hub-heading);
+}
+
+.md-nav--secondary .md-nav__link {
+  color: var(--hub-text-muted);
+}
+
+/* Hover and current item in the sidebars: dark (the yellow link color is too light to read as text) */
+.md-nav--primary .md-nav__link:hover,
+.md-nav--secondary .md-nav__link:hover,
+.md-nav--secondary .md-nav__link--active {
+  color: var(--hub-heading);
+}
+
+.md-nav--secondary .md-nav__link--active {
+  font-weight: 500;
+}
+
+/* Blank space at the bottom of every page. Change the height to make it larger or smaller. */
+.md-content__inner::after {
+  content: "";
+  display: block;
+  height: 8em;
+}
+
+/* ------------------------------------------------------------------
+ * Numbered list with a circle around each number.
+ * Add the class after an ordered list in Markdown:
+ *   1. First item
+ *   2. Second item
+ *   { .hub-circle-list }
+ * ------------------------------------------------------------------ */
+.md-typeset ol.hub-circle-list {
+  list-style: none;
+  counter-reset: hub-circle;
+  padding-left: 0;
+}
+
+.md-typeset ol.hub-circle-list > li {
+  counter-increment: hub-circle;
+  position: relative;
+  padding-left: 2.6em;
+  margin-bottom: 0.7em;
+}
+
+/* Example message box (not a command) — hide the copy button */
+.md-typeset pre.hub-msg .md-code__nav {
+  display: none;
+}
+
+.md-typeset ol.hub-circle-list > li::before {
+  content: counter(hub-circle);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background-color: var(--hub-step-num);
+  color: #ffffff;
+  font-size: 0.875em;
+  font-weight: 600;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------
+ * Images
+ * Add the class to any image in Markdown:
+ *   ![Alt text](assets/images/example.png){ .hub-img }
+ * Space above and below. Change --hub-img-space to make it larger or smaller.
+ * ------------------------------------------------------------------ */
+/* Space above and below every Mermaid diagram. Change --hub-diagram-space to adjust it.
+   A note directly under a diagram is its caption and stays centered on the chart. */
+.md-typeset .mermaid {
+  --hub-diagram-space: 1.5em;
+  margin-top: var(--hub-diagram-space);
+  margin-bottom: var(--hub-diagram-space);
+}
+
+.md-typeset .mermaid:has(+ p:not(.hub-prose)) {
+  margin-bottom: 0.4em;
+}
+
+.md-typeset .mermaid + p:not(.hub-prose) {
+  text-align: center;
+  font-style: italic;
+  margin-top: 0;
+}
+
+.md-typeset .mermaid + p:not(.hub-prose) strong {
+  font-style: italic;
+}
+
+/* Center one diagram and the caption under it. */
+.md-typeset .hub-diagram {
+  text-align: center;
+}
+
+.md-typeset .hub-diagram > svg {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  margin: 1.5em auto;
+}
+
+.md-typeset .hub-diagram .mermaid {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.4em;
+}
+
+.md-typeset .hub-diagram > p,
+.md-typeset p.figure-caption {
+  text-align: center;
+  font-size: 0.875em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+.md-typeset p.figure-caption strong {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.md-typeset img.hub-img {
+  --hub-img-space: 1.5em;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: var(--hub-img-space) auto;
+}
+
+.md-typeset img.hub-img:has(+ p.figure-caption) {
+  margin-bottom: 0.4em;
+}
+
+.md-typeset .hub-fig-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin: 1.5em 0;
+}
+
+.md-typeset .hub-fig-pair .hub-img {
+  width: 100%;
+  margin: 0 auto 0.4em;
+}
+
+.md-typeset .hub-fig-pair p.figure-caption {
+  margin-bottom: 0;
+}
+
+.md-typeset .hub-video {
+  margin: 1.5em 0;
+}
+
+/* Able Player video: centered, wider, and kept below the sticky header */
+.md-typeset figure.hub-video {
+  position: relative;
+  isolation: isolate;          /* Able Player uses z-index 5000+; keep it inside this box */
+  z-index: 0;
+  display: block;
+  width: 100%;
+  max-width: 52rem;
+  margin: 1.5em auto;
+}
+
+.md-typeset .hub-video .able-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.md-typeset .hub-video figcaption {
+  text-align: center;
+}
+
+/* Larger captions. Able Player's font-size preference is a percentage of this
+   base size, so people can still change it in the player's Preferences. */
+.md-typeset .hub-video .able-captions-wrapper {
+  font-size: 1.1rem;
+}
+
+/* Full-screen mode: player fills about 80% of the screen, centered.
+   Able Player sizes the video to the whole window, so override that here. */
+.md-typeset .hub-video .able-wrapper:fullscreen,
+.md-typeset .hub-video .able-wrapper.fullscreen {
+  left: 0 !important;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  display: flex;
+  overflow: auto; /* if the screen is too short (for example at 400% zoom), scroll instead of cutting off */
+  background: #000 !important;
+}
+
+.md-typeset .hub-video .able-wrapper:fullscreen .able,
+.md-typeset .hub-video .able-wrapper.fullscreen .able {
+  /* 80% of screen width, but never taller than the screen allows, and never narrower than 16rem */
+  width: clamp(16rem, min(80vw, calc((100vh - 14rem) * 16 / 9)), 100vw);
+  max-width: none;
+  margin: auto; /* centers in both directions, and stays reachable when it is taller than the screen */
+}
+
+/* Narrow screens, including 400% zoom on a desktop: use the full width */
+@media screen and (max-width: 40em) {
+  .md-typeset .hub-video .able-wrapper:fullscreen .able,
+  .md-typeset .hub-video .able-wrapper.fullscreen .able {
+    width: 100vw;
+  }
+}
+
+.md-typeset .hub-video .able-wrapper:fullscreen .able-vidcap-container,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-vidcap-container,
+.md-typeset .hub-video .able-wrapper:fullscreen .able-media-container,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-media-container {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.md-typeset .hub-video .able-wrapper:fullscreen iframe,
+.md-typeset .hub-video .able-wrapper.fullscreen iframe {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+}
+
+/* Captions below the video in full screen too, same as the small player */
+.md-typeset .hub-video .able-wrapper:fullscreen div.able-vidcap-container div.able-captions-overlay,
+.md-typeset .hub-video .able-wrapper.fullscreen div.able-vidcap-container div.able-captions-overlay {
+  position: relative !important;
+  bottom: auto !important;
+  min-height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000 !important;
+}
+
+.md-typeset .hub-video .able-wrapper:fullscreen div.able-captions,
+.md-typeset .hub-video .able-wrapper.fullscreen div.able-captions {
+  font-size: clamp(1.25rem, 1.5vw, 2.2rem) !important;
+  opacity: 1 !important;
+}
+
+/* Short screens (a landscape phone, or 400% zoom on a laptop). There is not enough height for
+   video + captions + controls, so nothing is squeezed or cropped. Instead the video keeps its full
+   16:9 picture, sized so that the video AND the controls fit on the first screen. The captions and
+   the time/status line follow below the controls; scroll down (vertical scroll only) to reach them. */
+@media screen and (max-height: 36em) {
+  .md-typeset .hub-video .able-wrapper:fullscreen .able,
+.md-typeset .hub-video .able-wrapper.fullscreen .able {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* The container is dissolved so the video, captions and controls can be put in a new order. */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able-vidcap-container,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-vidcap-container {
+    display: contents;
+  }
+
+  .md-typeset .hub-video .able-wrapper:fullscreen .able > *,
+.md-typeset .hub-video .able-wrapper.fullscreen .able > *,
+  .md-typeset .hub-video .able-wrapper:fullscreen .able-vidcap-container > *,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-vidcap-container > * {
+    order: 5;
+    flex: none;
+    width: 100%;
+  }
+
+  /* 1. video: the biggest 16:9 picture that still leaves room (4.5rem) for the control bar */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able-media-container,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-media-container {
+    order: 1;
+    width: min(100vw, calc((100vh - 4.5rem) * 16 / 9)) !important;
+    height: auto !important;
+    min-width: 12rem;
+  }
+
+  .md-typeset .hub-video .able-wrapper:fullscreen iframe,
+.md-typeset .hub-video .able-wrapper.fullscreen iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* 2. controls */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able > .able-controller,
+.md-typeset .hub-video .able-wrapper.fullscreen .able > .able-controller {
+    order: 2;
+  }
+
+  /* 3. captions (below the controls on a short screen) */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able-vidcap-container > .able-captions-wrapper,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-vidcap-container > .able-captions-wrapper {
+    order: 3;
+  }
+
+  .md-typeset .hub-video .able-wrapper:fullscreen div.able-vidcap-container div.able-captions-overlay,
+.md-typeset .hub-video .able-wrapper.fullscreen div.able-vidcap-container div.able-captions-overlay {
+    min-height: 3rem;
+  }
+
+  /* 4. time / status line */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able > .able-status-bar,
+.md-typeset .hub-video .able-wrapper.fullscreen .able > .able-status-bar {
+    order: 4;
+  }
+}
+
+.md-typeset .hub-video iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.md-typeset .hub-video figcaption {
+  margin-top: 0.4em;
+  font-size: 0.875em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+}
+
+@media screen and (max-width: 30em) {
+  .md-typeset .hub-fig-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+.md-typeset .gnss-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background: #4051b5;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+.md-typeset .gnss-mark--air {
+  background: #b45309;
+}
+
+.md-typeset td.gnss-mark-cell {
+  width: 3rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.md-typeset td.gnss-source {
+  background: #eaedf9;
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset td.gnss-source {
+  background: rgba(64, 81, 181, 0.35);
+}
+
+[data-md-color-scheme="default"] .md-typeset .gnss-errors table:not([class]) th {
+  background-color: #d5daf2;
+  color: #2c3480;
+}
+
+/* ------------------------------------------------------------------
+ * Tables
+ * Full width, square corners, indigo header row with centered text,
+ * striped rows and a hover highlight. Applies to every Markdown table on the site.
+ * ------------------------------------------------------------------ */
+[data-md-color-scheme="default"] {
+  --hub-table-head-bg: #4051b5;
+  --hub-table-head-fg: #ffffff;
+  --hub-table-stripe: #f6f7fb;
+  --hub-table-hover: #eaedf9;
+  --hub-table-line: #e3e5ec;
+  --hub-table-shadow: 0 1px 4px rgba(20, 21, 26, 0.12);
+  --hub-step-num: #4051b5;
+  --hub-step-row: #ffffff;
+  --hub-step-row-alt: #eaedf9;
+  --hub-quiet-warning: #757575;
+}
+
+[data-md-color-scheme="slate"] {
+  --hub-table-head-bg: #14151a;
+  --hub-table-head-fg: #ffffff;
+  --hub-table-stripe: rgba(255, 255, 255, 0.03);
+  --hub-table-hover: rgba(94, 139, 222, 0.14);
+  --hub-table-line: rgba(255, 255, 255, 0.08);
+  --hub-table-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  --hub-step-num: #7b8cff;
+  --hub-step-row: transparent;
+  --hub-step-row-alt: rgba(64, 81, 181, 0.22);
+  --hub-quiet-warning: #9e9e9e;
+}
+
+.md-typeset__table {
+  display: block;
+  width: 100%;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+  font-size: 0.7rem; /* fixed, so table text never grows larger than the 16px body text */
+  border: 1px solid var(--hub-table-line);
+  border-radius: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  box-shadow: var(--hub-table-shadow);
+}
+
+.md-typeset table:not([class]) th {
+  padding: 0.8em 1.1em;
+  background-color: var(--hub-table-head-bg);
+  color: var(--hub-table-head-fg);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Header text centered (Material sets text-align on [dir], so match its specificity) */
+[dir] .md-typeset table:not([class]) th {
+  text-align: center;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75em 1.1em;
+  vertical-align: top;
+  border-top: 1px solid var(--hub-table-line);
+}
+
+.md-typeset table:not([class]) tbody tr:first-child td {
+  border-top: 0;
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: var(--hub-table-stripe);
+}
+
+.md-typeset table:not([class]) tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: var(--hub-table-hover);
+}
+
+/* Bulleted lists inside table cells */
+.md-typeset table:not([class]) td ul,
+.md-typeset table:not([class]) td ol {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.md-typeset table:not([class]) td li {
+  margin-bottom: 0.25em;
+}
+
+.md-typeset table:not([class]) td li:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------
+ * Install steps: step number, image, instruction.
+ * Used on Getting started. Change the image column width below.
+ * ------------------------------------------------------------------ */
+.md-typeset .hub-step-table table {
+  display: table;
+  width: 100%;
+  border: 1px solid var(--hub-table-line);
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: none;
+  background: transparent;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.md-typeset .hub-step-table table thead {
+  display: none;
+}
+
+.md-typeset .hub-step-table table tbody tr:nth-child(odd) {
+  background-color: var(--hub-step-row);
+}
+
+.md-typeset .hub-step-table table tbody tr:nth-child(even) {
+  background-color: var(--hub-step-row-alt);
+}
+
+.md-typeset .hub-step-table table td {
+  border: none;
+  border-top: 1px solid var(--hub-table-line);
+  background: transparent;
+  vertical-align: middle;
+  padding: 0.85em 0.9em;
+}
+
+.md-typeset .hub-step-table table tbody tr:first-child td {
+  border-top: 0;
+}
+
+.md-typeset .hub-step-table table td:first-child {
+  width: 3em;
+  padding-left: 0.45em;
+  text-align: center;
+}
+
+.md-typeset .hub-step-table table td:nth-child(2),
+.md-typeset .hub-step-table table td.hub-step-media {
+  width: 36%;
+}
+
+.md-typeset .hub-step-table table td.hub-step-media {
+  background: var(--md-default-bg-color);
+}
+
+.md-typeset .hub-step-table table td.hub-step-text {
+  width: auto;
+}
+
+.md-typeset .hub-step-table table td.hub-step-text p,
+.md-typeset .hub-step-table table td.hub-step-media p {
+  margin: 0;
+}
+
+/* Quiet note under a step. Warning icon, smaller italic gray text. */
+.md-typeset .hub-quiet-warning {
+  position: relative;
+  margin: 0.75em 0 0;
+  padding: 0 0 0 1.5em;
+  border: 0;
+  background: none;
+  color: var(--hub-quiet-warning);
+  font-size: 0.875em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.md-typeset .hub-quiet-warning::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.05em;
+  height: 1.05em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23F5C400' d='M1 21h22L12 2z'/%3E%3Cpath fill='%23111' d='M11 9.5h2v5.2h-2zm0 6.3h2v2h-2z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Add { .hub-zoom } to a picture to allow click-to-enlarge. Remove that class to turn it off. */
+.md-typeset img.hub-zoom {
+  cursor: zoom-in;
+}
+
+.md-typeset .hub-zoom-frame {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: zoom-in;
+}
+
+.md-typeset .hub-zoom-frame:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 3px;
+}
+
+.md-typeset .hub-step-table td:nth-child(2) .hub-zoom-frame {
+  width: 100%;
+}
+
+.md-typeset .hub-zoom-frame::after {
+  content: "click to enlarge";
+  display: block;
+  margin-top: 0.35em;
+  text-align: center;
+  font-size: 0.875em;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--hub-text-muted);
+}
+
+/* Enlarged picture stays in a box on this page: up to 94% of the window width and 92% of its height. */
+.hub-enlarge-root {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(20, 21, 26, 0.45);
+}
+
+.hub-enlarge-root[hidden] {
+  display: none;
+}
+
+.hub-enlarge {
+  position: relative;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: min(1800px, 94vw);
+  max-height: 92vh;
+  padding: 16px 16px 14px;
+  overflow: visible;
+  border: none;
+  border-radius: 6px;
+  background: var(--md-default-bg-color, #fff);
+  box-shadow: 0 8px 28px rgba(20, 21, 26, 0.28);
+}
+
+.hub-enlarge img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(92vh - 60px);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.hub-enlarge-has-caption img {
+  max-height: calc(92vh - 6.5rem); /* leaves room for the caption under the picture */
+}
+
+.hub-enlarge-caption {
+  /* width: 0 + min-width: 100% keeps the caption as wide as the picture, not wider */
+  width: 0;
+  min-width: 100%;
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  text-align: center;
+  color: var(--md-default-fg-color);
+}
+
+.hub-enlarge-caption[hidden] {
+  display: none;
+}
+
+.hub-enlarge button {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 0 0 1px;
+  border: none;
+  border-radius: 50%;
+  appearance: none;
+  background: #6b6b6b;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.hub-enlarge button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #14151a;
+}
+
+.md-typeset .hub-step-table table td:nth-child(2) img,
+.md-typeset .hub-step-table table td.hub-step-media img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border: 1px solid var(--hub-line);
+  border-radius: 4px;
+}
+
+.md-typeset .hub-step-table table td:nth-child(2) pre {
+  margin: 0;
+}
+
+.md-typeset .hub-step-table table td:nth-child(2) pre code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.md-typeset .hub-step-table table td:nth-child(2) img.hub-step-icon {
+  width: 36px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 0;
+}
+
+.md-typeset .hub-step-badge {
+  display: inline-block;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background-color: var(--hub-step-num);
+  color: #ffffff;
+  font-size: 0.875em;
+  font-weight: 600;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .md-typeset .hub-step-table table,
+  .md-typeset .hub-step-table table tbody,
+  .md-typeset .hub-step-table table tr,
+  .md-typeset .hub-step-table table td,
+  .md-typeset .hub-step-table table td:nth-child(2) {
+    display: block;
+    width: 100%;
+  }
+
+  .md-typeset .hub-step-table table td {
+    padding: 0.35em 0 0;
+  }
+
+  .md-typeset .hub-step-table table td:first-child {
+    padding-top: 0;
+  }
+}
+
+/* Required and optional labels in command reference tables. */
+.md-typeset .hub-req,
+.md-typeset .hub-opt {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-weight: 600;
+  line-height: 1.6;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.md-typeset .hub-req {
+  background: var(--hub-step-num);
+  color: #ffffff;
+}
+
+.md-typeset .hub-opt {
+  border: 1px solid var(--hub-line);
+  color: var(--hub-text-muted);
+}
+
+/* Keep short first-column labels on one line, but only on wider screens and never in a
+   one-column table (the "Why it matters" boxes), where it made the page scroll sideways. */
+@media screen and (min-width: 40em) {
+  .md-typeset table td:first-child:not(:last-child) {
+    white-space: nowrap;
+  }
+}
+
+
+/* ===== Admonitions ===== */
+
+/* Tip: green, thicker left border */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #2e7d32;
+  border-width: 0 0 0 .3rem;
+  border-radius: .3rem;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(46, 125, 50, .12);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: #2e7d32;
+}
+
+/* Custom type: field-tip (orange, map pin icon) */
+:root {
+  --md-admonition-icon--field-tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 11.5A2.5 2.5 0 0 1 9.5 9 2.5 2.5 0 0 1 12 6.5 2.5 2.5 0 0 1 14.5 9 2.5 2.5 0 0 1 12 11.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"/></svg>');
+  --md-admonition-icon--important: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 13h-2V7h2m0 10h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>');
+}
+
+.md-typeset .admonition.field-tip,
+.md-typeset details.field-tip {
+  border-color: #ef6c00;
+}
+.md-typeset .field-tip > .admonition-title,
+.md-typeset .field-tip > summary {
+  background-color: rgba(239, 108, 0, .1);
+}
+.md-typeset .field-tip > .admonition-title::before,
+.md-typeset .field-tip > summary::before {
+  background-color: #ef6c00;
+  -webkit-mask-image: var(--md-admonition-icon--field-tip);
+  mask-image: var(--md-admonition-icon--field-tip);
+}
+
+/* Custom type: important (purple) */
+.md-typeset .admonition.important,
+.md-typeset details.important {
+  border-color: #7b1fa2;
+}
+.md-typeset .important > .admonition-title,
+.md-typeset .important > summary {
+  background-color: rgba(123, 31, 162, .1);
+}
+.md-typeset .important > .admonition-title::before,
+.md-typeset .important > summary::before {
+  background-color: #7b1fa2;
+  -webkit-mask-image: var(--md-admonition-icon--important);
+  mask-image: var(--md-admonition-icon--important);
+}
+
+
+/* ===== Self-Check ===== */
+.md-typeset .self-check {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.3rem 1.5rem 1rem;
+  background: color-mix(in srgb, var(--md-accent-fg-color) 7%, var(--md-default-bg-color));
+  border: .05rem solid var(--md-default-fg-color--lightest);
+  border-top: .25rem solid var(--md-default-fg-color--lightest);
+  border-radius: .5rem;
+  box-shadow: var(--md-shadow-z1);
+}
+
+/* progress bar (width set by JS) */
+.self-check::after {
+  content: "";
+  position: absolute;
+  top: -.25rem;
+  left: 0;
+  height: .25rem;
+  width: var(--sc-progress, 0%);
+  background: var(--md-accent-fg-color);
+  border-top-left-radius: .5rem;
+  transition: width .3s ease;
+}
+
+.self-check .sc-card[hidden],
+.self-check .sc-explain[hidden] { display: none; }
+
+.self-check .sc-card:not([hidden]),
+.self-check .sc-explain:not([hidden]) { animation: sc-in .3s ease; }
+
+@keyframes sc-in {
+  from { opacity: 0; transform: translateY(.4rem); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* question */
+.md-typeset .sc-card > p:first-child {
+  margin-top: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* options */
+.md-typeset .sc-options {
+  list-style: none;
+  margin: .8rem 0;
+  padding: 0;
+}
+.md-typeset .sc-options li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  list-style: none;
+  margin: .5rem 0;
+  padding: .65rem .9rem;
+  background: var(--md-default-bg-color);
+  border: .075rem solid var(--md-default-fg-color--lightest);
+  border-radius: .4rem;
+  cursor: pointer;
+  transition: transform .15s, border-color .15s, background .15s;
+}
+.md-typeset .sc-options li::before {
+  content: attr(data-key);
+  text-transform: uppercase;
+  flex: 0 0 1.9rem;
+  height: 1.9rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: .875rem;
+  font-weight: 700;
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color);
+  transition: background .15s, color .15s;
+}
+.md-typeset .sc-card:not([data-done]) .sc-options li:hover,
+.md-typeset .sc-card:not([data-done]) .sc-options li:focus {
+  transform: translateX(.2rem);
+  border-color: var(--md-accent-fg-color);
+}
+.md-typeset .sc-card:not([data-done]) .sc-options li:hover::before,
+.md-typeset .sc-card:not([data-done]) .sc-options li:focus::before {
+  background: var(--md-accent-fg-color);
+  color: #ffffff;
+}
+
+/* answered states */
+.md-typeset .sc-card[data-done] .sc-options li { cursor: default; }
+.md-typeset .sc-card[data-done] .sc-options li:not(.sc-right):not(.sc-wrong) { opacity: .8; }
+.md-typeset .sc-options li.sc-right {
+  background: rgba(46, 125, 50, .12);
+  border-color: #2e7d32;
+}
+.md-typeset .sc-options li.sc-right::before {
+  content: "✓";
+  background: #2e7d32;
+  color: #fff;
+}
+.md-typeset .sc-options li.sc-wrong {
+  background: rgba(198, 40, 40, .12);
+  border-color: #c62828;
+}
+.md-typeset .sc-options li.sc-wrong::before {
+  content: "✕";
+  background: #c62828;
+  color: #fff;
+}
+
+/* explanation */
+.md-typeset .sc-explain {
+  margin-top: .8rem;
+  padding: .7rem 1rem;
+  background: var(--md-default-bg-color);
+  border-left: .2rem solid var(--md-accent-fg-color);
+  border-radius: 0 .3rem .3rem 0;
+  font-size: 1rem;
+}
+.md-typeset .sc-explain::before {
+  content: "Explanation";
+  display: block;
+  margin-bottom: .2rem;
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .sc-explain > p:last-child { margin-bottom: 0; }
+
+/* navigation */
+.sc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: .8rem;
+  border-top: .05rem solid var(--md-default-fg-color--lightest);
+}
+.sc-count {
+  padding: .15rem .7rem;
+  border-radius: 1rem;
+  background: var(--md-default-bg-color);
+  font-size: .875rem;
+  font-weight: 600;
+}
+.sc-btn {
+  font: inherit;
+  font-size: .875rem;
+  padding: .35rem 1rem;
+  border: .075rem solid var(--md-accent-fg-color);
+  border-radius: 2rem;
+  background: none;
+  color: var(--md-accent-fg-color);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.sc-btn:hover:not(:disabled) {
+  background: var(--md-accent-fg-color);
+  color: #ffffff;
+}
+.sc-btn:disabled { opacity: .3; cursor: default; }
+
+/* Trainings page: tag filters and the tag on each training card. */
+.training-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.4rem 0 1.2rem;
+}
+
+.training-filters .md-tag,
+.training-card-tags .md-tag {
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  padding: 0.1rem 0.65rem;
+  border: 1px solid var(--hub-line);
+  border-radius: 2rem;
+  background: transparent;
+  color: var(--hub-text);
+  cursor: pointer;
+}
+
+.training-filters .md-tag[aria-pressed="true"] {
+  background: var(--hub-accent);
+  border-color: var(--hub-accent);
+  color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .training-filters .md-tag[aria-pressed="true"] {
+  color: #1e2129;
+}
+
+.md-typeset .training-grid.grid > ul > li.training-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.training-card-image {
+  margin: 0 0 0.8rem;
+}
+
+.training-card-image a {
+  display: block;
+}
+
+.training-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.1rem;
+}
+
+.training-card-placeholder .training-card-image {
+  margin-bottom: 0;
+}
+
+.training-card-title {
+  text-align: center;
+}
+
+.training-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+}
+
+.training-card-footer .training-card-tags {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.md-typeset .training-card-date {
+  position: relative;
+  top: 0.35rem;
+  margin: 0;
+  font-size: 0.875em;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: right;
+  color: var(--hub-text-muted);
+}
+
+.training-card-tags {
+  margin-top: auto;
+  padding-top: 0.8rem;
+}
+
+/* One training stays card-sized. auto-fit would stretch a single card across the page. */
+.md-typeset .training-grid.grid {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.md-typeset .training-card-empty {
+  border: none;
+  background: transparent;
+  padding-left: 0;
+}
+
+
+/* ------------------------------------------------------------------
+ * Accessibility: focus rings, dark-mode contrast, reduced motion
+ * ------------------------------------------------------------------ */
+
+/* Visible keyboard focus on the self-check answers and buttons */
+.md-typeset .sc-options li:focus-visible,
+.sc-btn:focus-visible,
+.training-filters .md-tag:focus-visible,
+.training-card-tags .md-tag:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+/* Dark theme: the accent is light mint, so hovered or focused items use dark text, not white. */
+[data-md-color-scheme="slate"] .md-typeset .sc-card:not([data-done]) .sc-options li:hover::before,
+[data-md-color-scheme="slate"] .md-typeset .sc-card:not([data-done]) .sc-options li:focus::before,
+[data-md-color-scheme="slate"] .sc-btn:hover:not(:disabled) {
+  color: #1e2129;
+}
+
+/* Visually hidden text for screen readers */
+.sc-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Respect the "reduce motion" setting in the visitor's system */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ------------------------------------------------------------------
+ * Wide tables: scroll sideways inside their own box on small screens
+ * (table-scroll.js adds the keyboard access and the hint line)
+ * ------------------------------------------------------------------ */
+.md-typeset__scrollwrap:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: -3px;
+}
+
+.md-typeset p.hub-scroll-hint {
+  margin: 1em 0 0;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--hub-text-muted);
+}
+
+@media screen and (max-width: 40em) {
+  /* Tighter cells and a minimum column width, so text does not wrap one word per line */
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding: 0.6em 0.7em;
+  }
+
+  .md-typeset table:not([class]) :is(th, td):not(.gnss-mark-cell) {
+    min-width: 8rem;
+  }
+}
+
+/* Quiz buttons and counter wrap instead of pushing the page wider than the screen */
+.sc-nav {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
