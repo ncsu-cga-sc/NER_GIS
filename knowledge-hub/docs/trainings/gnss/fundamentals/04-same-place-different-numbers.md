@@ -147,10 +147,10 @@ Pick the best answer for each question. If one surprises you, revisit that secti
 **Q1. What is the difference between NAD83(2011) and a global frame such as ITRF or WGS84?**
 
 <ul class="sc-options">
-  <li data-key="a">a. NAD83(2011) is less precise than global frames</li>
-  <li data-key="b">b. NAD83(2011) moves with the North American plate, so a fence post keeps nearly the same coordinates; global frames don't, so its coordinates change every year</li>
-  <li data-key="c">c. Global frames are only used outside the U.S.</li>
-  <li data-key="d">d. NAD83(2011) is fixed to the Earth as a whole; global frames move with the plate</li>
+  <li data-key="a">NAD83(2011) is less precise than global frames</li>
+  <li data-key="b">NAD83(2011) moves with the North American plate, so a fence post keeps nearly the same coordinates; global frames don't, so its coordinates change every year</li>
+  <li data-key="c">Global frames are only used outside the U.S.</li>
+  <li data-key="d">NAD83(2011) is fixed to the Earth as a whole; global frames move with the plate</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -162,10 +162,10 @@ Both are legitimate rulers. NAD83(2011) is the view from inside the train, and g
 **Q2. What does "epoch 2010.00" mean for NAD83(2011)?**
 
 <ul class="sc-options">
-  <li data-key="a">a. The year the receiver was manufactured</li>
-  <li data-key="b">b. The date your survey was collected</li>
-  <li data-key="c">c. The date (1 January 2010) the coordinates are valid for</li>
-  <li data-key="d">d. The version number of the correction software</li>
+  <li data-key="a">The year the receiver was manufactured</li>
+  <li data-key="b">The date your survey was collected</li>
+  <li data-key="c">The date (1 January 2010) the coordinates are valid for</li>
+  <li data-key="d">The version number of the correction software</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -177,10 +177,10 @@ An epoch is the timestamp on the photo. In a moving frame, coordinates only mean
 **Q3. Why can't a single fixed shift fix a frame mismatch?**
 
 <ul class="sc-options">
-  <li data-key="a">a. The gap grows each year, so a shift that is right this year is off by about 2 cm next year</li>
-  <li data-key="b">b. The gap changes with the weather</li>
-  <li data-key="c">c. Fixed shifts are not allowed in Field Maps</li>
-  <li data-key="d">d. The gap is different for every receiver model</li>
+  <li data-key="a">The gap grows each year, so a shift that is right this year is off by about 2 cm next year</li>
+  <li data-key="b">The gap changes with the weather</li>
+  <li data-key="c">Fixed shifts are not allowed in Field Maps</li>
+  <li data-key="d">The gap is different for every receiver model</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -192,10 +192,10 @@ A time-dependent transformation uses the collection date, plus a velocity model 
 **Q4. A colleague says to pick NAD83(PA11) because the project is in Pennsylvania. What should you do?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Agree, since PA stands for Pennsylvania</li>
-  <li data-key="b">b. Pick NAD83(MA11) instead, since it is closer to the Northeast</li>
-  <li data-key="c">c. Use whichever one the basemap uses</li>
-  <li data-key="d">d. Use NAD83(2011), because PA11 is the Pacific plate frame and MA11 is the Mariana plate frame</li>
+  <li data-key="a">Agree, since PA stands for Pennsylvania</li>
+  <li data-key="b">Pick NAD83(MA11) instead, since it is closer to the Northeast</li>
+  <li data-key="c">Use whichever one the basemap uses</li>
+  <li data-key="d">Use NAD83(2011), because PA11 is the Pacific plate frame and MA11 is the Mariana plate frame</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -207,10 +207,10 @@ The letters are a coincidence. Pennsylvania and Massachusetts both sit on the No
 **Q5. Network RTK agrees with a monument to 2 cm, but SBAS on the same spot is more than half a meter off. Both show a small ± on screen. What is the most likely reason?**
 
 <ul class="sc-options">
-  <li data-key="a">a. The SBAS receiver has a hardware fault</li>
-  <li data-key="b">b. The two sources are in different frames, and SBAS is in a global frame that was not transformed to NAD83(2011)</li>
-  <li data-key="c">c. There are too few satellites</li>
-  <li data-key="d">d. Multipath at the monument</li>
+  <li data-key="a">The SBAS receiver has a hardware fault</li>
+  <li data-key="b">The two sources are in different frames, and SBAS is in a global frame that was not transformed to NAD83(2011)</li>
+  <li data-key="c">There are too few satellites</li>
+  <li data-key="d">Multipath at the monument</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -222,10 +222,10 @@ The ± number can't see a frame mismatch. A constant offset of 50 cm to 1 m in t
 **Q6. How do you catch a frame mismatch before it ends up in your dataset?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Check that the ± estimate is small</li>
-  <li data-key="b">b. Check that the satellite count is high</li>
-  <li data-key="c">c. Confirm each setting agrees on NAD83(2011), then do a known-point check with each position source you use</li>
-  <li data-key="d">d. Only check when points look shifted against the basemap</li>
+  <li data-key="a">Check that the ± estimate is small</li>
+  <li data-key="b">Check that the satellite count is high</li>
+  <li data-key="c">Confirm each setting agrees on NAD83(2011), then do a known-point check with each position source you use</li>
+  <li data-key="d">Only check when points look shifted against the basemap</li>
 </ul>
 
 <div class="sc-explain" markdown>

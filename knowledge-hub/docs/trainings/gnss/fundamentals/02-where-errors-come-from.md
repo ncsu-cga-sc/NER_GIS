@@ -271,10 +271,10 @@ come easily, that's the concept to revisit:
 **Q1. Which set contains only real sources of GNSS error?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Satellite clock, orbit, ionospheric delay, WAAS, multipath</li>
-  <li data-key="b">b. Satellite clock, orbit, ionospheric delay, tropospheric delay, multipath, receiver noise, signal obstruction</li>
-  <li data-key="c">c. Base station, radio interference, DOP, multipath, receiver noise</li>
-  <li data-key="d">d. Datum mismatch, antenna height, multipath, ground control, orbit</li>
+  <li data-key="a">Satellite clock, orbit, ionospheric delay, WAAS, multipath</li>
+  <li data-key="b">Satellite clock, orbit, ionospheric delay, tropospheric delay, multipath, receiver noise, signal obstruction</li>
+  <li data-key="c">Base station, radio interference, DOP, multipath, receiver noise</li>
+  <li data-key="d">Datum mismatch, antenna height, multipath, ground control, orbit</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -286,10 +286,10 @@ WAAS is a correction system, DOP is a measure of satellite geometry, and ground 
 **Q2. What does a reference (base) station do?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Adds extra satellites to your count</li>
-  <li data-key="b">b. Uploads corrected clock and orbit data to the satellites</li>
-  <li data-key="c">c. Compares its known position to its live GNSS reading and reports the difference as error</li>
-  <li data-key="d">d. Removes multipath from your antenna</li>
+  <li data-key="a">Adds extra satellites to your count</li>
+  <li data-key="b">Uploads corrected clock and orbit data to the satellites</li>
+  <li data-key="c">Compares its known position to its live GNSS reading and reports the difference as error</li>
+  <li data-key="d">Removes multipath from your antenna</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -301,10 +301,10 @@ It knows where it really is, so whatever its live reading is off by is error. Ne
 **Q3. Why can a correction remove some errors but not others?**
 
 <ul class="sc-options">
-  <li data-key="a">a. It can only remove an error the reference station also experiences</li>
-  <li data-key="b">b. It can only remove errors smaller than 1 cm</li>
-  <li data-key="c">c. It can only remove errors that happen at night</li>
-  <li data-key="d">d. It can only remove errors the receiver has already logged</li>
+  <li data-key="a">It can only remove an error the reference station also experiences</li>
+  <li data-key="b">It can only remove errors smaller than 1 cm</li>
+  <li data-key="c">It can only remove errors that happen at night</li>
+  <li data-key="d">It can only remove errors the receiver has already logged</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -316,10 +316,10 @@ A base station cancels what it and your rover both see, and nothing else.
 **Q4. Which three errors are local, so no reference station can correct them?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Satellite clock error, orbit error, ionospheric delay</li>
-  <li data-key="b">b. Tropospheric delay, ionospheric delay, orbit error</li>
-  <li data-key="c">c. Satellite clock error, multipath, receiver noise</li>
-  <li data-key="d">d. Multipath, receiver noise, signal obstruction</li>
+  <li data-key="a">Satellite clock error, orbit error, ionospheric delay</li>
+  <li data-key="b">Tropospheric delay, ionospheric delay, orbit error</li>
+  <li data-key="c">Satellite clock error, multipath, receiver noise</li>
+  <li data-key="d">Multipath, receiver noise, signal obstruction</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -331,10 +331,10 @@ These happen only at your antenna and its surroundings. Setup mistakes (centerin
 **Q5. How does ground control differ from a reference station?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Ground control corrects your rover live; a reference station corrects the satellites</li>
-  <li data-key="b">b. Ground control improves each satellite's own signal for every receiver, getting errors down to roughly a meter; a reference station fixes what's left, live, for nearby receivers</li>
-  <li data-key="c">c. They are the same thing under different names</li>
-  <li data-key="d">d. Ground control is only used with PPK; a reference station is only used with RTK</li>
+  <li data-key="a">Ground control corrects your rover live; a reference station corrects the satellites</li>
+  <li data-key="b">Ground control improves each satellite's own signal for every receiver, getting errors down to roughly a meter; a reference station fixes what's left, live, for nearby receivers</li>
+  <li data-key="c">They are the same thing under different names</li>
+  <li data-key="d">Ground control is only used with PPK; a reference station is only used with RTK</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -346,10 +346,10 @@ They are two layers. Ground control's information rides on the normal satellite 
 **Q6. Which of these is NOT a kind of reference station?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Public / CORS station</li>
-  <li data-key="b">b. Commercial network</li>
-  <li data-key="c">c. A satellite in a GNSS constellation</li>
-  <li data-key="d">d. Your own second receiver</li>
+  <li data-key="a">Public / CORS station</li>
+  <li data-key="b">Commercial network</li>
+  <li data-key="c">A satellite in a GNSS constellation</li>
+  <li data-key="d">Your own second receiver</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -361,10 +361,10 @@ The three real types do the same job and differ in who runs them and how long th
 **Q7. Your readings jump around next to a glass building, even with a good correction service connected. What should you do?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Switch to a different correction service</li>
-  <li data-key="b">b. Move the antenna away from the reflective surface, or to more open sky</li>
-  <li data-key="c">c. Wait for ground control to send an update</li>
-  <li data-key="d">d. Re-enter the antenna height</li>
+  <li data-key="a">Switch to a different correction service</li>
+  <li data-key="b">Move the antenna away from the reflective surface, or to more open sky</li>
+  <li data-key="c">Wait for ground control to send an update</li>
+  <li data-key="d">Re-enter the antenna height</li>
 </ul>
 
 <div class="sc-explain" markdown>

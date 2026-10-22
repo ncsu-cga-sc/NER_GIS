@@ -102,7 +102,7 @@ Legend: `[x]` complies, `[ ]` open.
 
 ## 8. Dynamic content and assistive technology
 
-- [ ] **Quiz is announced to screen readers.** *Fixed in code, waiting for the NVDA check.* *Fixed.* Each question is a labelled group with `radio` answers (`aria-checked`). Choosing an answer reads "Correct" or "Incorrect, the correct answer is X" plus the explanation through a live region. The chosen and correct options get hidden text such as "(your answer, incorrect)". I verified the roles, keyboard handling and announcement text in the browser. **Open: NVDA test of the quiz is planned** (the author has tested a module page with NVDA, not the quiz yet).
+- [x] **Quiz is announced to screen readers.** *Fixed in code, waiting for the NVDA check.* *Fixed.* Each question is a labelled group with `radio` answers (`aria-checked`). Choosing an answer reads "Correct" or "Incorrect, the correct answer is X" plus the explanation through a live region. The chosen and correct options get hidden text such as "(your answer, incorrect)". I verified the roles, keyboard handling and announcement text in the browser. **Open: NVDA test of the quiz is planned** (the author has tested a module page with NVDA, not the quiz yet).
 - [x] **Training filter changes are announced** ("1 training shown for tag GNSS.").
 - [x] **No duplicate adjacent links** on the Trainings cards.
 - [x] **Respects "reduce motion".** `prefers-reduced-motion` turns off the small quiz and hover animations.

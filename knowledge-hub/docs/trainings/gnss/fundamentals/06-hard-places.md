@@ -126,10 +126,10 @@ Pick the best answer for each question. If one surprises you, revisit that secti
 **Q1. What two problems combine to make a site "hard"?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Atmospheric delay and satellite clock error</li>
-  <li data-key="b">b. A wrong datum and a wrong antenna height</li>
-  <li data-key="c">c. A long baseline and a weak cell signal</li>
-  <li data-key="d">d. Obstruction (fewer satellites, higher DOP) and multipath (a local error no correction removes)</li>
+  <li data-key="a">Atmospheric delay and satellite clock error</li>
+  <li data-key="b">A wrong datum and a wrong antenna height</li>
+  <li data-key="c">A long baseline and a weak cell signal</li>
+  <li data-key="d">Obstruction (fewer satellites, higher DOP) and multipath (a local error no correction removes)</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -141,10 +141,10 @@ Under canopy you usually get both at once. Leaves also weaken the signals that p
 **Q2. Why does logging longer at a hard site often fail to help?**
 
 <ul class="sc-options">
-  <li data-key="a">a. It averages out random noise, but multipath is a slowly changing bias that averaging leaves in</li>
-  <li data-key="b">b. Longer logging makes receiver noise worse</li>
-  <li data-key="c">c. Longer logging is not allowed under canopy</li>
-  <li data-key="d">d. Multipath changes faster than the receiver can log</li>
+  <li data-key="a">It averages out random noise, but multipath is a slowly changing bias that averaging leaves in</li>
+  <li data-key="b">Longer logging makes receiver noise worse</li>
+  <li data-key="c">Longer logging is not allowed under canopy</li>
+  <li data-key="d">Multipath changes faster than the receiver can log</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -156,10 +156,10 @@ Noise is the wobbly scale, which averages out. Multipath is the scale that reads
 **Q3. Under canopy you have a fixed solution at ±1 cm, but last week's visit to the same point differs by 50 cm. What does this tell you?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Last week's reading was wrong and today's is right</li>
-  <li data-key="b">b. The datum is set wrong</li>
-  <li data-key="c">c. Either reading could be a false fix biased by multipath, and only independent fixes that agree can settle it</li>
-  <li data-key="d">d. The receiver is broken</li>
+  <li data-key="a">Last week's reading was wrong and today's is right</li>
+  <li data-key="b">The datum is set wrong</li>
+  <li data-key="c">Either reading could be a false fix biased by multipath, and only independent fixes that agree can settle it</li>
+  <li data-key="d">The receiver is broken</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -171,10 +171,10 @@ A "fixed" solution can still be false at a hard site, with nothing on the screen
 **Q4. A point is blocked and reflective, and your link keeps dropping. Which option matches which cause?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Log longer fixes multipath, and PPK fixes obstruction</li>
-  <li data-key="b">b. Move or offset fixes obstruction and multipath at that spot, revisit later fixes poor geometry, and PPK fixes an unreliable link but not multipath</li>
-  <li data-key="c">c. Revisit later fixes a dropping link, and log longer fixes false fixes</li>
-  <li data-key="d">d. All four options fix all four causes</li>
+  <li data-key="a">Log longer fixes multipath, and PPK fixes obstruction</li>
+  <li data-key="b">Move or offset fixes obstruction and multipath at that spot, revisit later fixes poor geometry, and PPK fixes an unreliable link but not multipath</li>
+  <li data-key="c">Revisit later fixes a dropping link, and log longer fixes false fixes</li>
+  <li data-key="d">All four options fix all four causes</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -186,10 +186,10 @@ Each option attacks a different cause, so pick by cause, not by how much time yo
 **Q5. A hard point looked bad this morning. When is the best time to revisit?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Ten minutes later, at the same spot</li>
-  <li data-key="b">b. The same clock time tomorrow</li>
-  <li data-key="c">c. Never, since revisiting doesn't change anything</li>
-  <li data-key="d">d. A few hours later the same day</li>
+  <li data-key="a">Ten minutes later, at the same spot</li>
+  <li data-key="b">The same clock time tomorrow</li>
+  <li data-key="c">Never, since revisiting doesn't change anything</li>
+  <li data-key="d">A few hours later the same day</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -201,10 +201,10 @@ GPS satellites return to nearly the same sky positions about four minutes earlie
 **Q6. You've tried the options that match the cause, and independent fixes still disagree by 40 cm. What do you do?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Record the point as not achievable at this site, with the method used, the accuracy you actually achieved, and why</li>
-  <li data-key="b">b. Keep the fix with the smallest ± value</li>
-  <li data-key="c">c. Average the fixes and log it as centimeter data</li>
-  <li data-key="d">d. Delete the point</li>
+  <li data-key="a">Record the point as not achievable at this site, with the method used, the accuracy you actually achieved, and why</li>
+  <li data-key="b">Keep the fix with the smallest ± value</li>
+  <li data-key="c">Average the fixes and log it as centimeter data</li>
+  <li data-key="d">Delete the point</li>
 </ul>
 
 <div class="sc-explain" markdown>

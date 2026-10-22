@@ -1,6 +1,6 @@
 /*
  * Self-check quizzes.
- * Accessibility: each question is a labelled radio group, answers can be chosen with the
+ * Accessibility: each answer list is one labelled radio group, answers can be chosen with the
  * keyboard (arrow keys move, Enter or Space picks), and the result and explanation are
  * announced to screen readers through a live region. Correct and wrong answers also show
  * text for screen readers, not only a color and a check or cross.
@@ -35,11 +35,9 @@ document$.subscribe(function () {
         const explain = card.querySelector(".sc-explain");
         if (explain) explain.hidden = true;
 
-        // Tie the question to its answers
+        // One group only. A group on the card and another on the answers made NVDA say "grouping" twice.
         const qid = "sc-q-" + boxIndex + "-" + cardIndex;
         if (question) question.id = qid;
-        card.setAttribute("role", "group");
-        if (question) card.setAttribute("aria-labelledby", qid);
         if (list) {
           list.setAttribute("role", "radiogroup");
           if (question) list.setAttribute("aria-labelledby", qid);

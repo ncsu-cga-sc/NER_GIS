@@ -43,9 +43,9 @@ the horizon, so they add nothing to your count, even if your receiver
 lists them in its settings.
 
 ![Orbit paths of six satellite systems around Earth. A large panel on the left shows all of them together; smaller panels show each alone: GPS (United States), BeiDou (China), NavIC (India), Galileo (European Union), GLONASS (Russia), and QZSS (Japan). Image by NASA.](img/fig-1-1-gnss-constellations.jpg){ .hub-zoom }
-*Global Navigation Satellite System (GNSS) satellites, color-coded by operating country: United States (cyan), European Union (blue), China (red), Russia (yellow), India (green), and Japan (white). Composite view designed for ultrawide displays, including the NASA Earth Information Center (EIC). This version includes labels. See [video](https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005627/gnss_EIC_comp_labels_3840x1080_60fps_60mbps_h265_01.mp4)*.</br>
+*Global Navigation Satellite System (GNSS) satellites, color-coded by operating country: United States (cyan), European Union (blue), China (red), Russia (yellow), India (green), and Japan (white). Composite view designed for ultrawide displays, including the NASA Earth Information Center (EIC). This version includes labels.*
 
-*Source: NASA Scientific Visualization Studio: https://svs.gsfc.nasa.gov/5627/*
+*Source: [NASA Scientific Visualization Studio](https://svs.gsfc.nasa.gov/5627/). That page has a silent animation of the GNSS constellation orbits shown here, including the regional systems QZSS and NavIC.*
 
 !!! tip
     Confirm multi-constellation tracking is turned on in your receiver settings. Don't leave it limited to GPS-only.
@@ -53,7 +53,7 @@ lists them in its settings.
 ## 1.2 SBAS: Corrections, Not Extra Satellites
 
 You'll also see **SBAS** (Satellite-Based Augmentation System) on your
-device. WAAS is the version used in North America. SBAS is not another
+device. **WAAS** (Wide Area Augmentation System) is the version used in North America. SBAS is not another
 constellation, and it adds no satellites to your count. It is a
 correction layer built on top of GPS: ground stations measure GPS
 errors and send corrections up to geostationary satellites, which
@@ -87,7 +87,7 @@ circle, crossing the first at two points; a third distance passes
 through only one of those two points — leaving a single answer.
 
 ![How a receiver finds a position: time the signal, convert it to a distance, combine distances from several satellites](img/fig-1-2-trilateration-steps.svg){ .hub-zoom }
-*The three steps of trilateration: (1) the receiver times each satellite's signal, (2) it converts that time into a distance, and (3) it combines the distances. A third satellite's circle passes through only one of the two points where the first two circles cross.*
+*The figure has three steps. (1) The satellite sends a timed signal. Travel time is about 0.07 seconds. (2) Distance equals the speed of light times that travel time: 300,000 km/s × 0.07 s is about 21,000 km. Each satellite gives one distance. (3) Each distance is the radius of a circle around that satellite. Two circles cross at two points. The third circle passes through only one of them. That point is your position. The drawing is flat. A real fix uses spheres in 3D, and a 4th satellite to solve the receiver's clock error.*
 
 **Why trilateration needs 4 satellites, not 3.**
 <div style="float: right; margin-left: 15px; text-align: center; width: 200px;" markdown="block">
@@ -285,10 +285,10 @@ choose. If one is a miss, that's the concept to revisit.
 **Q1. Which four are global constellations?**
 
 <ul class="sc-options">
-  <li data-key="a">a. GPS, GLONASS, Galileo, BeiDou</li>
-  <li data-key="b">b. GPS, QZSS, NavIC, Galileo</li>
-  <li data-key="c">c. GPS, GLONASS, WAAS, BeiDou</li>
-  <li data-key="d">d. QZSS, NavIC, WAAS, GLONASS</li>
+  <li data-key="a">GPS, GLONASS, Galileo, BeiDou</li>
+  <li data-key="b">GPS, QZSS, NavIC, Galileo</li>
+  <li data-key="c">GPS, GLONASS, WAAS, BeiDou</li>
+  <li data-key="d">QZSS, NavIC, WAAS, GLONASS</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -300,10 +300,10 @@ WAAS is a correction system, and QZSS and NavIC are regional.
 **Q2. What does WAAS do?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Adds satellites to your count</li>
-  <li data-key="b">b. Replaces GPS in North America</li>
-  <li data-key="c">c. Corrects GPS errors, giving about 1–3 m accuracy</li>
-  <li data-key="d">d. Gives 1–3 cm accuracy on its own</li>
+  <li data-key="a">Adds satellites to your count</li>
+  <li data-key="b">Replaces GPS in North America</li>
+  <li data-key="c">Corrects GPS errors, giving about 1–3 m accuracy</li>
+  <li data-key="d">Gives 1–3 cm accuracy on its own</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -315,10 +315,10 @@ WAAS is a correction layer on GPS. It adds no satellites.
 **Q3. What is the minimum number of satellites for a position fix, and why?**
 
 <ul class="sc-options">
-  <li data-key="a">a. 3, because three circles cross at one point</li>
-  <li data-key="b">b. 4, because the 4th solves the receiver's clock error</li>
-  <li data-key="c">c. 4, because the 4th is a dedicated time satellite</li>
-  <li data-key="d">d. 5, so the receiver can cross-check</li>
+  <li data-key="a">3, because three circles cross at one point</li>
+  <li data-key="b">4, because the 4th solves the receiver's clock error</li>
+  <li data-key="c">4, because the 4th is a dedicated time satellite</li>
+  <li data-key="d">5, so the receiver can cross-check</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -330,10 +330,10 @@ Solving X, Y, Z plus clock error takes 4 satellites.
 **Q4. Which statement about DOP is correct?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Higher DOP means better geometry</li>
-  <li data-key="b">b. DOP counts the satellites you track</li>
-  <li data-key="c">c. DOP measures signal strength</li>
-  <li data-key="d">d. Lower DOP means better geometry</li>
+  <li data-key="a">Higher DOP means better geometry</li>
+  <li data-key="b">DOP counts the satellites you track</li>
+  <li data-key="c">DOP measures signal strength</li>
+  <li data-key="d">Lower DOP means better geometry</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -345,9 +345,9 @@ DOP (Dilution of Precision) rates geometry; lower is better.
 **Q5. Your PDOP reads 4. What is the rating color?**
 
 <ul class="sc-options">
-  <li data-key="a">a. 🟢 Green</li>
-  <li data-key="b">b. 🟡 Yellow</li>
-  <li data-key="c">c. 🔴 Red</li>
+  <li data-key="a">🟢 Green</li>
+  <li data-key="b">🟡 Yellow</li>
+  <li data-key="c">🔴 Red</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -359,10 +359,10 @@ DOP (Dilution of Precision) rates geometry; lower is better.
 **Q6. Which DOP covers full 3D position, and which covers horizontal position only?**
 
 <ul class="sc-options">
-  <li data-key="a">a. HDOP for 3D, PDOP for horizontal</li>
-  <li data-key="b">b. PDOP for 3D, HDOP for horizontal</li>
-  <li data-key="c">c. GDOP for 3D, VDOP for horizontal</li>
-  <li data-key="d">d. VDOP for 3D, PDOP for horizontal</li>
+  <li data-key="a">HDOP for 3D, PDOP for horizontal</li>
+  <li data-key="b">PDOP for 3D, HDOP for horizontal</li>
+  <li data-key="c">GDOP for 3D, VDOP for horizontal</li>
+  <li data-key="d">VDOP for 3D, PDOP for horizontal</li>
 </ul>
 
 <div class="sc-explain" markdown>

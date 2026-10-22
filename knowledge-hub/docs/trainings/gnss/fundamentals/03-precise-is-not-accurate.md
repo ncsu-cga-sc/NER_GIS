@@ -147,10 +147,10 @@ Pick the best answer for each question. If one surprises you, revisit that secti
 **Q1. Five repeated readings land within 1 cm of each other, but all sit 1.5 m from the true position. The receiver is:**
 
 <ul class="sc-options">
-  <li data-key="a">a. Accurate but not precise</li>
-  <li data-key="b">b. Neither accurate nor precise</li>
-  <li data-key="c">c. Precise but not accurate</li>
-  <li data-key="d">d. Both accurate and precise</li>
+  <li data-key="a">Accurate but not precise</li>
+  <li data-key="b">Neither accurate nor precise</li>
+  <li data-key="c">Precise but not accurate</li>
+  <li data-key="d">Both accurate and precise</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -162,10 +162,10 @@ Precision is consistency between measurements; accuracy is closeness to the trut
 **Q2. What do DOP and the ±cm estimate on your controller tell you?**
 
 <ul class="sc-options">
-  <li data-key="a">a. How close your position is to the true position</li>
-  <li data-key="b">b. How consistent the solution is, not whether it is correct</li>
-  <li data-key="c">c. Whether your datum and antenna height are right</li>
-  <li data-key="d">d. Whether your base coordinates were entered correctly</li>
+  <li data-key="a">How close your position is to the true position</li>
+  <li data-key="b">How consistent the solution is, not whether it is correct</li>
+  <li data-key="c">Whether your datum and antenna height are right</li>
+  <li data-key="d">Whether your base coordinates were entered correctly</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -177,10 +177,10 @@ Both numbers come from the receiver's own math and are never checked against any
 **Q3. Which of these can produce a stable, confident-looking, but wrong position?**
 
 <ul class="sc-options">
-  <li data-key="a">a. A base coordinate mismatch only</li>
-  <li data-key="b">b. An antenna height error only</li>
-  <li data-key="c">c. An ellipsoid/orthometric height mix-up only</li>
-  <li data-key="d">d. Any of the three</li>
+  <li data-key="a">A base coordinate mismatch only</li>
+  <li data-key="b">An antenna height error only</li>
+  <li data-key="c">An ellipsoid/orthometric height mix-up only</li>
+  <li data-key="d">Any of the three</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -192,10 +192,10 @@ All three are setup errors: mistakes in what you told the receiver, not in what 
 **Q4. Every point you log is shifted about 1.5 m in roughly the same direction horizontally, and heights match. What does the pattern suggest first?**
 
 <ul class="sc-options">
-  <li data-key="a">a. A base coordinate or datum mismatch</li>
-  <li data-key="b">b. An antenna height entry error</li>
-  <li data-key="c">c. Multipath at each site</li>
-  <li data-key="d">d. An ellipsoid/orthometric height mix-up</li>
+  <li data-key="a">A base coordinate or datum mismatch</li>
+  <li data-key="b">An antenna height entry error</li>
+  <li data-key="c">Multipath at each site</li>
+  <li data-key="d">An ellipsoid/orthometric height mix-up</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -207,10 +207,10 @@ A constant horizontal offset points to the setup. A vertical-only offset points 
 **Q5. Why is the known-point check the only real check on your setup?**
 
 <ul class="sc-options">
-  <li data-key="a">a. It gives the receiver more satellites to work with</li>
-  <li data-key="b">b. It is the one step that compares your reading to a position from outside the receiver</li>
-  <li data-key="c">c. It lowers your DOP</li>
-  <li data-key="d">d. It only needs to be done if a reading looks suspicious</li>
+  <li data-key="a">It gives the receiver more satellites to work with</li>
+  <li data-key="b">It is the one step that compares your reading to a position from outside the receiver</li>
+  <li data-key="c">It lowers your DOP</li>
+  <li data-key="d">It only needs to be done if a reading looks suspicious</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -222,10 +222,10 @@ Everything else on the screen is the receiver grading its own homework. Do the c
 **Q6. No published monument is near your site. What can you do?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Skip the check, since the ±cm estimate is good enough</li>
-  <li data-key="b">b. Use the receiver's average of a few minutes of readings as the known position</li>
-  <li data-key="c">c. Log several hours of static data at a stable, open-sky point and submit it to OPUS for a reusable known point</li>
-  <li data-key="d">d. Enter the coordinates from a map app as the known position</li>
+  <li data-key="a">Skip the check, since the ±cm estimate is good enough</li>
+  <li data-key="b">Use the receiver's average of a few minutes of readings as the known position</li>
+  <li data-key="c">Log several hours of static data at a stable, open-sky point and submit it to OPUS for a reusable known point</li>
+  <li data-key="d">Enter the coordinates from a map app as the known position</li>
 </ul>
 
 <div class="sc-explain" markdown>

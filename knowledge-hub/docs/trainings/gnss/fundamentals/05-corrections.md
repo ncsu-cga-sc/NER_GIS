@@ -264,10 +264,10 @@ Pick the best answer for each question. If one surprises you, revisit that secti
 **Q1. What two things must happen together to reach centimeter accuracy?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Track more constellations and lower your DOP</li>
-  <li data-key="b">b. Use a longer antenna pole and a faster radio link</li>
-  <li data-key="c">c. Remove the shared error, and measure distance with the wave's phase instead of just its arrival time</li>
-  <li data-key="d">d. Remove multipath, and remove receiver noise</li>
+  <li data-key="a">Track more constellations and lower your DOP</li>
+  <li data-key="b">Use a longer antenna pole and a faster radio link</li>
+  <li data-key="c">Remove the shared error, and measure distance with the wave's phase instead of just its arrival time</li>
+  <li data-key="d">Remove multipath, and remove receiver noise</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -279,10 +279,10 @@ RTK, PPK, and PPP do both. DGNSS only removes the shared error, so its timing-ba
 **Q2. Which pairing correctly states what each method trades for accuracy?**
 
 <ul class="sc-options">
-  <li data-key="a">a. RTK trades time, PPP trades infrastructure, PPK trades office effort</li>
-  <li data-key="b">b. RTK trades infrastructure, PPP trades time, PPK trades office effort</li>
-  <li data-key="c">c. RTK trades office effort, PPP trades infrastructure, PPK trades time</li>
-  <li data-key="d">d. All three trade only time</li>
+  <li data-key="a">RTK trades time, PPP trades infrastructure, PPK trades office effort</li>
+  <li data-key="b">RTK trades infrastructure, PPP trades time, PPK trades office effort</li>
+  <li data-key="c">RTK trades office effort, PPP trades infrastructure, PPK trades time</li>
+  <li data-key="d">All three trade only time</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -294,10 +294,10 @@ RTK needs a live link and a base or network, PPP needs convergence time at each 
 **Q3. A team plans a few minutes of PPP per point on a job that requires 1–3 cm. What is the problem?**
 
 <ul class="sc-options">
-  <li data-key="a">a. PPP cannot be used in the Northeast</li>
-  <li data-key="b">b. PPP measures distance less precisely than RTK</li>
-  <li data-key="c">c. Nothing, since PPP is always centimeter-grade</li>
-  <li data-key="d">d. A short session may only reach about 15–20 cm or worse, so the data shouldn't be logged as centimeter data</li>
+  <li data-key="a">PPP cannot be used in the Northeast</li>
+  <li data-key="b">PPP measures distance less precisely than RTK</li>
+  <li data-key="c">Nothing, since PPP is always centimeter-grade</li>
+  <li data-key="d">A short session may only reach about 15–20 cm or worse, so the data shouldn't be logged as centimeter data</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -309,10 +309,10 @@ PPP uses the same fine ruler as RTK, but without a nearby base it has to work ou
 **Q4. Which methods have a float vs. fixed state?**
 
 <ul class="sc-options">
-  <li data-key="a">a. RTK and PPK, because both count whole wavelengths</li>
-  <li data-key="b">b. PPP and DGNSS</li>
-  <li data-key="c">c. RTK and DGNSS</li>
-  <li data-key="d">d. All four methods</li>
+  <li data-key="a">RTK and PPK, because both count whole wavelengths</li>
+  <li data-key="b">PPP and DGNSS</li>
+  <li data-key="c">RTK and DGNSS</li>
+  <li data-key="d">All four methods</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -324,10 +324,10 @@ PPP converges gradually instead of switching from float to fixed, and DGNSS neve
 **Q5. You ran RTK on a moving platform and now doubt part of the data. When can it be reprocessed as PPK?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Always, since RTK and PPK are the same</li>
-  <li data-key="b">b. Never, since RTK discards the raw data</li>
-  <li data-key="c">c. Only if raw logging was on the whole time, and a base or CORS log covers the same window</li>
-  <li data-key="d">d. Only if the fix was fixed throughout</li>
+  <li data-key="a">Always, since RTK and PPK are the same</li>
+  <li data-key="b">Never, since RTK discards the raw data</li>
+  <li data-key="c">Only if raw logging was on the whole time, and a base or CORS log covers the same window</li>
+  <li data-key="d">Only if the fix was fixed throughout</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -339,10 +339,10 @@ RTK and PPK use the same raw measurements, but a gap can't be recovered. Not eve
 **Q6. Which of these is planning that applies no matter which method you use?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Checking correction age on the controller</li>
-  <li data-key="b">b. Matching the season to the site, choosing open sky, confirming the accuracy target, locating a known point, checking storage and battery, and backing up raw logs</li>
-  <li data-key="c">c. Matching your logging interval to the CORS source</li>
-  <li data-key="d">d. Checking mobile signal at the site</li>
+  <li data-key="a">Checking correction age on the controller</li>
+  <li data-key="b">Matching the season to the site, choosing open sky, confirming the accuracy target, locating a known point, checking storage and battery, and backing up raw logs</li>
+  <li data-key="c">Matching your logging interval to the CORS source</li>
+  <li data-key="d">Checking mobile signal at the site</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -354,10 +354,10 @@ Correction age and mobile signal are RTK-specific, and logging interval is PPK-s
 **Q7. Before an RTK day at a site with weak cell coverage and a network mountpoint 35 km away, what should you decide in advance?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Nothing, since RTK will adapt once you arrive</li>
-  <li data-key="b">b. Switch to DGNSS, since it needs no link</li>
-  <li data-key="c">c. Use post-processed PPP, since it is always the best fallback</li>
-  <li data-key="d">d. A fallback: PPK by default if a base or CORS log is available, and post-processed PPP only if there is no base access at all</li>
+  <li data-key="a">Nothing, since RTK will adapt once you arrive</li>
+  <li data-key="b">Switch to DGNSS, since it needs no link</li>
+  <li data-key="c">Use post-processed PPP, since it is always the best fallback</li>
+  <li data-key="d">A fallback: PPK by default if a base or CORS log is available, and post-processed PPP only if there is no base access at all</li>
 </ul>
 
 <div class="sc-explain" markdown>
@@ -369,10 +369,10 @@ A long baseline and a weak link both push a site toward the fallback. PPK reache
 **Q8. Which set covers PPK-specific planning?**
 
 <ul class="sc-options">
-  <li data-key="a">a. Confirm base/CORS coverage and status, confirm raw logging support, match the logging interval, plan overlap with the base window, and know who processes the data</li>
-  <li data-key="b">b. Confirm the NTRIP account, cell signal, and correction age</li>
-  <li data-key="c">c. Confirm the datum, antenna height, and known point</li>
-  <li data-key="d">d. Confirm DOP, satellite count, and sky plot</li>
+  <li data-key="a">Confirm base/CORS coverage and status, confirm raw logging support, match the logging interval, plan overlap with the base window, and know who processes the data</li>
+  <li data-key="b">Confirm the NTRIP account, cell signal, and correction age</li>
+  <li data-key="c">Confirm the datum, antenna height, and known point</li>
+  <li data-key="d">Confirm DOP, satellite count, and sky plot</li>
 </ul>
 
 <div class="sc-explain" markdown>
