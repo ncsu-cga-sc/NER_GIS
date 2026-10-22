@@ -42,7 +42,7 @@ they serve only their own area (Asia-Oceania for QZSS; India and about
 the horizon, so they add nothing to your count, even if your receiver
 lists them in its settings.
 
-![GNSS Constellations by NASA](img/fig-1-1-gnss-constellations.jpg)
+![Orbit paths of six satellite systems around Earth. A large panel on the left shows all of them together; smaller panels show each alone: GPS (United States), BeiDou (China), NavIC (India), Galileo (European Union), GLONASS (Russia), and QZSS (Japan). Image by NASA.](img/fig-1-1-gnss-constellations.jpg){ .hub-zoom }
 *Global Navigation Satellite System (GNSS) satellites, color-coded by operating country: United States (cyan), European Union (blue), China (red), Russia (yellow), India (green), and Japan (white). Composite view designed for ultrawide displays, including the NASA Earth Information Center (EIC). This version includes labels. See [video](https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005627/gnss_EIC_comp_labels_3840x1080_60fps_60mbps_h265_01.mp4)*.</br>
 
 *Source: NASA Scientific Visualization Studio: https://svs.gsfc.nasa.gov/5627/*
@@ -61,7 +61,7 @@ broadcast them back down on the same kind of signal your receiver
 already listens for. The corrections are free, work automatically on
 most receivers, and only apply while your receiver is tracking GPS.
 
-| | **GPS (standalone)** | **GPS + WAAS** |
+| **Feature** | **GPS (standalone)** | **GPS + WAAS** |
 |---|---|---|
 | **What it is** | Satellite constellation that provides your position | Correction layer added on top of GPS |
 | **Average accuracy** | ~2-10 m | ~1-3 m |
@@ -86,7 +86,7 @@ draws a circle around a satellite; a second distance draws another
 circle, crossing the first at two points; a third distance passes
 through only one of those two points — leaving a single answer.
 
-![How a receiver finds a position: time the signal, convert it to a distance, combine distances from several satellites](img/fig-1-2-trilateration-steps.svg)
+![How a receiver finds a position: time the signal, convert it to a distance, combine distances from several satellites](img/fig-1-2-trilateration-steps.svg){ .hub-zoom }
 *The three steps of trilateration: (1) the receiver times each satellite's signal, (2) it converts that time into a distance, and (3) it combines the distances. A third satellite's circle passes through only one of the two points where the first two circles cross.*
 
 **Why trilateration needs 4 satellites, not 3.**
@@ -108,8 +108,10 @@ drop a degraded signal.</br>
 <br style="clear: both;">-->
 
 <figure class="hub-video">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/urLfpVSaBIs?cc_load_policy=1&amp;cc_lang_pref=en&amp;hl=en" title="How GPS calculates your position: trilateration explained" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<figcaption>How GPS calculates your position, by Geospatial Solution. English captions play with the video.</figcaption>
+<video id="video-trilateration" data-able-player data-youtube-id="urLfpVSaBIs" data-youtube-nocookie="true" data-lang="en" data-include-transcript="false" preload="auto" playsinline title="How GPS calculates your position: trilateration explained">
+<track kind="captions" src="../media/captions/01-trilateration.en.vtt" srclang="en" label="English" default>
+</video>
+<figcaption>How GPS calculates your position, by Geospatial Solution. English captions are available; a full transcript follows.</figcaption>
 </figure>
 
 ??? note "Transcript: How GPS calculates your position"
@@ -145,7 +147,7 @@ around a lot.
 <div class="hub-fig-pair" markdown="1">
 <div markdown="1">
 
-![Satellites bunched in a narrow gap above a receiver under forest canopy](img/fig-1-4-dop-poor-forested.png){ .hub-img }
+![Satellites bunched in a narrow gap above a receiver under forest canopy](img/fig-1-4-dop-poor-forested.png){ .hub-img .hub-zoom }
 
 Poor DOP: The satellites are bunched in one narrow gap, so a small error swings the position a long way.
 { .figure-caption }
@@ -153,7 +155,7 @@ Poor DOP: The satellites are bunched in one narrow gap, so a small error swings 
 </div>
 <div markdown="1">
 
-![Satellites spread across the open sky above a receiver](img/fig-1-5-dop-good-open.png){ .hub-img }
+![Satellites spread across the open sky above a receiver](img/fig-1-5-dop-good-open.png){ .hub-img .hub-zoom }
 
 Good DOP: The satellites are spread across the sky, so the same error barely moves the position.
 { .figure-caption }
@@ -236,8 +238,10 @@ covers what to actually do about it — move, wait, or switch methods.
 This module is only about recognizing good geometry from bad; the fix
 comes later.
 <figure class="hub-video">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CwDIiPXLTs4?cc_load_policy=1&amp;cc_lang_pref=en&amp;hl=en" title="Dilution of precision: why satellite geometry changes accuracy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<figcaption>Dilution of precision, by GIS Resources. English captions play with the video.</figcaption>
+<video id="video-dop" data-able-player data-youtube-id="CwDIiPXLTs4" data-youtube-nocookie="true" data-lang="en" data-include-transcript="false" preload="auto" playsinline title="Dilution of precision: why satellite geometry changes accuracy">
+<track kind="captions" src="../media/captions/01-dilution-of-precision.en.vtt" srclang="en" label="English" default>
+</video>
+<figcaption>Dilution of precision, by GIS Resources. English captions are available; a full transcript follows.</figcaption>
 </figure>
 
 ??? note "Transcript: Dilution of precision"

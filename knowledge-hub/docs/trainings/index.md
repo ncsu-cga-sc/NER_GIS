@@ -17,7 +17,7 @@ Choose a tag to show trainings in that category, then open the one you want.
 <ul id="training-cards">
 
 <li class="training-card" data-tags="GNSS">
-<p class="training-card-image"><a href="gnss/fundamentals/"><img src="img/gnss-training-card.jpeg" alt="GNSS Fundamentals for Accurate Data Collection"></a></p>
+<p class="training-card-image"><a href="gnss/fundamentals/" tabindex="-1" aria-hidden="true"><img src="img/gnss-training-card.jpeg" alt=""></a></p>
 <p class="training-card-title"><strong><a href="gnss/fundamentals/">GNSS Fundamentals for Accurate Data Collection</a></strong></p>
 <hr>
 <p>Core concepts, error sources, and a repeatable field workflow.</p>

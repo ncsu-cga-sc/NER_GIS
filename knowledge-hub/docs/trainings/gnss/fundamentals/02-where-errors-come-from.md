@@ -15,11 +15,11 @@ on the signal's way down from space, three happen around your antenna,
 and three are setup mistakes. Each table says where the error comes
 from and what you can do about it.
 
-#### Errors on the way down (items 1–4)
+### Errors on the way down (items 1–4)
 
 The signal travels about 20,000 km from satellite to receiver. Four things go wrong along the way.
 
-![Satellite clock error, orbit error, ionospheric delay, and tropospheric delay](img/fig-2-1-1-gnss-errors-satellite-atmosphere.jpeg){ .hub-img width="70%" }
+![A GNSS receiver on a tripod with a satellite overhead. Labels mark four errors: the satellite's orbit is slightly off (orbit error), its onboard clock is off (satellite clock error), and the signal is slowed passing through the ionosphere and then the lower troposphere on its way down (ionospheric delay, tropospheric delay).](img/fig-2-1-1-gnss-errors-satellite-atmosphere.jpeg){ .hub-img .hub-zoom width="70%" }
 
 Figure 2.1.1: Satellite and atmosphere errors
 { .figure-caption }
@@ -29,7 +29,7 @@ Figure 2.1.1: Satellite and atmosphere errors
 <table>
   <thead>
     <tr>
-      <th></th>
+      <th scope="col" class="gnss-mark-cell">#</th>
       <th>Error</th>
       <th>Where it comes from</th>
       <th>What you can do</th>
@@ -73,11 +73,11 @@ Figure 2.1.1: Satellite and atmosphere errors
 
 Left alone, these can add several meters of error.
 
-#### Errors around your antenna (items 5–7)
+### Errors around your antenna (items 5–7)
 
 Even a clean signal can be disturbed in its last few meters.
 
-![Errors around the receiver](img/fig-2-1-2-gnss-errors-multipath-obstruction.jpeg){ .hub-img width="70%" }
+![A receiver on a tripod between a tree and a glass building. A tree blocks the signal from one satellite (signal obstruction). A second satellite's signal bounces off the building before reaching the antenna (multipath). The receiver itself adds small random errors (receiver noise).](img/fig-2-1-2-gnss-errors-multipath-obstruction.jpeg){ .hub-img .hub-zoom width="70%" }
 
 Figure 2.1.2: Errors around the receiver
 { .figure-caption }
@@ -87,7 +87,7 @@ Figure 2.1.2: Errors around the receiver
 <table>
   <thead>
     <tr>
-      <th></th>
+      <th scope="col" class="gnss-mark-cell">#</th>
       <th>Error</th>
       <th>Where it comes from</th>
       <th>What you can do</th>
@@ -120,11 +120,11 @@ Figure 2.1.2: Errors around the receiver
 No correction can remove these. They happen at your antenna, so the fix
 is where and how you set up.
 
-#### Setup mistakes (items 8–10)
+### Setup mistakes (items 8–10)
 
 Good satellites and good corrections cannot rescue a setup mistake.
 
-![User setup errors](img/fig-2-1-3-gnss-errors-user-setup.jpeg){ .hub-img width="70%" }
+![A receiver on a tripod with three setup mistakes marked. The tripod is not centered over the ground point (centering error), the receiver is not level (leveling error), and the measured antenna height is wrong (antenna height error).](img/fig-2-1-3-gnss-errors-user-setup.jpeg){ .hub-img .hub-zoom width="70%" }
 
 Figure 2.1.3: User setup errors
 { .figure-caption }
@@ -134,7 +134,7 @@ Figure 2.1.3: User setup errors
 <table>
   <thead>
     <tr>
-      <th></th>
+      <th scope="col" class="gnss-mark-cell">#</th>
       <th>Error</th>
       <th>Where it comes from</th>
       <th>What you can do</th>
@@ -195,7 +195,7 @@ reference station, covered next.
   Earth, and gets satellite errors down to roughly a meter.
 - **Reference station:** fixes what is left, live, for receivers near it.
 
-The correction methods in Module 4 work on top of this first layer.
+The correction methods in Module 5 work on top of this first layer.
 
 ## 2.3 What a Reference Station Does
 
@@ -222,17 +222,17 @@ Reference Station**: a permanent station that runs around the clock, so
 you don't have to set up your own. It usually means the free networks
 run by government and universities, such as NGS's national network and
 many state DOT networks. This is where your organization mostly gets the
-base data used for PPK (Module 6).
+base data used for PPK (Module 7).
 
 **Commercial network.** A paid subscription, such as Leica SmartNet or
 Trimble VRS. These are usually denser than the public network in
 populated areas. Many create a "virtual" base station near wherever you
-are standing, instead of using one fixed physical station. Module 4
+are standing, instead of using one fixed physical station. Module 5
 calls this **Network RTK**.
 
 **Your own second receiver.** You set up a second receiver yourself on a
 known point (or survey one in) and use it as a temporary base for that
-session. When you pack up, it is gone. Module 4 covers setup, including
+session. When you pack up, it is gone. Module 5 covers setup, including
 the radio link between the two receivers.
 
 ## 2.5 Which Errors a Correction Can Fix
@@ -254,11 +254,11 @@ at one antenna._
 
 This is why every correction method (DGNSS, RTK, PPP, PPK) has the same
 limit: none of them can fix local errors. **What to do in difficult
-multipath or obstructed places is covered in Module 5 (Hard Places).**
+multipath or obstructed places is covered in Module 6 (Hard Places).**
 
-| **WHY IT MATTERS** |     |
-| ------------------ | --- |
-| When a reading looks bad, ask one question: is the cause shared or local?<br><br>**Shared:** check your correction source. Is it connected, close enough, and working?<br><br>**Local:** no correction will help. Fix it at your antenna: move to open sky, step away from reflective surfaces, re-level, re-center, or re-measure the height. | |
+| **WHY IT MATTERS** |
+|---|
+| When a reading looks bad, ask one question: is the cause shared or local?<br><br>**Shared:** check your correction source. Is it connected, close enough, and working?<br><br>**Local:** no correction will help. Fix it at your antenna: move to open sky, step away from reflective surfaces, re-level, re-center, or re-measure the height. |
 
 ### Self-Check
 

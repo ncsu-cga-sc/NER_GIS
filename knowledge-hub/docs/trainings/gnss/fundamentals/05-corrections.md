@@ -1,10 +1,10 @@
-# Module 4: Corrections — What Each Method Buys, Costs, and Breaks
+# Module 5: Corrections — What Each Method Buys, Costs, and Breaks
 
 *Read time: 12–14 minutes*
 
 **By the end of this module, you can:** explain why RTK (Real-Time Kinematic), PPK (Post-Processed Kinematic), and PPP (Precise Point Positioning) reach centimeter accuracy at all, choose the right method for a given project, log data the right way for each, tell float from fixed, and plan a field day so RTK problems are avoided rather than fixed on the fly.
 
-## 4.1 What It Takes to Reach Centimeter Accuracy
+## 5.1 What It Takes to Reach Centimeter Accuracy
 
 Getting from raw GNSS (2–10 m) down to centimeters means correction methods have to solve two problems — plus live with a third one they can't touch at all.
 
@@ -20,7 +20,7 @@ RTK, PPK, and PPP all measure something much finer: the shape of the radio wave 
 
 Multipath (the signal bouncing off a nearby surface) and receiver noise (small electronic jitter in the hardware) happen at your own antenna, at your own spot, at the moment you're standing there. No base station or global correction service — however close, however good — ever experiences what's happening right at your antenna, so no correction message can subtract it out.
 
-This is the one factor that's on *you*, not the method: open sky, antenna placement away from reflective surfaces, a stable mount. It holds no matter how close or well-placed your base is — a nearby base cancels the shared error faster (4.4), but it has no effect on local error at all.
+This is the one factor that's on *you*, not the method: open sky, antenna placement away from reflective surfaces, a stable mount. It holds no matter how close or well-placed your base is — a nearby base cancels the shared error faster (5.4), but it has no effect on local error at all.
 
 Put the pieces together — subtract out the shared error, measure what's left with the fine ruler, and keep local error small yourself with good field practice — and RTK, PPK, and PPP all reach centimeters. That's the ceiling all three are built to reach; local error is the floor they're built on top of.
 
@@ -28,28 +28,28 @@ Put the pieces together — subtract out the shared error, measure what's left w
 
 RTK and PPK have a base station standing nearby, so the shared error cancels out almost instantly. PPP has no base at all — it has to work that same shared error out for itself, from a global orbit/clock model, without anything nearby to compare against.
 
-That's a slower way to solve problem one, which is why PPP needs minutes to hours instead of seconds, and why its real-world accuracy depends so heavily on how long you sit at the point (4.2.2). The ceiling is identical; reaching it just takes longer.
+That's a slower way to solve problem one, which is why PPP needs minutes to hours instead of seconds, and why its real-world accuracy depends so heavily on how long you sit at the point (5.2.2). The ceiling is identical; reaching it just takes longer.
 
 DGNSS never switches to the fine ruler — it only ever does the timing-based measurement from problem two.
 
 So even with the shared error perfectly removed and local error kept small, its distance measurement itself is only good to about a meter. No amount of correction fixes that; it's a limit built into how DGNSS measures distance in the first place.
 
-## 4.2 Correction Methods
+## 5.2 Correction Methods
 
-Four methods add a correction layer on top of raw GNSS, and each solves the two problems from 4.1 differently — DGNSS only ever solves problem one; RTK, PPK, and PPP solve both, which is what unlocks centimeters. Here's how they compare before we go through each in turn:
+Four methods add a correction layer on top of raw GNSS, and each solves the two problems from 5.1 differently — DGNSS only ever solves problem one; RTK, PPK, and PPP solve both, which is what unlocks centimeters. Here's how they compare before we go through each in turn:
 
 | **Method** | **What it needs** | **Live or post?** | **Accuracy** | **What fails first** |
 | --- | --- | --- | --- | --- |
 | DGNSS | A nearby beacon or SBAS signal | Live | ~1–3 m | Range from the beacon (radio) — SBAS itself rarely fails |
-| PPP | Global precise orbit/clock products, or Galileo HAS, or none | Live (after convergence) or post | ~2 cm–2 m, depending on service and session length (see 4.2.2) | Convergence time — cut a session short and accuracy drops with it |
+| PPP | Global precise orbit/clock products, or Galileo HAS, or none | Live (after convergence) or post | ~2 cm–2 m, depending on service and session length (see 5.2.2) | Convergence time — cut a session short and accuracy drops with it |
 | RTK | A base station + a live link (radio or NTRIP) | Live | 1–3 cm | The link — line-of-sight, cell signal, or battery |
 | PPK | A rover log + a base/CORS log, combined later | Post | 1–3 cm | The overlap — if the logs don't cover the same window, nothing to combine |
 
 *Four correction methods arranged by what they need, what they deliver, and where they're most likely to let you down.*
 
-### 4.2.1 DGNSS (Differential GNSS)
+### 5.2.1 DGNSS (Differential GNSS)
 
-**How it works:** a nearby beacon or an SBAS satellite compares its own known position to its GNSS fix, broadcasts the difference, and your receiver applies it — the timing-only correction described in 4.1.
+**How it works:** a nearby beacon or an SBAS satellite compares its own known position to its GNSS fix, broadcasts the difference, and your receiver applies it — the timing-only correction described in 5.1.
 
 **Accuracy:** ~1–3 m.
 
@@ -59,7 +59,7 @@ Four methods add a correction layer on top of raw GNSS, and each solves the two 
 
 **Example:** logging the rough location of a storm drain for an inventory map, where "within a couple of meters" is fine.
 
-### 4.2.2 PPP (Precise Point Positioning)
+### 5.2.2 PPP (Precise Point Positioning)
 
 **How it works:** the receiver computes its own position using global precise satellite orbit and clock products, with no base station — trading a nearby reference for convergence time.
 
@@ -79,19 +79,19 @@ Post-processed PPP (logging raw, then processing against free IGS data afterward
 
 **Use it when:** no base or network access is available, and the tolerance can accept the accuracy your session length actually delivers.
 
-**Don't use it when:** the project needs a firm 1–3 cm — a short session may only reach 15–20 cm or worse, and that shouldn't be logged as centimeter data. Also don't reach for post-processed PPP as a same-day RTK fallback if a base or CORS log is available for the site — see 4.5.1, step 3.
+**Don't use it when:** the project needs a firm 1–3 cm — a short session may only reach 15–20 cm or worse, and that shouldn't be logged as centimeter data. Also don't reach for post-processed PPP as a same-day RTK fallback if a base or CORS log is available for the site — see 5.5.1, step 3.
 
 **Example:** a single remote point far outside RTK network and CORS coverage, with no base station to deploy.
 
-### 4.2.3 RTK (Real-Time Kinematic)
+### 5.2.3 RTK (Real-Time Kinematic)
 
-**How it works:** a base station at a known point streams live carrier-phase corrections; your rover resolves the ambiguity (4.3) and locks a centimeter fix you can confirm on the spot.
+**How it works:** a base station at a known point streams live carrier-phase corrections; your rover resolves the ambiguity (5.3) and locks a centimeter fix you can confirm on the spot.
 
 **Accuracy:** 1–3 cm, live — the default method for this project's work, because it's the only method that lets you verify the fix before leaving the point.
 
-**Not the same idea as a DGNSS beacon (4.2.1).** Both compare a known point to a GNSS reading and send you the difference, so it's tempting to think of single-base RTK as "DGNSS with your own beacon." It isn't — the two correct different kinds of measurements.
+**Not the same idea as a DGNSS beacon (5.2.1).** Both compare a known point to a GNSS reading and send you the difference, so it's tempting to think of single-base RTK as "DGNSS with your own beacon." It isn't — the two correct different kinds of measurements.
 
-A DGNSS beacon corrects the same **timing-based** measurement covered in 4.2.1, which tops out around a meter no matter how good the correction is. Single-base RTK corrects a **carrier-phase** measurement instead — the far finer, wave-based reading from 4.1 — which is why the same basic idea (correct against a known point) delivers meters in one case and centimeters in the other.
+A DGNSS beacon corrects the same **timing-based** measurement covered in 5.2.1, which tops out around a meter no matter how good the correction is. Single-base RTK corrects a **carrier-phase** measurement instead — the far finer, wave-based reading from 5.1 — which is why the same basic idea (correct against a known point) delivers meters in one case and centimeters in the other.
 
 **The measurement sets the ceiling; the correction only gets you up to that ceiling, not past it.**
 
@@ -99,9 +99,9 @@ A DGNSS beacon corrects the same **timing-based** measurement covered in 4.2.1, 
 
 **NTRIP** (Networked Transport of RTCM via Internet Protocol) is a delivery route: the internet "pipe" that carries an RTCM message from a base or network to your rover, the way a streaming app is the pipe for a movie rather than the movie itself. NTRIP only changes how a correction reaches you, not what it says or how accurate it is.
 
-**Two flavors, one method.** RTK comes in two forms, depending on where the base's known position comes from and how the correction travels to you. Both are still RTK underneath — same carrier-phase measurement, same ambiguity resolution, same float/fixed states (4.3). The difference is entirely in the setup.
+**Two flavors, one method.** RTK comes in two forms, depending on where the base's known position comes from and how the correction travels to you. Both are still RTK underneath — same carrier-phase measurement, same ambiguity resolution, same float/fixed states (5.3). The difference is entirely in the setup.
 
-#### 4.2.3.1 Single-Base RTK (Base/Rover)
+#### 5.2.3.1 Single-Base RTK (Base/Rover)
 
 **How it works:** you bring two receivers — one stays fixed at a surveyed or published point for the whole session as the **base**; the other is the **rover** you carry to log points.
 
@@ -111,17 +111,17 @@ Radio range is the binding limit here: typically a few km with clear line-of-sig
 
 **Accuracy:** 1–3 cm, and it holds fast and reliably close to the base. Plan on solid fixes within roughly **10–20 km**.
 
-Fixes are still often achievable out to 30–50 km, but take longer to lock and are more prone to dropping to float, for the reason covered in 4.4 — the shared atmosphere between you and the base diverges with distance. *(Rule of thumb — flag for your GNSS specialist or provider to confirm, since the exact number varies by receiver.)*
+Fixes are still often achievable out to 30–50 km, but take longer to lock and are more prone to dropping to float, for the reason covered in 5.4 — the shared atmosphere between you and the base diverges with distance. *(Rule of thumb — flag for your GNSS specialist or provider to confirm, since the exact number varies by receiver.)*
 
 **Use it when:** neither CORS nor a commercial network covers the site — remote work outside any network's reach — or you want the base close enough to guarantee the fastest possible fix, tighter than any fixed public or commercial station happens to sit.
 
 **Don't use it when:** a network already covers the site. Single-base RTK adds real overhead a network doesn't: a second receiver, someone to set up and survey in the base, and a base whose own position is only as good as the monument or survey-in step behind it — a wrong base coordinate here produces exactly the "constant offset at every point" pattern from Module 3.
 
-For this organization, Network RTK (4.2.3.2) is the default; reach for single-base only when the site genuinely falls outside network coverage.
+For this organization, Network RTK (5.2.3.2) is the default; reach for single-base only when the site genuinely falls outside network coverage.
 
 **Example:** a remote site with no CORS or commercial network signal, where a project base is set up and surveyed in for the day.
 
-#### 4.2.3.2 Network RTK
+#### 5.2.3.2 Network RTK
 
 **How it works:** instead of a physical base you deploy yourself, the correction comes from a network of permanent stations — CORS, a commercial network, or your organization's own — computing a synthesized "virtual" base for wherever you happen to be. No second receiver to deploy or survey in.
 
@@ -129,9 +129,9 @@ For this organization, Network RTK (4.2.3.2) is the default; reach for single-ba
 
 **Accuracy:** 1–3 cm, and it typically holds over a wider area than single-base RTK, since the network synthesizes a nearby virtual base for wherever you are rather than relying on one fixed physical station.
 
-**Use it when:** the site falls within CORS, commercial, or your organization's network coverage — the normal case for this region, and the same coverage this organization already relies on for CORS-based PPK (Module 6). No base to haul, set up, or survey in.
+**Use it when:** the site falls within CORS, commercial, or your organization's network coverage — the normal case for this region, and the same coverage this organization already relies on for CORS-based PPK (Module 7). No base to haul, set up, or survey in.
 
-**Don't use it when:** the site is outside every available network's reach, or your mobile device has no signal to carry NTRIP (see 4.5.1, step 2) — either case pushes you back to single-base RTK or another method entirely.
+**Don't use it when:** the site is outside every available network's reach, or your mobile device has no signal to carry NTRIP (see 5.5.1, step 2) — either case pushes you back to single-base RTK or another method entirely.
 
 **Example:** setting boundary or utility points on a site with good cell coverage and existing CORS or commercial network reach.
 
@@ -143,7 +143,7 @@ Not every field app supports this. Some GNSS data-collection software streams an
 
 Confirm this capability before you count on it: if raw logging matters to a project, choose a device-and-software combination that offers it, so you keep the choice between RTK and later PPK rather than losing it by default.
 
-### 4.2.4 PPK (Post-Processed Kinematic)
+### 5.2.4 PPK (Post-Processed Kinematic)
 
 **How it works:** mechanically identical to RTK — a base and rover comparing carrier-phase data — but nothing is streamed live. The rover logs raw data continuously; a base or CORS log covering the same window is combined with it afterward in the office.
 
@@ -155,7 +155,7 @@ Keep the receiver logging continuously for the full session, including travel be
 
 **Use it when:** the link can't be trusted (weather, seasonal or remote sites) or the platform moves continuously (coastal vehicle, drone) — for moving-platform work, PPK is the standard approach, not a fallback.
 
-It's also the better choice whenever a base or CORS log is available for the site, even as a same-day RTK fallback — see 4.5.1, step 3.
+It's also the better choice whenever a base or CORS log is available for the site, even as a same-day RTK fallback — see 5.5.1, step 3.
 
 **Don't use it when:** you need to confirm accuracy in the field before leaving — PPK gives you no live readout; a logging gap isn't discovered until the office processes the data.
 
@@ -167,9 +167,9 @@ That's the practical argument for logging raw by default any time you're on a mo
 
 **Example:** a coastal survey run from a moving vehicle where RTK would drop in radio or cell dead zones.
 
-## 4.3 Float vs. Fixed: Has the Receiver Locked a Precise Answer?
+## 5.3 Float vs. Fixed: Has the Receiver Locked a Precise Answer?
 
-RTK and PPK's centimeter accuracy comes from the fine ruler in 4.1 — measuring the wave's phase. To use that ruler, the receiver first has to figure out something more basic: exactly how many *whole wavelengths* fit between it and each satellite.
+RTK and PPK's centimeter accuracy comes from the fine ruler in 5.1 — measuring the wave's phase. To use that ruler, the receiver first has to figure out something more basic: exactly how many *whole wavelengths* fit between it and each satellite.
 
 Each wavelength is only about 19 cm, so the receiver can measure the leftover fraction of a wavelength very precisely — but on its own, that fraction doesn't tell it whether it's 3 wavelengths and a bit away, or 300,003 wavelengths and a bit away. It has to solve for that whole number first, by comparing signals from many satellites over a few seconds to a couple of minutes.
 
@@ -178,23 +178,23 @@ Each wavelength is only about 19 cm, so the receiver can measure the leftover fr
 
 Your screen tells you which state you're in — check the differential or solution-type status before you trust a point, not just the ±cm number next to it. This applies to **both RTK and PPK**, since both rely on the same phase measurement and whole-number count.
 
-PPP doesn't have this same on/off state — it *converges* gradually instead (4.2.2). DGNSS never does this step at all, since it only uses the simple timing measurement from 4.1.
+PPP doesn't have this same on/off state — it *converges* gradually instead (5.2.2). DGNSS never does this step at all, since it only uses the simple timing measurement from 5.1.
 
-| **WHY IT MATTERS** | |
-|---|---|
-| Fixed is necessary but not sufficient. Under bad conditions — multipath, a marginal link, poor geometry — a receiver can lock onto the *wrong* whole number and still show "fixed": confident, precise, and wrong. A fix tells you the receiver settled on an answer; it doesn't tell you the answer was correct. That's a separate check (the known-point check), not something the fixed/float status can catch on its own. | |
+| **WHY IT MATTERS** |
+|---|
+| Fixed is necessary but not sufficient. Under bad conditions — multipath, a marginal link, poor geometry — a receiver can lock onto the *wrong* whole number and still show "fixed": confident, precise, and wrong. A fix tells you the receiver settled on an answer; it doesn't tell you the answer was correct. That's a separate check (the known-point check), not something the fixed/float status can catch on its own. |
 
-## 4.4 Baseline Length
+## 5.4 Baseline Length
 
-**Baseline** is simply the straight-line distance between the base station and your rover (your receiver). It matters because of the same shared-error idea from 4.1: the correction only helps with what you and the base experience in common.
+**Baseline** is simply the straight-line distance between the base station and your rover (your receiver). It matters because of the same shared-error idea from 5.1: the correction only helps with what you and the base experience in common.
 
 Close to the base — say, a few km — you're both looking through nearly the same slice of atmosphere, so the correction cancels almost all of that shared error immediately, and the fix locks fast.
 
-As the baseline grows longer, that atmosphere diverges between you and the base, the correction gets less complete, and the fix takes longer to resolve. On a long enough baseline, the leftover error can be too large for the receiver to ever pin down the exact whole-wavelength count from 4.3 — so instead of just taking longer, it never resolves at all, and the receiver is stuck reporting **float** (the lower-accuracy estimate from 4.3) indefinitely.
+As the baseline grows longer, that atmosphere diverges between you and the base, the correction gets less complete, and the fix takes longer to resolve. On a long enough baseline, the leftover error can be too large for the receiver to ever pin down the exact whole-wavelength count from 5.3 — so instead of just taking longer, it never resolves at all, and the receiver is stuck reporting **float** (the lower-accuracy estimate from 5.3) indefinitely.
 
 This is why a receiver that fixes instantly next to its own base can sit on float for minutes — or never fix — when connected to a network base tens of kilometers away.
 
-## 4.5 Good Practice: Planning for a Reliable Field Day
+## 5.5 Good Practice: Planning for a Reliable Field Day
 
 Most field problems are avoided, not fixed — by deciding a few things before you ever leave the office. Some of this holds no matter which method you're using that day:
 
@@ -210,7 +210,7 @@ Most field problems are avoided, not fixed — by deciding a few things before y
 
 **Back up raw logs before leaving the field, whatever method you used.** Even on a day that went smoothly with a live fix the whole time, a backed-up raw log gives you the option to reprocess a point later if anything about it turns out to be in doubt.
 
-### 4.5.1 Planning for a Reliable RTK Day
+### 5.5.1 Planning for a Reliable RTK Day
 
 RTK adds its own planning on top of the general practices above. In order:
 
@@ -238,7 +238,7 @@ Reserve **post-processed PPP** for the rare site with no base or CORS coverage a
 
 A connection that still *looks* active but whose correction age keeps climbing instead of resetting every second or two is the real sign that corrections have stopped — the link icon alone can lag behind what's actually happening.
 
-### 4.5.2 Planning for a Reliable PPK Day
+### 5.5.2 Planning for a Reliable PPK Day
 
 PPK adds its own planning on top of the general practices above. In order:
 

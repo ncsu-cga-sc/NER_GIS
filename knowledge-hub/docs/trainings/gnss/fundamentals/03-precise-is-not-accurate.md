@@ -38,9 +38,9 @@ good DOP and a tight ±1 cm has simply converged on a *consistent*
 answer — it has no way of knowing whether that answer started from the
 right assumptions.
 
-| **WHY IT MATTERS** | |
-|---|---|
-| Good DOP and a tight ±cm estimate only mean the math converged — neither one can detect a wrong datum, a mistyped antenna height, or bad base coordinates. Those errors produce numbers that look just as clean as a correct one. Don't treat a steady screen as proof of a correct position. | |
+| **WHY IT MATTERS** |
+|---|
+| Good DOP and a tight ±cm estimate only mean the math converged — neither one can detect a wrong datum, a mistyped antenna height, or bad base coordinates. Those errors produce numbers that look just as clean as a correct one. Don't treat a steady screen as proof of a correct position. |
 
 ## 3.3 Where a Wrong-but-Precise Number Comes From
 

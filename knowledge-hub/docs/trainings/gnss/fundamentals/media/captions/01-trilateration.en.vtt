@@ -1,0 +1,286 @@
+WEBVTT
+
+00:00:08.880 --> 00:00:11.759
+Welcome back to the channel. Today we're
+
+00:00:11.759 --> 00:00:13.200
+breaking down one of the biggest
+
+00:00:13.200 --> 00:00:16.880
+misconceptions in navigation. GPS does
+
+00:00:16.880 --> 00:00:19.119
+not use triangulation.
+
+00:00:19.119 --> 00:00:21.439
+It uses trilateration.
+
+00:00:21.439 --> 00:00:23.680
+People mix these two all the time, but
+
+00:00:23.680 --> 00:00:26.640
+they're completely different methods. By
+
+00:00:26.640 --> 00:00:28.880
+the end of this video, you'll clearly
+
+00:00:28.880 --> 00:00:32.320
+understand how GPS receivers calculate
+
+00:00:32.320 --> 00:00:35.440
+your position, why satellites don't
+
+00:00:35.440 --> 00:00:38.800
+measure angles, the exact meaning of
+
+00:00:38.800 --> 00:00:42.160
+trilateration versus triangulation.
+
+00:00:42.160 --> 00:00:44.239
+Let's get started.
+
+00:00:44.239 --> 00:00:47.680
+What GPS really measures. Your GPS
+
+00:00:47.680 --> 00:00:50.480
+receiver, whether in your phone, car, or
+
+00:00:50.480 --> 00:00:53.039
+drone, constantly listens to signals
+
+00:00:53.039 --> 00:00:55.760
+broadcasted by satellites. Each
+
+00:00:55.760 --> 00:00:58.320
+satellite sends two important pieces of
+
+00:00:58.320 --> 00:00:59.840
+information.
+
+00:00:59.840 --> 00:01:03.680
+Its exact position in space, a timestamp
+
+00:01:03.680 --> 00:01:06.560
+of when the signal was transmitted. When
+
+00:01:06.560 --> 00:01:09.119
+your device receives that signal, it
+
+00:01:09.119 --> 00:01:10.960
+checks how long the signal took to
+
+00:01:10.960 --> 00:01:13.920
+arrive. Since radio signals travel at
+
+00:01:13.920 --> 00:01:16.640
+the speed of light, we can convert that
+
+00:01:16.640 --> 00:01:22.000
+time delay into distance equals time
+
+00:01:22.000 --> 00:01:25.360
+speed of light. So the only thing GPS
+
+00:01:25.360 --> 00:01:27.280
+actually measures is distance to
+
+00:01:27.280 --> 00:01:30.479
+satellites, not direction or angle. This
+
+00:01:30.479 --> 00:01:33.360
+is why GPS uses trilateration, the
+
+00:01:33.360 --> 00:01:36.000
+method based on distances.
+
+00:01:36.000 --> 00:01:37.600
+Trilateration.
+
+00:01:37.600 --> 00:01:40.720
+Let's break trilateration down visually.
+
+00:01:40.720 --> 00:01:43.200
+Step one, one satellite, you are
+
+00:01:43.200 --> 00:01:46.079
+somewhere on a sphere. If your receiver
+
+00:01:46.079 --> 00:01:49.360
+knows it's exactly 20,000 km away from
+
+00:01:49.360 --> 00:01:52.479
+satellite one, you could be anywhere on
+
+00:01:52.479 --> 00:01:54.560
+the surface of an imaginary sphere
+
+00:01:54.560 --> 00:01:58.000
+around that satellite. Step two, two
+
+00:01:58.000 --> 00:02:01.119
+satellites intersection of two spheres.
+
+00:02:01.119 --> 00:02:04.399
+Now add satellite two. You now have two
+
+00:02:04.399 --> 00:02:07.600
+possible intersection curves like two
+
+00:02:07.600 --> 00:02:10.560
+overlapping bubbles. Still not enough to
+
+00:02:10.560 --> 00:02:13.840
+pinpoint you. Step three, three
+
+00:02:13.840 --> 00:02:17.599
+satellites, two possible points. With
+
+00:02:17.599 --> 00:02:20.480
+satellite three, the spheres intersect
+
+00:02:20.480 --> 00:02:23.200
+at two points. Usually, one is
+
+00:02:23.200 --> 00:02:25.760
+impossible. Maybe it's in space or on
+
+00:02:25.760 --> 00:02:27.760
+the other side of Earth, so the receiver
+
+00:02:27.760 --> 00:02:30.959
+eliminates it. Step four, four
+
+00:02:30.959 --> 00:02:34.959
+satellites fixing time error. The fourth
+
+00:02:34.959 --> 00:02:37.920
+satellite solves the biggest issue. Your
+
+00:02:37.920 --> 00:02:39.599
+phone's clock is not perfectly
+
+00:02:39.599 --> 00:02:42.560
+synchronized with satellite clocks. This
+
+00:02:42.560 --> 00:02:44.879
+tiny timing error could lead to
+
+00:02:44.879 --> 00:02:47.680
+kilometers of positional error. The
+
+00:02:47.680 --> 00:02:49.280
+fourth satellite removes that
+
+00:02:49.280 --> 00:02:52.800
+uncertainty and gives you a precise 3D
+
+00:02:52.800 --> 00:02:57.760
+position. Latitude, longitude, altitude.
+
+00:02:57.760 --> 00:03:00.160
+That's trilateration in action. Pure
+
+00:03:00.160 --> 00:03:03.360
+distance calculations.
+
+00:03:03.360 --> 00:03:05.920
+What is triangulation?
+
+00:03:05.920 --> 00:03:09.120
+Triangulation is completely different.
+
+00:03:09.120 --> 00:03:12.159
+Triangulation uses angles, not
+
+00:03:12.159 --> 00:03:16.239
+distances. It's commonly used in land
+
+00:03:16.239 --> 00:03:20.239
+surveying, mapping with total stations,
+
+00:03:20.239 --> 00:03:23.280
+radio direction finding, navigation
+
+00:03:23.280 --> 00:03:26.959
+using known landmarks. To triangulate,
+
+00:03:26.959 --> 00:03:30.799
+you measure angles between lines forming
+
+00:03:30.799 --> 00:03:32.400
+triangles.
+
+00:03:32.400 --> 00:03:35.760
+GPS satellites however do not send angle
+
+00:03:35.760 --> 00:03:38.239
+information and your phone cannot
+
+00:03:38.239 --> 00:03:41.920
+measure angles to satellites in the sky.
+
+00:03:41.920 --> 00:03:44.319
+That's why triangulation cannot be used
+
+00:03:44.319 --> 00:03:48.159
+for GPS. Why four satellites are
+
+00:03:48.159 --> 00:03:51.680
+minimum? A common question why do we
+
+00:03:51.680 --> 00:03:55.519
+need four satellites not three? Because
+
+00:03:55.519 --> 00:03:57.760
+your devices internal clock is not
+
+00:03:57.760 --> 00:04:01.040
+atomic. Even a tiny nancond difference
+
+00:04:01.040 --> 00:04:04.159
+means huge errors. Three satellites
+
+00:04:04.159 --> 00:04:06.640
+equals you get a location with massive
+
+00:04:06.640 --> 00:04:09.519
+error. Four satellites equals correct
+
+00:04:09.519 --> 00:04:12.480
+time plus correct location. This is why
+
+00:04:12.480 --> 00:04:15.680
+a GPS fix normally requires at least
+
+00:04:15.680 --> 00:04:17.680
+four satellites.
+
+00:04:17.680 --> 00:04:21.120
+So to summarize, GPS equals
+
+00:04:21.120 --> 00:04:22.800
+trilateration,
+
+00:04:22.800 --> 00:04:25.840
+trilateration equals distances,
+
+00:04:25.840 --> 00:04:30.000
+triangulation equals angles. GPS never
+
+00:04:30.000 --> 00:04:33.120
+measures angles, only timing information
+
+00:04:33.120 --> 00:04:36.160
+used to compute distance. If you learned
+
+00:04:36.160 --> 00:04:38.479
+something new today, don't forget to
+
+00:04:38.479 --> 00:04:42.000
+like, subscribe, and share this video
+
+00:04:42.000 --> 00:04:45.120
+with other geospatial learners. See you
+
+00:04:45.120 --> 00:04:48.560
+in the next tutorial.

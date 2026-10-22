@@ -88,9 +88,9 @@ transformation works out where a passenger would have been sitting in
 the time-dependent transformation (Zeno Connect, Field Maps, or both),
 the version number, and the velocity model it uses.]
 
-| **WHY IT MATTERS** | |
-|---|---|
-| A receiver can be fixed, show ±1 cm, and still be 50 cm to 1 m off if two frames are mixed. The ± number can't see it. Only a known-point check, repeated with each position source you use, catches a frame mismatch. | |
+| **WHY IT MATTERS** |
+|---|
+| A receiver can be fixed, show ±1 cm, and still be 50 cm to 1 m off if two frames are mixed. The ± number can't see it. Only a known-point check, repeated with each position source you use, catches a frame mismatch. |
 
 ## 4.5 PA11 and MA11 Are Not Pennsylvania and Massachusetts
 

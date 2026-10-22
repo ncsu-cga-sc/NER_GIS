@@ -25,6 +25,13 @@
   });
   tags.sort(function (a, b) { return a.localeCompare(b); });
 
+  // Screen-reader message when the filter changes the list
+  var status = document.createElement("p");
+  status.className = "sc-sr-only";
+  status.setAttribute("role", "status");
+  status.setAttribute("aria-live", "polite");
+  filters.parentNode.insertBefore(status, filters.nextSibling);
+
   var empty = document.createElement("li");
   empty.className = "training-card-empty";
   empty.textContent = "No trainings with this tag.";
@@ -43,6 +50,13 @@
       if (visible) shown++;
     });
     empty.style.display = shown ? "none" : "";
+    var real = cards.filter(function (card) { return cardTags(card).length; }).length;
+    var count = cards.filter(function (card) {
+      return card.style.display !== "none" && cardTags(card).length;
+    }).length;
+    status.textContent = active
+      ? count + (count === 1 ? " training" : " trainings") + " shown for tag " + active + "."
+      : "Showing all " + real + (real === 1 ? " training." : " trainings.");
   }
 
   function select(tag) {

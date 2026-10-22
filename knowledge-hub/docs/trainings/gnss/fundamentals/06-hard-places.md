@@ -1,4 +1,4 @@
-# Module 5 — Hard Places
+# Module 6 — Hard Places
 
 *Read time: 7–10 minutes*
 
@@ -8,7 +8,7 @@ confident but may be false, choose between logging longer, moving,
 revisiting, or switching method, and know when to record a point as
 not achievable at this site.
 
-## 5.1 What Makes a Place Hard
+## 6.1 What Makes a Place Hard
 
 A "hard place" is any site where the sky works against you: tree
 canopy, building edges, steep slopes, or a spot next to water or metal.
@@ -26,7 +26,7 @@ Under canopy you usually get both at once. Leaves also weaken the
 signals that pass through them, which makes the receiver's
 measurements noisier.
 
-## 5.2 Will Waiting Help? Noise vs. Bias
+## 6.2 Will Waiting Help? Noise vs. Bias
 
 Picture two bathroom scales. The first wobbles by a few hundred grams
 each time you step on. Weigh yourself ten times, average the readings,
@@ -48,9 +48,9 @@ logging reduces noise, and a much longer wait lets satellite geometry
 change. But a few more minutes in the same multipath spot mostly makes
 a wrong answer look more convincing.
 
-## 5.3 A Fix That Isn't
+## 6.3 A Fix That Isn't
 
-In Module 4 you learned that a *fixed* solution is necessary but not
+In Module 5 you learned that a *fixed* solution is necessary but not
 sufficient. Hard places are where that matters most. With few
 satellites and reflected signals, the receiver can lock onto the wrong
 solution and still report "fixed" with a small ± value. Nothing on the
@@ -63,7 +63,7 @@ centimeters, is another. A common safeguard at hard sites is to take a
 second, independent fix: let the fix drop, reacquire it, and check that
 both observations agree within your tolerance.
 
-## 5.4 Your Four Options
+## 6.4 Your Four Options
 
 When a site won't give you a trustworthy point, each option changes
 something different:
@@ -93,16 +93,16 @@ problem.
 **Switching to PPK** means logging raw data so the office can compute
 the solution afterward. It removes the dependence on a live link and
 gives processing a second chance, but multipath is still in the data.
-Planning that logging so the office step works is covered in Module 6.
+Planning that logging so the office step works is covered in Module 7.
 
 **Worked example.** You have a fixed solution under canopy at ±1 cm,
 but last week's visit to the same point differs by 50 cm. Logging
 longer won't settle it, because either reading could be a false fix
 biased by multipath. Instead, move to an opening and offset, or come
 back later in the day and take two independent fixes. If those agree,
-keep them. If they don't, go to 5.5.
+keep them. If they don't, go to 6.5.
 
-## 5.5 When to Stop
+## 6.5 When to Stop
 
 Some points can't reach 1–3 cm at their location with the methods you
 have. The honest record is more useful than a confident wrong
@@ -112,9 +112,9 @@ the point as **not achievable at this site** to the project accuracy,
 and note the method used, the accuracy you actually achieved, and why
 (for example, "dense canopy, fixes disagreed by 40 cm").
 
-| **WHY IT MATTERS** | |
-|---|---|
-| At a hard site, a steady "fixed, ±1 cm" reading is not proof. Multipath and false fixes produce confident, stable, wrong points. Trust a hard-site point only when independent fixes agree, and record it honestly when they don't. | |
+| **WHY IT MATTERS** |
+|---|
+| At a hard site, a steady "fixed, ±1 cm" reading is not proof. Multipath and false fixes produce confident, stable, wrong points. Trust a hard-site point only when independent fixes agree, and record it honestly when they don't. |
 
 ### Self-Check
 

@@ -64,6 +64,7 @@ markdown_extensions:
 
 extra_css:
   - assets/css/extra.css
+  - assets/ableplayer/build/ableplayer.min.css
 
 plugins:
   - search
@@ -72,9 +73,13 @@ plugins:
       listings_toc: false
 
 extra_javascript:
+  - assets/ableplayer/jquery.min.js        # must load before Able Player
+  - assets/ableplayer/js.cookie.min.js
+  - assets/ableplayer/build/ableplayer.min.js
   - javascripts/self-check.js
   - javascripts/toc-align.js
   - javascripts/enlarge.js
+  - javascripts/table-scroll.js
   - javascripts/training-tags.js
 
 hooks:

@@ -74,20 +74,28 @@
   color: #1e2129;
 }
 
+/* Text sizes are in rem, so they follow the reader's browser font-size setting.
+   Material raises the root size on very wide screens (137.5% at 100em, 150% at 125em).
+   It is held at Material's normal 125% here, so the text looks the same on every screen:
+   0.8rem = 16px, 0.7rem = 14px, 1rem = 20px, with the browser's default size of 16px. */
+html {
+  font-size: 125%;
+}
+
 /* ------------------------------------------------------------------
  * Text: body, headings, links, inline code
  * ------------------------------------------------------------------ */
 .md-typeset {
-  font-size: 16px;
+  font-size: 0.8rem;
   color: var(--hub-text);
 }
 
 .md-typeset p {
-  line-height: 26px;
+  line-height: 1.3rem;
 }
 
 .md-typeset li {
-  line-height: 24px;
+  line-height: 1.2rem;
 }
 
 /* ------------------------------------------------------------------
@@ -139,7 +147,7 @@
   width: fit-content;
   max-width: 100%;
   position: relative;
-  font-size: 36px;
+  font-size: 1.8rem;
   line-height: 1.2;
   margin: 0 0 28px;
   padding-bottom: 8px;
@@ -152,7 +160,7 @@
 }
 
 .md-typeset h2 {
-  font-size: 30px;
+  font-size: 1.5rem;
   line-height: 1.375;
   margin: 40px 0 12px;
 }
@@ -160,7 +168,7 @@
 .md-typeset h3 {
   color: var(--hub-h3);
   font-weight: 300;
-  font-size: 24px;
+  font-size: 1.2rem;
   line-height: 1.66;
   margin: 40px 0 12px;
 }
@@ -168,7 +176,7 @@
 .md-typeset h4 {
   color: var(--hub-h3);
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 1.5;
   margin: 32px 0 12px;
 }
@@ -176,7 +184,7 @@
 .md-typeset h5,
 .md-typeset h6 {
   color: var(--hub-h3);
-  font-size: 16px;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: none;
   margin: 24px 0 8px;
@@ -185,22 +193,22 @@
 /* Wide screens: the Esri sizes (H1 48px, H2 40px, H3 32px) */
 @media screen and (min-width: 76.25em) {
   .md-typeset h1 {
-    font-size: 48px;
+    font-size: 2.4rem;
     line-height: 1.15;
   }
 
   .md-typeset h2 {
-    font-size: 40px;
-    line-height: 55px;
+    font-size: 2rem;
+    line-height: 2.75rem;
   }
 
   .md-typeset h3 {
-    font-size: 32px;
-    line-height: 53px;
+    font-size: 1.6rem;
+    line-height: 2.65rem;
   }
 
   .md-typeset h4 {
-    font-size: 24px;
+    font-size: 1.2rem;
   }
 }
 
@@ -230,7 +238,7 @@
 
 /* Inline code: gray box with a thin border */
 .md-typeset :not(pre) > code {
-  font-size: 14px;
+  font-size: 0.7rem;
   padding: 2px 4px;
   border: 1px solid var(--hub-line);
   border-radius: 4px;
@@ -238,16 +246,16 @@
 
 /* Code blocks */
 .md-typeset pre > code {
-  font-size: 14.4px;
+  font-size: 0.72rem;
 }
 
 /* Sidebar text sizes. Fixed sizes, so they do not grow on large screens. Widths are not changed. */
 .md-sidebar--primary .md-nav {
-  font-size: 13px; /* left sidebar (navigation) */
+  font-size: 0.7rem; /* left sidebar (navigation) */
 }
 
 .md-sidebar--secondary .md-nav {
-  font-size: 14px; /* right sidebar ("Table of contents") */
+  font-size: 0.7rem; /* right sidebar ("Table of contents") */
 }
 
 /* Right sidebar: the table of contents is at most 400px tall. When the list is longer than that,
@@ -357,7 +365,7 @@
   border-radius: 50%;
   background-color: var(--hub-step-num);
   color: #ffffff;
-  font-size: 0.8em;
+  font-size: 0.875em;
   font-weight: 600;
   line-height: 1.7em;
   text-align: center;
@@ -413,7 +421,7 @@
 .md-typeset .hub-diagram > p,
 .md-typeset p.figure-caption {
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.875em;
   font-style: italic;
   color: var(--md-default-fg-color--light);
   margin-top: 0;
@@ -458,10 +466,168 @@
   margin: 1.5em 0;
 }
 
+/* Able Player video: centered, wider, and kept below the sticky header */
+.md-typeset figure.hub-video {
+  position: relative;
+  isolation: isolate;          /* Able Player uses z-index 5000+; keep it inside this box */
+  z-index: 0;
+  display: block;
+  width: 100%;
+  max-width: 52rem;
+  margin: 1.5em auto;
+}
+
+.md-typeset .hub-video .able-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.md-typeset .hub-video figcaption {
+  text-align: center;
+}
+
+/* Larger captions. Able Player's font-size preference is a percentage of this
+   base size, so people can still change it in the player's Preferences. */
+.md-typeset .hub-video .able-captions-wrapper {
+  font-size: 1.1rem;
+}
+
+/* Full-screen mode: player fills about 80% of the screen, centered.
+   Able Player sizes the video to the whole window, so override that here. */
+.md-typeset .hub-video .able-wrapper:fullscreen,
+.md-typeset .hub-video .able-wrapper.fullscreen {
+  left: 0 !important;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  display: flex;
+  overflow: auto; /* if the screen is too short (for example at 400% zoom), scroll instead of cutting off */
+  background: #000 !important;
+}
+
+.md-typeset .hub-video .able-wrapper:fullscreen .able,
+.md-typeset .hub-video .able-wrapper.fullscreen .able {
+  /* 80% of screen width, but never taller than the screen allows, and never narrower than 16rem */
+  width: clamp(16rem, min(80vw, calc((100vh - 14rem) * 16 / 9)), 100vw);
+  max-width: none;
+  margin: auto; /* centers in both directions, and stays reachable when it is taller than the screen */
+}
+
+/* Narrow screens, including 400% zoom on a desktop: use the full width */
+@media screen and (max-width: 40em) {
+  .md-typeset .hub-video .able-wrapper:fullscreen .able,
+  .md-typeset .hub-video .able-wrapper.fullscreen .able {
+    width: 100vw;
+  }
+}
+
+.md-typeset .hub-video .able-wrapper:fullscreen .able-vidcap-container,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-vidcap-container,
+.md-typeset .hub-video .able-wrapper:fullscreen .able-media-container,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-media-container {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.md-typeset .hub-video .able-wrapper:fullscreen iframe,
+.md-typeset .hub-video .able-wrapper.fullscreen iframe {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+}
+
+/* Captions below the video in full screen too, same as the small player */
+.md-typeset .hub-video .able-wrapper:fullscreen div.able-vidcap-container div.able-captions-overlay,
+.md-typeset .hub-video .able-wrapper.fullscreen div.able-vidcap-container div.able-captions-overlay {
+  position: relative !important;
+  bottom: auto !important;
+  min-height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000 !important;
+}
+
+.md-typeset .hub-video .able-wrapper:fullscreen div.able-captions,
+.md-typeset .hub-video .able-wrapper.fullscreen div.able-captions {
+  font-size: clamp(1.25rem, 1.5vw, 2.2rem) !important;
+  opacity: 1 !important;
+}
+
+/* Short screens (a landscape phone, or 400% zoom on a laptop). There is not enough height for
+   video + captions + controls, so nothing is squeezed or cropped. Instead the video keeps its full
+   16:9 picture, sized so that the video AND the controls fit on the first screen. The captions and
+   the time/status line follow below the controls; scroll down (vertical scroll only) to reach them. */
+@media screen and (max-height: 36em) {
+  .md-typeset .hub-video .able-wrapper:fullscreen .able,
+.md-typeset .hub-video .able-wrapper.fullscreen .able {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* The container is dissolved so the video, captions and controls can be put in a new order. */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able-vidcap-container,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-vidcap-container {
+    display: contents;
+  }
+
+  .md-typeset .hub-video .able-wrapper:fullscreen .able > *,
+.md-typeset .hub-video .able-wrapper.fullscreen .able > *,
+  .md-typeset .hub-video .able-wrapper:fullscreen .able-vidcap-container > *,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-vidcap-container > * {
+    order: 5;
+    flex: none;
+    width: 100%;
+  }
+
+  /* 1. video: the biggest 16:9 picture that still leaves room (4.5rem) for the control bar */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able-media-container,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-media-container {
+    order: 1;
+    width: min(100vw, calc((100vh - 4.5rem) * 16 / 9)) !important;
+    height: auto !important;
+    min-width: 12rem;
+  }
+
+  .md-typeset .hub-video .able-wrapper:fullscreen iframe,
+.md-typeset .hub-video .able-wrapper.fullscreen iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* 2. controls */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able > .able-controller,
+.md-typeset .hub-video .able-wrapper.fullscreen .able > .able-controller {
+    order: 2;
+  }
+
+  /* 3. captions (below the controls on a short screen) */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able-vidcap-container > .able-captions-wrapper,
+.md-typeset .hub-video .able-wrapper.fullscreen .able-vidcap-container > .able-captions-wrapper {
+    order: 3;
+  }
+
+  .md-typeset .hub-video .able-wrapper:fullscreen div.able-vidcap-container div.able-captions-overlay,
+.md-typeset .hub-video .able-wrapper.fullscreen div.able-vidcap-container div.able-captions-overlay {
+    min-height: 3rem;
+  }
+
+  /* 4. time / status line */
+  .md-typeset .hub-video .able-wrapper:fullscreen .able > .able-status-bar,
+.md-typeset .hub-video .able-wrapper.fullscreen .able > .able-status-bar {
+    order: 4;
+  }
+}
+
 .md-typeset .hub-video iframe {
   display: block;
   width: 100%;
-  max-width: 40rem;
   height: auto;
   aspect-ratio: 16 / 9;
   border: 0;
@@ -469,7 +635,7 @@
 
 .md-typeset .hub-video figcaption {
   margin-top: 0.4em;
-  font-size: 0.8em;
+  font-size: 0.875em;
   font-style: italic;
   color: var(--md-default-fg-color--light);
 }
@@ -559,7 +725,7 @@
 .md-typeset table:not([class]) {
   display: table;
   width: 100%;
-  font-size: 14px; /* fixed, so table text never grows larger than the 16px body text */
+  font-size: 0.7rem; /* fixed, so table text never grows larger than the 16px body text */
   border: 1px solid var(--hub-table-line);
   border-radius: 0;
   border-collapse: separate;
@@ -630,7 +796,7 @@
   border-spacing: 0;
   box-shadow: none;
   background: transparent;
-  font-size: 16px;
+  font-size: 0.8rem;
   overflow: hidden;
 }
 
@@ -690,7 +856,7 @@
   border: 0;
   background: none;
   color: var(--hub-quiet-warning);
-  font-size: 0.82em;
+  font-size: 0.875em;
   font-style: italic;
   font-weight: 400;
   line-height: 1.4;
@@ -715,6 +881,19 @@
   display: block;
   width: fit-content;
   max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: zoom-in;
+}
+
+.md-typeset .hub-zoom-frame:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 3px;
 }
 
 .md-typeset .hub-step-table td:nth-child(2) .hub-zoom-frame {
@@ -726,13 +905,13 @@
   display: block;
   margin-top: 0.35em;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.875em;
   font-style: italic;
   line-height: 1.3;
   color: var(--hub-text-muted);
 }
 
-/* Enlarged picture stays in a box on this page. It does not fill the window. */
+/* Enlarged picture stays in a box on this page: up to 94% of the window width and 92% of its height. */
 .hub-enlarge-root {
   position: fixed;
   inset: 0;
@@ -752,8 +931,8 @@
   position: relative;
   box-sizing: border-box;
   width: fit-content;
-  max-width: min(720px, 82vw);
-  max-height: 82vh;
+  max-width: min(1800px, 94vw);
+  max-height: 92vh;
   padding: 16px 16px 14px;
   overflow: visible;
   border: none;
@@ -767,9 +946,28 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: calc(82vh - 88px);
+  max-height: calc(92vh - 60px);
   margin: 0 auto;
   object-fit: contain;
+}
+
+.hub-enlarge-has-caption img {
+  max-height: calc(92vh - 6.5rem); /* leaves room for the caption under the picture */
+}
+
+.hub-enlarge-caption {
+  /* width: 0 + min-width: 100% keeps the caption as wide as the picture, not wider */
+  width: 0;
+  min-width: 100%;
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  text-align: center;
+  color: var(--md-default-fg-color);
+}
+
+.hub-enlarge-caption[hidden] {
+  display: none;
 }
 
 .hub-enlarge button {
@@ -786,21 +984,20 @@
   padding: 0 0 1px;
   border: none;
   border-radius: 50%;
-  outline: none;
   appearance: none;
   background: #6b6b6b;
   color: #ffffff;
   font-family: inherit;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
 }
 
-.hub-enlarge button:focus,
 .hub-enlarge button:focus-visible {
-  outline: none;
-  box-shadow: none;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #14151a;
 }
 
 .md-typeset .hub-step-table table td:nth-child(2) img,
@@ -837,7 +1034,7 @@
   border-radius: 50%;
   background-color: var(--hub-step-num);
   color: #ffffff;
-  font-size: 0.8em;
+  font-size: 0.875em;
   font-weight: 600;
   line-height: 1.7em;
   text-align: center;
@@ -868,7 +1065,7 @@
   display: inline-block;
   padding: 0.05em 0.45em;
   border-radius: 3px;
-  font-size: 0.75em;
+  font-size: 0.875em;
   font-weight: 600;
   line-height: 1.6;
   vertical-align: middle;
@@ -885,8 +1082,12 @@
   color: var(--hub-text-muted);
 }
 
-.md-typeset table td:first-child {
-  white-space: nowrap;
+/* Keep short first-column labels on one line, but only on wider screens and never in a
+   one-column table (the "Why it matters" boxes), where it made the page scroll sideways. */
+@media screen and (min-width: 40em) {
+  .md-typeset table td:first-child:not(:last-child) {
+    white-space: nowrap;
+  }
 }
 
 
@@ -985,7 +1186,7 @@
 /* question */
 .md-typeset .sc-card > p:first-child {
   margin-top: 0;
-  font-size: .9rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -1011,12 +1212,12 @@
 .md-typeset .sc-options li::before {
   content: attr(data-key);
   text-transform: uppercase;
-  flex: 0 0 1.6rem;
-  height: 1.6rem;
+  flex: 0 0 1.9rem;
+  height: 1.9rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  font-size: .7rem;
+  font-size: .875rem;
   font-weight: 700;
   background: var(--md-default-fg-color--lightest);
   color: var(--md-default-fg-color);
@@ -1026,7 +1227,6 @@
 .md-typeset .sc-card:not([data-done]) .sc-options li:focus {
   transform: translateX(.2rem);
   border-color: var(--md-accent-fg-color);
-  outline: none;
 }
 .md-typeset .sc-card:not([data-done]) .sc-options li:hover::before,
 .md-typeset .sc-card:not([data-done]) .sc-options li:focus::before {
@@ -1036,7 +1236,7 @@
 
 /* answered states */
 .md-typeset .sc-card[data-done] .sc-options li { cursor: default; }
-.md-typeset .sc-card[data-done] .sc-options li:not(.sc-right):not(.sc-wrong) { opacity: .55; }
+.md-typeset .sc-card[data-done] .sc-options li:not(.sc-right):not(.sc-wrong) { opacity: .8; }
 .md-typeset .sc-options li.sc-right {
   background: rgba(46, 125, 50, .12);
   border-color: #2e7d32;
@@ -1063,13 +1263,13 @@
   background: var(--md-default-bg-color);
   border-left: .2rem solid var(--md-accent-fg-color);
   border-radius: 0 .3rem .3rem 0;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 .md-typeset .sc-explain::before {
   content: "Explanation";
   display: block;
   margin-bottom: .2rem;
-  font-size: .65rem;
+  font-size: .875rem;
   font-weight: 700;
   letter-spacing: .05em;
   text-transform: uppercase;
@@ -1090,12 +1290,12 @@
   padding: .15rem .7rem;
   border-radius: 1rem;
   background: var(--md-default-bg-color);
-  font-size: .7rem;
+  font-size: .875rem;
   font-weight: 600;
 }
 .sc-btn {
   font: inherit;
-  font-size: .75rem;
+  font-size: .875rem;
   padding: .35rem 1rem;
   border: .075rem solid var(--md-accent-fg-color);
   border-radius: 2rem;
@@ -1121,7 +1321,7 @@
 .training-filters .md-tag,
 .training-card-tags .md-tag {
   font: inherit;
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   padding: 0.1rem 0.65rem;
   border: 1px solid var(--hub-line);
@@ -1189,7 +1389,7 @@
   position: relative;
   top: 0.35rem;
   margin: 0;
-  font-size: 0.8em;
+  font-size: 0.875em;
   font-style: italic;
   line-height: 1.4;
   text-align: right;
@@ -1210,4 +1410,85 @@
   border: none;
   background: transparent;
   padding-left: 0;
+}
+
+
+/* ------------------------------------------------------------------
+ * Accessibility: focus rings, dark-mode contrast, reduced motion
+ * ------------------------------------------------------------------ */
+
+/* Visible keyboard focus on the self-check answers and buttons */
+.md-typeset .sc-options li:focus-visible,
+.sc-btn:focus-visible,
+.training-filters .md-tag:focus-visible,
+.training-card-tags .md-tag:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+/* Dark theme: the accent is light mint, so hovered or focused items use dark text, not white. */
+[data-md-color-scheme="slate"] .md-typeset .sc-card:not([data-done]) .sc-options li:hover::before,
+[data-md-color-scheme="slate"] .md-typeset .sc-card:not([data-done]) .sc-options li:focus::before,
+[data-md-color-scheme="slate"] .sc-btn:hover:not(:disabled) {
+  color: #1e2129;
+}
+
+/* Visually hidden text for screen readers */
+.sc-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Respect the "reduce motion" setting in the visitor's system */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ------------------------------------------------------------------
+ * Wide tables: scroll sideways inside their own box on small screens
+ * (table-scroll.js adds the keyboard access and the hint line)
+ * ------------------------------------------------------------------ */
+.md-typeset__scrollwrap:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: -3px;
+}
+
+.md-typeset p.hub-scroll-hint {
+  margin: 1em 0 0;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--hub-text-muted);
+}
+
+@media screen and (max-width: 40em) {
+  /* Tighter cells and a minimum column width, so text does not wrap one word per line */
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding: 0.6em 0.7em;
+  }
+
+  .md-typeset table:not([class]) :is(th, td):not(.gnss-mark-cell) {
+    min-width: 8rem;
+  }
+}
+
+/* Quiz buttons and counter wrap instead of pushing the page wider than the screen */
+.sc-nav {
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
